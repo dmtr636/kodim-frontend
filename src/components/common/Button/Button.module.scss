@@ -1,0 +1,19 @@
+@import "src/styles/vars";
+
+.button {
+  background: $color-black;
+  border-radius: 5px;
+  padding: 13px 30px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+
+  &:hover {
+    background: $color-black-hover;
+  }
+}
+

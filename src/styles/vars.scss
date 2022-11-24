@@ -1,0 +1,22 @@
+$color-black: #303030;
+$color-black-hover: #444444;
+
+$color-white: #FFFFFF;
+$color-white-disabled: #B1B1B1;
+$color-white-inactive: rgba(255, 255, 255, 0.7);
+
+$color-blue: #52AEFF;
+$color-blue-gradient: linear-gradient(223.1deg, #89D3FF 5.85%, rgba(137, 211, 255, 0) 97.22%);
+$color-blue-hover: rgba(82, 174, 255, 0.05);
+
+@mixin mobile {
+  @media (max-width: 699px) { @content; }
+}
+
+@mixin tablet {
+  @media (min-width: 700px) and (max-width: 1279px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) { @content; }
+}
