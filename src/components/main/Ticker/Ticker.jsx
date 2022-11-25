@@ -11,17 +11,17 @@ export const Ticker = () => {
     { caseName: "Строительная компания", link: "/projects" },
     { caseName: "Дизайнер", link: "/projects" },
     { caseName: "Продажа дома", link: "/projects" },
-    { caseName: "Кафе", link: "/projects" },
+    /* { caseName: "Кафе", link: "/projects" },
     { caseName: "Агенство недвижимости", link: "/projects" },
     { caseName: "Водитель газели", link: "/projects" },
     { caseName: "Строительная компания", link: "/projects" },
     { caseName: "Дизайнер", link: "/projects" },
-    { caseName: "Продажа дома", link: "/projects" },
+    { caseName: "Продажа дома", link: "/projects" }, */
   ];
-  const caseElement= cases.map(el=><TickerLinks link={el.link} caseName={el.caseName}/>)
+  const caseElement= cases.map(el=><TickerLinks style={{margin:"70px"}} link={el.link} caseName={el.caseName}/>)
   return (
     <div className={style.wrapper}>
-      <Marquee gradient={false} pauseOnHover={true}>
+      <Marquee gradient={false} pauseOnHover={true} >
      {caseElement}
       </Marquee>
     </div>
