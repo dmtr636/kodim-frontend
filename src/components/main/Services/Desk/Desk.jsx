@@ -11,6 +11,7 @@ import TGBOT from "../Desk/img/TGBOT.gif"
 import COPY from "../Desk/img/COPY.gif"
 import CODING from "../Desk/img/CODING.gif"
 import MARKETING from "../Desk/img/MARKETING.gif"
+import gg from "../Desk/img/1514309233151967728.gif"
 
 export const Desk = () => {
   const [activeService,SetActiveService]=React.useState(0)
@@ -87,7 +88,6 @@ export const Desk = () => {
           <div className={style.buttonPosition}><Button onClick={() => navigate("/calculator")}>
             Рассчитать стоимость
           </Button></div>
-
         </div>
       </div>
     </div>
