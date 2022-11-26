@@ -1,0 +1,59 @@
+@import "src/styles/vars";
+.desk {
+  width: 1220px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.deskHeader {
+  height: 180px;
+  background-color: $color-blue;
+  background-image: url("../../../../assets/main/deskBG.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.button {
+  background-color: white;
+  color: black;
+  padding: 25px;
+}
+.deskCard {
+  margin-top: 40px;
+}
+.deskCardRightHeader {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  color: #303030;
+}
+
+.deskCardRightText {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 140%;
+  width: 642px;
+  letter-spacing: 0.03em;
+  color: #303030;
+}
+.deskCardLeftImg {
+  width: 460px;
+  height: 320px;
+}
+.deskCard {
+  display: flex;
+}
+.deskCardRight {
+  margin-left: 30px;
+  position: relative;
+}
+.buttonPosition {
+  margin-bottom: 63px;
+  position: absolute;
+  bottom: 0px;
+}
+
