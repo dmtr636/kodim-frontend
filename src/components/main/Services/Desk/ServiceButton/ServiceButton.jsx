@@ -7,7 +7,7 @@ const ServiceButton = ({onClick, children, activeButton}) => {
     return (
         <button
             onClick={onClick}
-            className={`${styles.button} ${activeButton?"active":""}`}
+            className={activeButton?styles.activebutton:styles.button}
         >
             {children}
         </button>
