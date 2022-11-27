@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from "./Header.module.scss"
-import {routes} from "../../../constants/routes";
+import {navRoutes} from "../../../constants/navRoutes";
 import Button from "../Button/Button";
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {logo} from "../../../assets/common";
 import classNames from "classnames";
+import {observer} from "mobx-react-lite";
 
-const Header = () => {
+const Header = observer(() => {
     const navigate = useNavigate()
+    const location = useLocation()
 
     return (
         <header className={styles.header}>
@@ -15,7 +17,7 @@ const Header = () => {
                 <img src={logo} alt={"logo"}/>
             </NavLink>
             <nav className={styles.nav}>
-                {routes.map(route =>
+                {navRoutes.map(route =>
                     <NavLink
                         to={route.path}
                         className={({isActive}) => classNames(
@@ -29,12 +31,14 @@ const Header = () => {
                 )}
             </nav>
             <div className={styles.button}>
-                <Button onClick={() => navigate("/calculator")}>
+                <Button onClick={() => {
+                    navigate("calculator", {replace: location.pathname.startsWith("/calculator")})
+                }}>
                     Начать проект
                 </Button>
             </div>
         </header>
     );
-};
+})
 
 export default Header;

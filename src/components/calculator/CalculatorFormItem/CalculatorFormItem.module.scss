@@ -1,0 +1,16 @@
+@import "src/styles/vars";
+
+.formItem {
+  margin-top: 20px;
+}
+
+.label {
+  margin-bottom: 20px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 130%;
+  color: $color-black;
+  white-space: pre-line;
+}

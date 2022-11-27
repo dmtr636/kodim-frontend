@@ -1,0 +1,25 @@
+@import "src/styles/vars";
+
+.input {
+  width: 100%;
+  padding: 11px 28px;
+  border: 2px solid #52AEFF;
+  border-radius: 5px;
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: $color-black;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+}
+
+.phoneInput {
+  composes: input;
+  font-family: 'Montserrat';
+}

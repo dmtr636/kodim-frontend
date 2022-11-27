@@ -1,0 +1,21 @@
+@import "src/styles/vars";
+
+.container {
+  width: 756px;
+  height: 194px;
+  background: #52AEFF url("../../../../src/assets/calculator/submitResultBg.svg");
+  box-shadow: 0 0 14px rgba(52, 182, 255, 0.35);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 130%;
+  color: #FFFFFF;
+}

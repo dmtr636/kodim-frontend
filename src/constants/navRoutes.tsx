@@ -4,31 +4,30 @@ import {ProjectsPage} from "../pages/ProjectsPage";
 import {CalculatorPage} from "../pages/CalculatorPage";
 import {FAQPage} from "../pages/FAQPage";
 
-export const routes = [
+export const navRoutes = [
     {
         name: "Главная",
-        path: "/",
+        path: "",
         component: <MainPage/>,
-        index: true
     },
     {
         name: "Кейсы",
-        path: "/cases",
+        path: "cases",
         component: <CasesPage/>
     },
     {
         name: "Наши проекты",
-        path: "/projects",
+        path: "projects",
         component: <ProjectsPage/>
     },
     {
         name: "Калькулятор услуг",
-        path: "/calculator",
+        path: "calculator",
         component: <CalculatorPage/>
     },
     {
         name: "FAQ",
-        path: "/faq",
+        path: "faq",
         component: <FAQPage/>
     }
 ]

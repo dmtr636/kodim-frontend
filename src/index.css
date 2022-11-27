@@ -7,15 +7,26 @@
 a {
     text-decoration: none;
     cursor: pointer;
+    -webkit-user-drag: none;
 }
 
 button {
     border: none;
     cursor: pointer;
+    background: none;
+}
+
+button:disabled {
+    cursor: initial;
 }
 
 img {
     display: block;
+}
+
+input, textarea {
+    border: none;
+    outline: none;
 }
 
 /* Scrollbar */

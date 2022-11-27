@@ -1,0 +1,53 @@
+@import "src/styles/vars";
+
+.positions {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.position {
+  display: grid;
+  grid-gap: 6px;
+}
+
+.positionName {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  color: $color-blue;
+}
+
+.positionPrice {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: $color-black;
+}
+
+.divider {
+  height: 2px;
+  background: $color-blue;
+}
+
+.total {
+  margin-top: 20px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 130%;
+  color: $color-black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalPrice {
+  font-family: 'Montserrat';
+  font-size: 22px;
+  line-height: 140%;
+}

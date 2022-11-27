@@ -1,0 +1,67 @@
+@import "src/styles/vars";
+
+.inputs {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.checkboxRow {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.checkbox {
+  width: 38px;
+  height: 38px;
+  border: 2px solid $color-blue;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background: $color-blue-hover;
+  }
+}
+
+.checkboxChecked {
+  composes: checkbox;
+  background: $color-blue;
+
+  &:hover {
+    background: $color-blue;
+  }
+}
+
+.text {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: $color-black;
+}
+
+.link {
+  composes: text ;
+  font-weight: 700;
+  text-decoration-line: underline;
+
+  &:hover {
+    color: $color-black-hover;
+  }
+}
+
+.buttons {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 193px 463px;
+  grid-gap: 20px;
+}
+
+.privacyText {
+  margin-top: 10px;
+  text-align: center;
+}

@@ -1,0 +1,33 @@
+@import "src/styles/vars";
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  padding: 11px 28px;
+  border-radius: 5px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: $color-black;
+  background: white;
+  border: 2px solid #52AEFF;
+
+  &:hover {
+    background: $color-blue-hover;
+  }
+}
+
+.buttonActive {
+  background: $color-blue;
+  color: white;
+
+  &:hover {
+    background: $color-blue;
+  }
+}

@@ -1,7 +1,7 @@
 @import "src/styles/vars";
 
 .header {
-  width: 1230px;
+  width: 1220px;
   height: 82px;
   margin: 0 auto;
   display: flex;
@@ -31,6 +31,7 @@
 
 .navLinkActive {
   opacity: 1;
+  pointer-events: none;
 }
 
 .button {
