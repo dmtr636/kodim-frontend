@@ -82,13 +82,11 @@ export const CalculatorPage = observer(() => {
                 )
             case "success":
                 return (
-                    <CalculatorSubmitResult
-                        success={store.currentStep === "success"}
-                    />
+                    <CalculatorSubmitResult success={true}/>
                 )
             case "error":
                 return (
-                    <h1>Error</h1>
+                    <CalculatorSubmitResult success={false}/>
                 )
             default:
                 return (
