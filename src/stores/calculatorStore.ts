@@ -48,6 +48,9 @@ class CalculatorStore {
                     onSubmit("error")
                 }
             })
+            .catch(() =>
+                onSubmit("error")
+            )
     }
 
     get pricePositions() {
