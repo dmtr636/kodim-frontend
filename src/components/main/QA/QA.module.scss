@@ -52,9 +52,10 @@
   color: #ffffff;
   margin-top: 18px;
   display: none;
+  white-space: pre-line;
 }
 .qatextactive {
-    width: 853px;
+    /* width: 853px; */
     font-family: "Raleway";
     font-style: normal;
     font-weight: 500;
@@ -63,6 +64,7 @@
     letter-spacing: 0.03em;
     color: #ffffff;
     margin-top: 18px;
+    white-space: pre-line;
 
   }
 .qaHeaderIcon{

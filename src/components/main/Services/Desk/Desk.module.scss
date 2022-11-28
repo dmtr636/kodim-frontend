@@ -16,7 +16,7 @@
 }
 .button {
   background-color: white;
-  color: black;
+  color: #303030;
   padding: 25px;
 }
 .deskCard {
@@ -37,11 +37,15 @@
   font-weight: 500;
   font-size: 19px;
   line-height: 140%;
-  width: 642px;
+  width: 643px;
   letter-spacing: 0.03em;
   color: #303030;
+  margin-top: 28px;
+  white-space: pre-line;
 }
 .deskCardLeftImg {
+  margin-left: 30px;
+  margin-bottom: 30px;
   width: 460px;
   height: 320px;
   img{
@@ -54,11 +58,11 @@
 }
 .deskCardRight {
   margin-left: 30px;
-  position: relative;
 }
 .buttonPosition {
-  margin-bottom: 63px;
-  position: absolute;
-  bottom: 0px;
+  margin-top: 40px;
 }
-
+.deskwrapper{
+  margin-left: 10px;
+  margin-top: 6px;
+}
