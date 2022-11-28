@@ -1,0 +1,29 @@
+@import "src/styles/vars";
+.wrapper {
+  background-color: $color-blue;
+  width: 1220px;
+  height: 262px;
+  margin: 0 auto;
+  margin-top: 110px;
+  margin-bottom: 80px;
+  display: flex;
+  position: relative;
+}
+.header {
+  width: 720px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  padding: 30px;
+  color: white;
+}
+.button {
+  padding-left: 30px;
+}
+.right {
+  position: absolute;
+  right:0;
+  bottom: 0;
+}

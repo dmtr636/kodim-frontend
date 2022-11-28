@@ -12,6 +12,18 @@
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 1520px) {
+  .wrapper {
+    background-image: url("");
+  }
+  .bodybanner {
+    margin: 0 auto;
+    width: 1520px;
+    background-image: url("../../../assets/main/bgBannerFull.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+}
 .h1 {
   color: $color-white;
   padding-top: 100px;
