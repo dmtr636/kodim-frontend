@@ -29,22 +29,12 @@ const Header = observer(() => {
                         {route.name}
                     </NavLink>
                 )}
-                {location.pathname !== "/"
-                    ?
-                    <NavLink
-                        to={"/#faq"}
-                        className={styles.navLink}
-                    >
-                        FAQ
-                    </NavLink>
-                    :
-                    <a
-                        className={styles.navLink}
-                        href={"#faq"}
-                    >
-                        FAQ
-                    </a>
-                }
+                <NavLink
+                    to={"/#faq"}
+                    className={styles.navLink}
+                >
+                    FAQ
+                </NavLink>
             </nav>
             <div className={styles.button}>
                 <Button onClick={() => {
