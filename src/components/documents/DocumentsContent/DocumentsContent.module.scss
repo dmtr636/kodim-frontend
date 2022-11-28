@@ -1,0 +1,15 @@
+@import "src/styles/vars";
+
+.content {
+  padding: 20px 40px;
+}
+
+.title {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  color: $color-black;
+  margin-bottom: 20px;
+}

@@ -72,7 +72,7 @@ const data = [
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className={styles.footer}>
             <div className={styles.top}>
                 <div className={styles.menu}>
                     {data.map(column =>
