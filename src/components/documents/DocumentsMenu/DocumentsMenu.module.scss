@@ -13,6 +13,7 @@
   line-height: 22px;
   letter-spacing: 0.03em;
   color: $color-black;
+  user-select: none;
 
   &:hover {
     background: $color-blue-hover;

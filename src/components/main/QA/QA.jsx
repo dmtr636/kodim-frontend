@@ -39,7 +39,7 @@ export const QA = () => {
     <QAItem key={el.QAName} QAName={el.QAName} QAText={el.QAText}/>
   ));
   return (
-    <div className={style.wrapper}>
+    <div className={style.wrapper} id={"faq"}>
       <div className={style.body}>
         <div className={style.header}>Ответы на популярные вопросы</div>
         {QAList}
