@@ -8,13 +8,16 @@
     font-size: 19px;
     line-height: 22px;
     letter-spacing: 0.03em;
-    color: black;
+    color: #303030;
     margin-left: 20px;
-    margin-top: 26px;
-    
+    margin-top: 24px;
+    &:hover {
+      background: #444444;
+      color: #FFFFFF;
+    }
     }
 .activebutton{
-  background: black;
+  background: #303030;
     border-radius: 5px;
     padding: 13px 30px;
     font-family: 'Raleway', sans-serif;
@@ -25,6 +28,6 @@
     letter-spacing: 0.03em;
     color: #FFFFFF;
     margin-left: 20px;
-    margin-top: 26px;
+    margin-top: 24px;
     
 }
