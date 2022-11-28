@@ -11,7 +11,7 @@ import TGBOT from "../Desk/img/TGBOT.gif"
 import COPY from "../Desk/img/COPY.gif"
 import CODING from "../Desk/img/CODING.gif"
 import MARKETING from "../Desk/img/MARKETING.gif"
-import gg from "../Desk/img/1514309233151967728.gif"
+
 
 export const Desk = () => {
   const [activeService,SetActiveService]=React.useState(0)
@@ -73,7 +73,7 @@ export const Desk = () => {
   }
   const serviceArray = services.map((el, i) => (
     
-    <ServiceButton activeButton={activeService === i} onClick={()=>serviceOnClick(i)} >{el.serviceName}</ServiceButton>
+    <ServiceButton key={el.serviceName} activeButton={activeService === i} onClick={()=>serviceOnClick(i)} >{el.serviceName}</ServiceButton>
   ));
   return (
     <div className={style.desk}>

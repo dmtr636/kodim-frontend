@@ -1,0 +1,71 @@
+@import "src/styles/vars";
+.wrapper {
+  background-color: $color-black;
+  padding-bottom: 50px;
+}
+.body {
+  width: 1230px;
+  margin: 0 auto;
+  /* display: flex; */
+  color: $color-white;
+}
+.header {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  color: $color-blue;
+  padding-top: 50px;
+  margin-bottom: 13px;
+}
+.qablock{
+    border-bottom: $color-blue 3px solid;
+    margin-top: 30px;
+    &:last-child{
+        border-bottom:none; 
+    }
+
+  }
+
+.qaheader {
+  display: flex;
+  justify-content: space-between;
+}
+.qaHeaderText {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  color: #ffffff;
+  padding-top: 30px;
+}
+.qatext {
+  width: 853px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin-top: 18px;
+  display: none;
+}
+.qatextactive {
+    width: 853px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    margin-top: 18px;
+
+  }
+.qaHeaderIcon{
+    cursor: pointer;
+    margin-top: 27px;
+}
