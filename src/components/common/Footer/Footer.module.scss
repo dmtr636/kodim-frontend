@@ -1,15 +1,75 @@
 @import "src/styles/vars";
 
-.footer {
-  
-}
-
 .top {
   height: 328px;
-  background: $color-blue;
+  padding-top: 50px;
+  position: relative;
+  background: $color-blue url("../../../../src/assets/common/footerBg.svg") no-repeat;
+}
+
+.menu {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 136px;
+}
+
+.columnTitle {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  color: #FFFFFF;
+}
+
+.columnItems {
+  display: grid;
+  grid-gap: 17px;
+  margin-top: 30px;
+}
+
+.columnItem {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: $color-black;
+
+  &:hover {
+    color: $color-black-hover
+  }
 }
 
 .bottom {
   height: 82px;
   background: $color-black;
+}
+
+.bottomContent {
+  max-width: 1220px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.mailIcon {
+  width: 30px;
+  height: 30px;
+  background: url("../../../../src/assets/common/mail.svg");
+}
+
+.email {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
 }
