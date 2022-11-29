@@ -1,0 +1,55 @@
+@import "src/styles/vars";
+.wrapper {
+  width: 1230px;
+  margin: 0 auto;
+  border-bottom: 3px solid #52aeff;
+  margin-top: 30px;
+  display: flex;
+  opacity: 1;
+  color: $color-black;
+  &:last-child {
+    margin-bottom: 30px;
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+}
+.leftImg {
+  width: 610px;
+  height: 434px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.right {
+  margin-left: 50px;
+  margin-top: 59px;
+  position: relative;
+}
+.rightHeader {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+}
+.rightText {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  margin-top: 40px;
+  letter-spacing: 0.03em;
+}
+.rightCategory {
+  position: absolute;
+  bottom: 60px;
+  color: $color-blue;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+}
