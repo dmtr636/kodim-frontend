@@ -1,4 +1,72 @@
-.wrapper{
-    width: 1230px;
-    margin: 0 auto;
+.wrapper {
+  width: 1230px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.headerImg {
+  width: 1210px;
+  height: 560px;
+  border-radius: 5px;
+}
+.date {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #52aeff;
+  margin-top: 20px;
+}
+.header {
+  margin-top: 10px;
+  width: 611px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #303030;
+}
+.block {
+  display: flex;
+  justify-content: space-between;
+
+}
+.blockGoal {
+  display: inline;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  color: #52aeff;
+  margin-top: 20px;
+
+}
+.blockText {
+  margin-top: 23px;
+  right: 0;
+  width: 571px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+}
+.imgBlock{
+    margin-top: 30px;
+    border-radius: 5px;
+}
+.LastImgBlock{
+    margin-top: 20px;
+    margin-bottom: 80px;
+    border-radius: 5px;
 }

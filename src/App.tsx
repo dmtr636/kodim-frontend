@@ -23,8 +23,8 @@ function App() {
                             <Route path={route.path} element={route.component} key={route.path}/>
                         )}
                     </Route>
-                    <Route path={"/cases/:id"}  element={<CaseOpen/>}></Route>
-                    <Route path={"/projects/:id"} element={<CaseOpen/>}></Route>
+                    <Route path={"/cases/:id"}  element={<CaseOpen url={"https://kodim.space/api/kodim/cases"}/>}></Route>
+                    <Route path={"/projects/:id"} element={<CaseOpen url={"https://kodim.space/api/kodim/projects"}/>}></Route>
                     <Route path={"*"} element={<Page404/>}/>
                 </Route>
             </Routes>
