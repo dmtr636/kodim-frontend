@@ -3,10 +3,12 @@
   width: 1230px;
   margin: 0 auto;
   border-bottom: 3px solid #52aeff;
+  border-radius: 1px;
   margin-top: 30px;
   display: flex;
   opacity: 1;
   color: $color-black;
+  cursor: pointer;
   &:last-child {
     margin-bottom: 30px;
   }

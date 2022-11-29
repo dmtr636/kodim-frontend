@@ -2,10 +2,10 @@ import React from "react";
 import style from "./CaseCard.module.scss";
 import axios from "axios";
 
-export const CaseCard = ({image,name,description,category}) => {
+export const CaseCard = ({image,name,description,category,onClick}) => {
   const domain = "https://kodim.space";
   return (
-    <div className={style.wrapper}>
+    <div onClick={onClick} className={style.wrapper}>
       <div className={style.left}>
         <img className={style.leftImg} src={domain + image} alt="" />
       </div>

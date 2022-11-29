@@ -6,6 +6,7 @@ import {Page404} from "./pages/Page404";
 import DocumentsPage from "./pages/DocumentsPage";
 import {documentsRoutes} from "./constants/documentsRoutes";
 import ScrollToTop from "./components/common/ScrollToTop/ScrollToTop";
+import { CaseOpen } from './components/cases/CaseOpen/CaseOpen';
 
 function App() {
     return (
@@ -22,6 +23,8 @@ function App() {
                             <Route path={route.path} element={route.component} key={route.path}/>
                         )}
                     </Route>
+                    <Route path={"/cases/:id"}  element={<CaseOpen/>}></Route>
+                    <Route path={"/projects/:id"} element={<CaseOpen/>}></Route>
                     <Route path={"*"} element={<Page404/>}/>
                 </Route>
             </Routes>
