@@ -29,6 +29,12 @@ const Header = observer(() => {
                         {route.name}
                     </NavLink>
                 )}
+                <NavLink
+                    to={"/#faq"}
+                    className={styles.navLink}
+                >
+                    FAQ
+                </NavLink>
             </nav>
             <div className={styles.button}>
                 <Button onClick={() => {

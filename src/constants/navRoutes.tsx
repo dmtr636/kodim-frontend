@@ -24,10 +24,5 @@ export const navRoutes = [
         name: "Калькулятор услуг",
         path: "calculator",
         component: <CalculatorPage/>
-    },
-    {
-        name: "FAQ",
-        path: "faq",
-        component: <FAQPage/>
     }
 ]
