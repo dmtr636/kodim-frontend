@@ -36,9 +36,17 @@ export const QA = () => {
     },
   ];
   const [currentItem, setCurrentItem] = React.useState("");
+  const changeCurrentItem=(item)=>{
+    if(currentItem!=item){
+      setCurrentItem(item)
+    }
+    else{
+      setCurrentItem("")
+    }
+  }
   const QAList = QAArray.map((el) => (
     <QAItem
-      onClick={() => setCurrentItem(el.QAName)}
+      onClick={() => changeCurrentItem(el.QAName)}
       currentItem={currentItem}
       key={el.QAName}
       QAName={el.QAName}
