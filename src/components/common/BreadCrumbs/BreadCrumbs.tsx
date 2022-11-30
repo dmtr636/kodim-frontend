@@ -8,6 +8,10 @@ import {observer} from "mobx-react-lite";
 
 
 const BreadCrumbs = observer(() => {
+    if (!projectsStore.projects.length || !projectsStore.cases.length) {
+        return null
+    }
+
     const breadcrumbs = useBreadcrumbs(createRoutes(projectsStore));
     const location = useLocation()
 
