@@ -35,9 +35,25 @@ export const QA = () => {
         "В два этапа. Сначала клиенту отправляется счёт на предоплату, в стоимость которой входит работа \n UX/UI-дизайнера и копирайтера при необходимости,готовится визуальный макет проекта и \n коммерческий текст для него. После согласования макета с клиентом,мы отправляем второй счёт, где \n включены выбранные им услуги и оставшиеся работы над проектом.",
     },
   ];
+  const [currentItem, setCurrentItem] = React.useState("");
+  const changeCurrentItem=(item)=>{
+    if(currentItem!=item){
+      setCurrentItem(item)
+    }
+    else{
+      setCurrentItem("")
+    }
+  }
   const QAList = QAArray.map((el) => (
-    <QAItem key={el.QAName} QAName={el.QAName} QAText={el.QAText}/>
+    <QAItem
+      onClick={() => changeCurrentItem(el.QAName)}
+      currentItem={currentItem}
+      key={el.QAName}
+      QAName={el.QAName}
+      QAText={el.QAText}
+    />
   ));
+  console.log(currentItem)
   return (
     <div className={style.wrapper} id={"faq"}>
       <div className={style.body}>
