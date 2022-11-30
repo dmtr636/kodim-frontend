@@ -4,9 +4,10 @@ import {NavLink, useLocation} from "react-router-dom";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import {createRoutes} from "../../../constants/routes";
 import {projectsStore} from "../../../stores/projectsStore";
+import {observer} from "mobx-react-lite";
 
 
-const BreadCrumbs = () => {
+const BreadCrumbs = observer(() => {
     const breadcrumbs = useBreadcrumbs(createRoutes(projectsStore));
     const location = useLocation()
 
@@ -33,6 +34,6 @@ const BreadCrumbs = () => {
             </div>
         </div>
     );
-};
+});
 
 export default BreadCrumbs;
