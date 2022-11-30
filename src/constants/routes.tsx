@@ -69,12 +69,12 @@ export const createRoutes = (projectStore: ProjectsStore): BreadcrumbsRoute[] =>
             },
             {
                 path: "/cases/:id",
-                element: <CaseOpen url={"https://kodim.space/api/kodim/cases"}/>,
+                element: <CaseOpen type={"case"}/>,
                 breadcrumb: CaseBreadcrumb
             },
             {
                 path: "/projects/:id",
-                element: <CaseOpen url={"https://kodim.space/api/kodim/projects"}/>,
+                element: <CaseOpen type={"project"}/>,
                 breadcrumb: ProjectBreadcrumb
             },
             {
