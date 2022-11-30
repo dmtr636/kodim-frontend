@@ -21,7 +21,6 @@ export const Banner = () => {
       setWordCount(0)
       setCurrentWord(words[wordCount])
     }
-    console.log(wordCount)
   }
   setTimeout(changeWordFunc,1000)
 

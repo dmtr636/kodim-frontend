@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./CaseCard.module.scss";
-import axios from "axios";
 
 export const CaseCard = ({image,name,description,category,onClick}) => {
   const domain = "https://kodim.space";
