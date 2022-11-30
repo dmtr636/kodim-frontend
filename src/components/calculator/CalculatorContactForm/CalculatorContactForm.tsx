@@ -8,6 +8,7 @@ import classNames from "classnames";
 import {checkboxChecked} from "../../../assets/calculator";
 import Button from "../../common/Button/Button";
 import {calculatorStore} from "../../../stores/calculatorStore";
+import {NavLink} from "react-router-dom";
 
 const CalculatorContactForm = (props: {
     formValues: Record<string, any>,
@@ -64,9 +65,13 @@ const CalculatorContactForm = (props: {
                 </button>
                 <div className={styles.text}>
                     {"Как заказчик, я ознакомлен и согласен с условиями "}
-                    <a className={styles.link}>
+                    <NavLink
+                        to={"/documents/contract"}
+                        className={styles.link}
+                        target={"_blank"}
+                    >
                         Публичной оферты
-                    </a>
+                    </NavLink>
                 </div>
             </div>
             <div className={styles.buttons}>
@@ -91,9 +96,13 @@ const CalculatorContactForm = (props: {
                         "Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных\n" +
                         "данных согласно условиям "
                     }
-                    <a className={styles.link}>
+                    <NavLink
+                        to={"/documents/privacy"}
+                        className={styles.link}
+                        target={"_blank"}
+                    >
                         Политики конфиденциальности
-                    </a>
+                    </NavLink>
                 </div>
             </div>
         </CalculatorCard>

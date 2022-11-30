@@ -4,7 +4,7 @@ import DocumentsCard from "../DocumentsCard/DocumentsCard";
 
 const DocumentsContent = (props: {
     children: ReactNode,
-    title?: string
+    title?: string,
 }) => {
     return (
         <DocumentsCard>

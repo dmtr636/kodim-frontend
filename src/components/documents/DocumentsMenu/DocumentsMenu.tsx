@@ -7,7 +7,7 @@ import DocumentsCard from "../DocumentsCard/DocumentsCard";
 
 const DocumentsMenu = () => {
     return (
-        <DocumentsCard>
+        <DocumentsCard sticky>
             {documentsRoutes.map(route =>
                 <NavLink
                     to={`/documents/${route.path}`}

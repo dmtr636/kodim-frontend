@@ -25,6 +25,7 @@ const Header = observer(() => {
                             {[styles.navLinkActive]: isActive}
                         )}
                         key={route.path}
+                        end
                     >
                         {route.name}
                     </NavLink>
