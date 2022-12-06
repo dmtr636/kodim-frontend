@@ -1,9 +1,9 @@
 @import "src/styles/vars";
 .desk {
-  width: 1220px;
+  width: 1230px;
   margin: 0 auto;
   margin-top: 50px;
-  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+ border-radius: 5px;
 }
 .deskHeader {
   height: 180px;
@@ -11,8 +11,12 @@
   background-image: url("../../../../assets/main/deskBG.svg");
   background-repeat: no-repeat;
   background-position: right;
-  border-top-left-radius: 5px;
+  -moz-outline-radius: 5px;
+  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -webkit-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
   border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .button {
   background-color: white;
@@ -20,7 +24,13 @@
   padding: 25px;
 }
 .deskCard {
-  margin-top: 40px;
+  padding-top: 40px;
+  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -webkit-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius:5px ;
+  
 }
 .deskCardRightHeader {
   font-family: "Raleway";

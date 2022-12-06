@@ -66,7 +66,6 @@ export const Desk = () => {
     },
   ];
   const serviceOnClick = (i) => {
-    console.log(`i=${i} activeService=${activeService}`);
     SetActiveService(i);
   };
   const serviceArray = services.map((el, i) => (
@@ -84,7 +83,7 @@ export const Desk = () => {
       <div className={style.deskCard}>
         <div className={style.deskCardLeft}>
           <div className={style.deskCardLeftImg}>
-            <img src={services[activeService].imgUrl} alt="" />
+            {<img src={services[activeService].imgUrl} alt="" />}
           </div>
         </div>
         <div className={style.deskCardRight}>
