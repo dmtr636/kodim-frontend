@@ -11,6 +11,7 @@ import TGBOT from "../Desk/img/TGBOT.gif";
 import COPY from "../Desk/img/COPY.gif";
 import CODING from "../Desk/img/CODING.gif";
 import MARKETING from "../Desk/img/MARKETING.gif";
+import MyLoader from "../../../common/Loader/Loader";
 
 export const Desk = () => {
   const [activeService, SetActiveService] = React.useState(0);
@@ -84,7 +85,7 @@ export const Desk = () => {
       <div className={style.deskCard}>
         <div className={style.deskCardLeft}>
           <div className={style.deskCardLeftImg}>
-            <img src={services[activeService].imgUrl} alt="" />
+            {<img src={services[activeService].imgUrl} alt="" />}
           </div>
         </div>
         <div className={style.deskCardRight}>
