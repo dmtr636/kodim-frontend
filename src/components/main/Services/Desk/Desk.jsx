@@ -66,7 +66,6 @@ export const Desk = () => {
     },
   ];
   const serviceOnClick = (i) => {
-    console.log(`i=${i} activeService=${activeService}`);
     SetActiveService(i);
   };
   const serviceArray = services.map((el, i) => (
