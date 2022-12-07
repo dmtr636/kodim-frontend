@@ -18,7 +18,6 @@ const CalculatorFormTextArea = (props: {
             className={styles.input}
             placeholder={props.placeholder}
             minRows={4}
-            maxRows={10}
         />
     );
 };

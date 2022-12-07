@@ -14,7 +14,7 @@ const Header = observer(() => {
     return (
         <header className={styles.header}>
             <NavLink to={"/"}>
-                <img src={logo} alt={"logo"}/>
+                <img className={styles.logo} src={logo} alt={"logo"}/>
             </NavLink>
             <nav className={styles.nav}>
                 {navRoutes.map(route =>
@@ -44,6 +44,7 @@ const Header = observer(() => {
                     Начать проект
                 </Button>
             </div>
+            <button className={styles.burger} />
         </header>
     );
 })
