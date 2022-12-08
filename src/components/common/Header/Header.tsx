@@ -65,7 +65,36 @@ const Header = observer(() => {
                         className={styles.menu}
                         onClick={(event) => event.stopPropagation()}
                     >
-                        Menu
+                        <nav className={styles.menuNav}>
+                            {navRoutes.map(route =>
+                                <NavLink
+                                    to={route.path}
+                                    className={({isActive}) => classNames(
+                                        styles.navLink,
+                                        {[styles.navLinkActive]: isActive}
+                                    )}
+                                    key={route.path}
+                                    end
+                                    onClick={() => setShowMenu(false)}
+                                >
+                                    {route.name}
+                                </NavLink>
+                            )}
+                            <NavLink
+                                to={"/#faq"}
+                                className={styles.navLink}
+                            >
+                                FAQ
+                            </NavLink>
+                        </nav>
+                        <div className={styles.menuButton}>
+                            <Button onClick={() => {
+                                navigate("calculator", {replace: location.pathname.startsWith("/calculator")})
+                                setShowMenu(false)
+                            }}>
+                                Начать проект
+                            </Button>
+                        </div>
                     </div>
                 </div>
             }

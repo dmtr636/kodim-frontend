@@ -2,6 +2,10 @@
 
 .footer {
   margin-top: 80px;
+
+  @include mobile {
+    margin-top: 40px;
+  }
 }
 
 .top {
@@ -9,6 +13,11 @@
   padding-top: 50px;
   position: relative;
   background: $color-blue url("../../../../src/assets/common/footerBg.svg") no-repeat;
+
+  @include mobile {
+    height: auto;
+    padding: 24px 24px 60px 24px;
+  }
 }
 
 .menu {
@@ -17,6 +26,11 @@
   display: flex;
   justify-content: space-between;
   column-gap: 136px;
+
+  @include mobile {
+    flex-direction: column;
+    row-gap: 40px;
+  }
 }
 
 .columnTitle {
@@ -26,12 +40,22 @@
   font-size: 36px;
   line-height: 130%;
   color: #FFFFFF;
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 130%;
+  }
 }
 
 .columnItems {
   display: grid;
   grid-gap: 17px;
   margin-top: 30px;
+
+  @include mobile {
+    margin-top: 24px;
+    grid-gap: 16px;
+  }
 }
 
 .columnItem {
@@ -51,6 +75,10 @@
 .bottom {
   height: 82px;
   background: $color-black;
+
+  @include mobile {
+    height: 78px;
+  }
 }
 
 .bottomContent {
@@ -60,6 +88,10 @@
   display: flex;
   align-items: center;
   column-gap: 12px;
+
+  @include mobile {
+    padding: 24px;
+  }
 }
 
 .mailIcon {
@@ -76,4 +108,9 @@
   line-height: 140%;
   letter-spacing: 0.03em;
   color: #FFFFFF;
+
+  @include mobile {
+    font-size: 18px;
+    line-height: 120%;
+  }
 }
