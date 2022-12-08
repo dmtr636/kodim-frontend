@@ -17,6 +17,9 @@
   @include mobile {
     height: auto;
     padding: 24px 24px 60px 24px;
+    background: $color-blue url("../../../../src/assets/common/footerBgMobile.svg") no-repeat;
+    background-position: right;
+    background-size: cover;
   }
 }
 
@@ -55,6 +58,7 @@
   @include mobile {
     margin-top: 24px;
     grid-gap: 16px;
+    max-width: 250px;
   }
 }
 
