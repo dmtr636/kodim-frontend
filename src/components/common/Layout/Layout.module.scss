@@ -5,6 +5,10 @@
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
+
+  @include mobile {
+    margin-top: 62px;
+  }
 }
 
 .main {

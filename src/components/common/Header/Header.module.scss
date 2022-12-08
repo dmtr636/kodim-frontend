@@ -12,6 +12,10 @@
     height: 62px;
     padding: 24px;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: 10;
   }
 }
 
@@ -62,11 +66,22 @@
 
 .burger {
   display: none;
-  background: url("../../../assets/common/burger.svg");
-  width: 23px;
-  height: 8px;
 
   @include mobile {
     display: initial;
   }
+}
+
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 62px;
+  left: 0;
+  background: rgba(0,0,0,.5);
+}
+
+.menu {
+  padding: 24px;
+  background: white;
 }
