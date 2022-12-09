@@ -1,6 +1,6 @@
 @import "src/styles/vars";
 .desk {
-  width: 1230px;
+  width: 1220px;
   margin: 0 auto;
   margin-top: 50px;
  border-radius: 5px;
@@ -75,4 +75,24 @@
 .deskwrapper{
   margin-left: 10px;
   margin-top: 6px;
+}
+@include mobile{
+ .desk{
+  width: 100%;
+  
+ }
+ .deskCard {
+  flex-direction: column;
+}
+.deskHeader{
+ height: 76px;
+  
+}
+.deskwrapper{
+  overflow-y: auto;
+  display: flex;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
 }

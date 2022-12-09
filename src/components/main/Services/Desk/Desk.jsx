@@ -13,6 +13,8 @@ import CODING from "../Desk/img/CODING.gif";
 import MARKETING from "../Desk/img/MARKETING.gif";
 
 export const Desk = () => {
+  const {width} = useWindowDimensions()
+  let serviceName
   const [activeService, SetActiveService] = React.useState(0);
   const navigate = useNavigate();
   const services = [

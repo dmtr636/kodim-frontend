@@ -48,3 +48,30 @@
 .button {
   padding-top: 60px;
 }
+@include mobile {
+  .wrapper {
+    width: 100%;
+    padding:  0 24px;
+    background: $color-blue;
+    background-image: url("../../../assets/main/bgBannerMobile.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+  .body {
+    width: 382px;
+    height: 255px;
+  }
+  .h1 {
+    padding-top: 24px;
+    font-size: 28px;
+  }
+  .text {
+    font-size: 22px;
+    color: #fdfeff;
+    padding-top: 16px;
+  }
+  .button {
+    padding-top: 24px;
+  }
+  
+}

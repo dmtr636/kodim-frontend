@@ -1,3 +1,4 @@
+@import "src/styles/vars";
 .wrapper{
     width: 1220px;
     margin: 0 auto;
@@ -13,4 +14,16 @@
   font-size: 36px;
   line-height: 130%;
   color: #303030;
+}
+@include mobile{
+  .wrapper{
+    width: 100%;
+    /* padding:  0 24px; */
+  }
+  .header{
+    width: 100%;
+    font-size: 24px;
+    padding:  0 24px;
+    
+  }
 }
