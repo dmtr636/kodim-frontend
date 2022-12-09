@@ -11,7 +11,7 @@ export const Banner = () => {
   const navigate = useNavigate();
   const words = ["Скоростные.", "Без загрузок.", "Для всех."]
   const [currentWord,setCurrentWord] =React.useState(words[0])
-  const [wordCount, setWordCount] =React.useState(0)
+  const [wordCount, setWordCount] =React.useState(1)
   const changeWordFunc =()=>{
     if(wordCount<2){
       setCurrentWord(words[wordCount])
