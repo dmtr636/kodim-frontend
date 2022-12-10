@@ -1,10 +1,8 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
 import style from "./Page404/Page404.module.scss"
 import { Link } from "react-router-dom"
 
 export const Page404 = () => {
-    const navigate = useNavigate()
     return (
         <div className={style.wrapper}>
             <h1>Предлагаем перейти сюда</h1>

@@ -9,6 +9,16 @@ export const OurClients = () => {
         и все те, кому нужен реально <br />
         быстрый сайт
       </div>
+      <div className={style.leftMobSmall}>
+        Наши клиенты <br /> это — малый бизнес, <br />
+        и все те, кому нужен<br /> реально 
+        быстрый сайт
+      </div>
+      <div className={style.leftMobBig}>
+        Наши клиенты это — малый <br /> бизнес, 
+        и все те, кому нужен<br /> реально 
+        быстрый сайт
+      </div>
       <div className={style.right}>Скорость вашего <br /> будущего <br /> сайта</div>
     </div>
   );

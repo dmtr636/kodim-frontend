@@ -1,8 +1,10 @@
 import React from "react";
+
 import style from "./QA.module.scss";
 import { QAItem } from "./QAItem";
 
 export const QA = () => {
+ 
   const QAArray = [
     {
       QAName: "Кто мы?",

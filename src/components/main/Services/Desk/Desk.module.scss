@@ -1,9 +1,9 @@
 @import "src/styles/vars";
 .desk {
-  width: 1230px;
+  width: 1220px;
   margin: 0 auto;
   margin-top: 50px;
- border-radius: 5px;
+  border-radius: 5px;
 }
 .deskHeader {
   height: 180px;
@@ -29,8 +29,7 @@
   -webkit-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
   -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
   border-bottom-left-radius: 5px;
-  border-bottom-right-radius:5px ;
-  
+  border-bottom-right-radius: 5px;
 }
 .deskCardRightHeader {
   font-family: "Raleway";
@@ -58,9 +57,9 @@
   margin-bottom: 30px;
   width: 460px;
   height: 320px;
-  img{
+  img {
     width: 460px;
-  height: 320px;
+    height: 320px;
   }
 }
 .deskCard {
@@ -72,7 +71,55 @@
 .buttonPosition {
   margin-top: 40px;
 }
-.deskwrapper{
+.deskwrapper {
   margin-left: 10px;
   margin-top: 6px;
+}
+@include mobile {
+  .desk {
+    width: 100%;
+  }
+  .deskCard {
+    flex-direction: column;
+    padding-top: 24px;
+  }
+  .deskHeader {
+    height: 76px;
+  }
+  .deskwrapper {
+    overflow-y: auto;
+    display: flex;
+    margin-left: 4px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .deskCardRightHeader {
+    font-size: 20px;
+    line-height: 130%;
+  }
+  .deskCardRightText {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    width: 100%;
+    margin-top: 16px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+  }
+  .deskCardLeftImg {
+    margin-left: 24px;
+    margin-bottom: 20px;
+    width: auto;
+    height: auto;
+    img {
+      width: 100%;
+      padding-right: 24px;
+      height: auto;
+    }
+  }
+  .buttonPosition{
+    display: none;
+  }
 }
