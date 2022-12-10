@@ -2,7 +2,6 @@ import {MainPage} from "../pages/MainPage";
 import {CasesPage} from "../pages/CasesPage";
 import {ProjectsPage} from "../pages/ProjectsPage";
 import {CalculatorPage} from "../pages/CalculatorPage";
-import {FAQPage} from "../pages/FAQPage";
 
 export const navRoutes = [
     {

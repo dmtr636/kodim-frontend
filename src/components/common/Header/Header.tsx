@@ -83,6 +83,7 @@ const Header = observer(() => {
                             <NavLink
                                 to={"/#faq"}
                                 className={styles.navLink}
+                                preventScrollReset={true}
                             >
                                 FAQ
                             </NavLink>

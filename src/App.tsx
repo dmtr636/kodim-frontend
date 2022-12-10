@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Layout from "./components/common/Layout/Layout";
-import ScrollToTop from "./components/common/ScrollToTop/ScrollToTop";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {createRoutes} from "./constants/routes";
 import {projectsStore} from "./stores/projectsStore";
 
@@ -12,18 +10,10 @@ function App() {
     }, [])
 
     const routes = createRoutes(projectsStore)
+    const router = createBrowserRouter(routes)
 
     return (
-        <BrowserRouter>
-            <Layout>
-                <Routes>
-                    {routes.map(route =>
-                        <Route path={route.path} element={route.element}/>
-                    )}
-                </Routes>
-            </Layout>
-            <ScrollToTop/>
-        </BrowserRouter>
+        <RouterProvider router={router}/>
     );
 }
 

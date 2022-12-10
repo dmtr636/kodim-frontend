@@ -6,23 +6,25 @@ import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
 import {Helmet} from "react-helmet";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import {isTablet} from "../../../utils/utils";
+import {Outlet, ScrollRestoration} from "react-router-dom";
 
-const Layout = (props: {
-    children: ReactNode
-}) => {
+const Layout = () => {
     const {width} = useWindowDimensions()
-    console.log(width)
+
     return (
         <div className={styles.layout}>
+            <ScrollRestoration />
+
             <Helmet>
                 {isTablet(width) &&
                     <meta name="viewport" content="width=1280" />
                 }
             </Helmet>
+
             <Header/>
             <BreadCrumbs/>
             <main className={styles.main}>
-                {props.children}
+                <Outlet />
             </main>
             <Footer/>
         </div>
