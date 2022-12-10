@@ -50,6 +50,8 @@ const CalculatorStepper = (props: {
                         value={props.formValues[item.name] ?? ""}
                         onChange={(value) => props.onChange(item.name, value)}
                         placeholder={item.placeholder}
+                        minRows={item.minRows}
+                        maxLength={item.maxLength}
                     />
                 )
         }

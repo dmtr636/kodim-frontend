@@ -37,7 +37,9 @@ export interface ICalculatorFormTextArea {
     type: "textArea",
     label: string,
     name: string,
-    placeholder: string
+    placeholder: string,
+    minRows?: number,
+    maxLength?: number
 }
 
 export type ICalculatorFormItem =
