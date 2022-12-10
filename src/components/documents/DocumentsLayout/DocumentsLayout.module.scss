@@ -5,5 +5,10 @@
   display: grid;
   grid-template-columns: 414px 756px;
   grid-gap: 50px;
-  margin: 30px auto 0;
+  margin: 24px;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+  }
 }
