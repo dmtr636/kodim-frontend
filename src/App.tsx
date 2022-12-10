@@ -1,33 +1,28 @@
-import React from 'react';
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import React, {useEffect} from 'react';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "./components/common/Layout/Layout";
-import {navRoutes} from "./constants/navRoutes";
-import {Page404} from "./pages/Page404";
-import DocumentsPage from "./pages/DocumentsPage";
-import {documentsRoutes} from "./constants/documentsRoutes";
 import ScrollToTop from "./components/common/ScrollToTop/ScrollToTop";
-import { CaseOpen } from './components/cases/CaseOpen/CaseOpen';
+import {createRoutes} from "./constants/routes";
+import {projectsStore} from "./stores/projectsStore";
 
 function App() {
+    useEffect(() => {
+        projectsStore.fetchProjects()
+        projectsStore.fetchCases()
+    }, [])
+
+    const routes = createRoutes(projectsStore)
+
     return (
         <BrowserRouter>
-            <ScrollToTop/>
-            <Routes>
-                <Route path={"/"} element={<Layout/>}>
-                    {navRoutes.map(route =>
-                        <Route path={route.path} element={route.component} key={route.path}/>
+            <Layout>
+                <Routes>
+                    {routes.map(route =>
+                        <Route path={route.path} element={route.element}/>
                     )}
-                    <Route path={"/documents"} element={<DocumentsPage/>}>
-                        <Route index element={<Navigate to={documentsRoutes[0].path} replace/>}/>
-                        {documentsRoutes.map(route =>
-                            <Route path={route.path} element={route.component} key={route.path}/>
-                        )}
-                    </Route>
-                    <Route path={"/cases/:id"}  element={<CaseOpen url={"https://kodim.space/api/kodim/cases"}/>}></Route>
-                    <Route path={"/projects/:id"} element={<CaseOpen url={"https://kodim.space/api/kodim/projects"}/>}></Route>
-                    <Route path={"*"} element={<Page404/>}/>
-                </Route>
-            </Routes>
+                </Routes>
+            </Layout>
+            <ScrollToTop/>
         </BrowserRouter>
     );
 }

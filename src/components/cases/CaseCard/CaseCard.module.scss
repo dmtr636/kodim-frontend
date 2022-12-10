@@ -9,9 +9,7 @@
   opacity: 1;
   color: $color-black;
   cursor: pointer;
-  &:last-child {
-    margin-bottom: 80px;
-  }
+
   &:hover {
     opacity: 0.6;
   }

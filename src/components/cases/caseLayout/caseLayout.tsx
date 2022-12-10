@@ -1,17 +1,13 @@
 import React from "react";
-import axios from "axios";
-import { CaseCard } from "../CaseCard/CaseCard";
-import { useNavigate } from "react-router-dom";
+import {CaseCard} from "../CaseCard/CaseCard";
+import {useNavigate} from "react-router-dom";
+import {projectsStore} from "../../../stores/projectsStore";
+import {observer} from "mobx-react-lite";
 
-export const CaseLayout = () => {
+export const CaseLayout = observer(() => {
   const navigate = useNavigate();
-  const [data, setData] = React.useState<any[]>([]);
-  React.useEffect(() => {
-    axios.get("https://kodim.space/api/kodim/cases").then((data) => {
-      setData(data.data.result);
-    });
-  }, []);
-  const dataArray = data.map((el) => (
+
+  const dataArray = projectsStore.cases.map((el) => (
     <CaseCard
       onClick={() => navigate("/cases/" + el.id)}
       key={el.id + el.image}
@@ -23,4 +19,4 @@ export const CaseLayout = () => {
   ));
 
   return <>{dataArray}</>;
-};
+});

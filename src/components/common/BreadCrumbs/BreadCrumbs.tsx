@@ -1,29 +1,19 @@
 import React from 'react';
 import styles from "./BreadCrumbs.module.scss"
 import {NavLink, useLocation} from "react-router-dom";
-import {navRoutes} from "../../../constants/navRoutes";
-import {documentsRoutes} from "../../../constants/documentsRoutes";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import {createRoutes} from "../../../constants/routes";
+import {projectsStore} from "../../../stores/projectsStore";
+import {observer} from "mobx-react-lite";
 
-const routes = [
-    ...navRoutes,
-    ...documentsRoutes,
-    {
-        name: "Документы",
-        path: "documents"
+
+const BreadCrumbs = observer(() => {
+    if (!projectsStore.projects.length || !projectsStore.cases.length) {
+        return null
     }
-]
 
-const getRoute = (path: string) => {
-    return routes.find(route => route.path === path)
-}
-
-const BreadCrumbs = () => {
+    const breadcrumbs = useBreadcrumbs(createRoutes(projectsStore));
     const location = useLocation()
-    const paths = location.pathname.split("/")
-
-    const getBreadcrumbPath = (index: number) => {
-        return paths.slice(0, index + 1).join("/")
-    }
 
     if (location.pathname === "/") {
         return null
@@ -32,27 +22,22 @@ const BreadCrumbs = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.content}>
-                {paths.map((path, index) => {
-                    const route = getRoute(path)
-                    if (route) {
-                        return (
-                            <>
-                                {index > 0 &&
-                                    <div className={styles.separator}/>
-                                }
-                                <NavLink
-                                    to={getBreadcrumbPath(index)}
-                                    className={styles.link}
-                                >
-                                    {route.name}
-                                </NavLink>
-                            </>
-                        )
-                    }
-                })}
+                {breadcrumbs.map((item, index) =>
+                    <>
+                        {index > 0 &&
+                            <div className={styles.separator}/>
+                        }
+                        <NavLink
+                            to={item.match.pathname}
+                            className={styles.link}
+                        >
+                            {item.breadcrumb}
+                        </NavLink>
+                    </>
+                )}
             </div>
         </div>
     );
-};
+});
 
 export default BreadCrumbs;

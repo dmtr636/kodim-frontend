@@ -31,7 +31,7 @@ input, textarea {
 
 /* Scrollbar */
 body::-webkit-scrollbar {
-    width: 25px;               /* width of the entire scrollbar */;
+    width: 12px;               /* width of the entire scrollbar */;
 }
 
 body::-webkit-scrollbar-track {
@@ -41,7 +41,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: #52AEFF;    /* color of the scroll thumb */
     border-radius: 50px;       /* roundness of the scroll thumb */
-    border: 5px solid white;  /* creates padding around scroll thumb */
+    border: 2px solid white;  /* creates padding around scroll thumb */
 }
 
 body::-webkit-scrollbar-thumb:hover {

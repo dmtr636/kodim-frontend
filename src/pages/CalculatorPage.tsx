@@ -104,7 +104,7 @@ export const CalculatorPage = observer(() => {
     return (
         <CalculatorLayout>
             {getFirstColumn()}
-            <CalculatorCard>
+            <CalculatorCard sticky>
                 <CalculatorPrice/>
             </CalculatorCard>
         </CalculatorLayout>

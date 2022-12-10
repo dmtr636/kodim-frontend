@@ -40,7 +40,13 @@ class CalculatorStore {
 
     submitBrief(onSubmit: (status: string) => void) {
         axios
-            .post(SEND_BRIEF_ENDPOINT, this.formValues)
+            .post(SEND_BRIEF_ENDPOINT, {
+                form_values: this.formValues,
+                descriptions: [
+                    ...calculatorFormFirstStep.map(section => section.items).flat(),
+                    ...calculatorFormSecondStep.map(section => section.items).flat()
+                ]
+            })
             .then(res => {
                 if (res.data.result) {
                     onSubmit("success")

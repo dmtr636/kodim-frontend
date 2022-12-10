@@ -1,14 +1,17 @@
 import DocumentsCertificate from "../components/documents/DocumentsCertificate/DocumentsCertificate";
+import DocumentsContent from "../components/documents/DocumentsContent/DocumentsContent";
+import DocumentsText from "../components/documents/DocumentsText/DocumentsText";
+import {privacyPolicy} from "./documents";
 
 export const documentsRoutes = [
     {
         path: "privacy",
-        component: <h1>Privacy</h1>,
+        component: <DocumentsText text={privacyPolicy}/>,
         name: "Политика конфиденциальности"
     },
     {
         path: "contract",
-        component: <h1>Contract</h1>,
+        component: <DocumentsText text={privacyPolicy}/>,
         name: "Договор-оферта"
     },
     {
