@@ -9,6 +9,8 @@ import {checkboxChecked} from "../../../assets/calculator";
 import Button from "../../common/Button/Button";
 import {calculatorStore} from "../../../stores/calculatorStore";
 import {NavLink} from "react-router-dom";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import {isMobile} from "../../../utils/utils";
 
 const CalculatorContactForm = (props: {
     formValues: Record<string, any>,
@@ -17,6 +19,7 @@ const CalculatorContactForm = (props: {
     onSubmit: (status: string) => void,
 }) => {
     const [checked, setChecked] = useState(false)
+    const {width} = useWindowDimensions()
 
     const phoneRegex = new RegExp("\\+7 \\([0-9]{3}\\) [0-9]{3}-[0-9]{2}-[0-9]{2}")
 
@@ -42,7 +45,10 @@ const CalculatorContactForm = (props: {
                         <CalculatorFormTextField
                             value={props.formValues["phone"]}
                             onChange={(value) => props.onChange("phone", value)}
-                            placeholder={"Телефон, по которому мы можем связаться"}
+                            placeholder={isMobile(width)
+                                ? "Телефон"
+                                : "Телефон, по которому мы можем связаться"
+                            }
                             type={"phone"}
                         />
                         <CalculatorFormTextField

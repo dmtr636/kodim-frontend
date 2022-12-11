@@ -3,6 +3,11 @@
 .container {
   display: flex;
   gap: 20px;
+
+  @include mobile {
+    flex-wrap: wrap;
+    row-gap: 18px;
+  }
 }
 
 .button {
@@ -20,6 +25,12 @@
 
   &:hover {
     background: $color-blue-hover;
+  }
+
+  @include mobile {
+    padding: 10px 13px;
+    font-size: 14px;
+    line-height: 130%;
   }
 }
 

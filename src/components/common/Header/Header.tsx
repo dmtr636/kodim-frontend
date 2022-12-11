@@ -67,7 +67,7 @@ const Header = observer(() => {
                                     to={route.path}
                                     className={({isActive}) => classNames(
                                         styles.navLink,
-                                        {[styles.navLinkActive]: isActive}
+                                        {[styles.navLinkActive]: isActive && !route.path.includes("#")}
                                     )}
                                     key={route.path}
                                     onClick={() => setShowMenu(false)}

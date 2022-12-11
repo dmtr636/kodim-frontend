@@ -6,11 +6,11 @@ import CalculatorFormSelect from "../CalculatorFormSelect/CalculatorFormSelect";
 import CalculatorFormToggleButtons from "../CalculatorFormToggleButtons/CalculatorFormToggleButtons";
 import {ICalculatorFormItem, ICalculatorFormSection} from "../../../interfaces/ICalculatorFormSection";
 import Button from "../../common/Button/Button";
-import styles from "./CalculatorStepper.module.scss"
+import styles from "./style.module.scss"
 import CalculatorFormTextField from "../CalculatorFormTextField/CalculatorFormTextField";
 import CalculatorFormTextArea from "../CalculatorFormTextArea/CalculatorFormTextArea";
 
-const CalculatorStepper = (props: {
+const CalculatorForm = (props: {
     formValues: Record<string, any>,
     onChange: (fieldName: string, value: any) => void,
     formData: ICalculatorFormSection[],
@@ -102,4 +102,4 @@ const CalculatorStepper = (props: {
     );
 };
 
-export default CalculatorStepper;
+export default CalculatorForm;

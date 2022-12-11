@@ -92,12 +92,13 @@ export const calculatorFormSecondStep: ICalculatorFormSection[] = [
         hideDivider: true,
         items: [
             {
-                type: "textField",
+                type: "textArea",
                 label:
                     "Был ли у вас уже сайт этого проекта?\n" +
                     "Если да, то вставьте ссылку",
                 name: "old_site",
-                placeholder: "Оставьте поле пустым, если не было"
+                placeholder: "Оставьте поле пустым, если не было",
+                minRows: 1
             },
             {
                 type: "textArea",

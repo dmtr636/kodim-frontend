@@ -20,4 +20,10 @@
   &::placeholder {
     opacity: 0.5;
   }
+
+  @include mobile {
+    padding: 9px 13px;
+    font-size: 14px;
+    line-height: 130%;
+  }
 }
