@@ -16,8 +16,9 @@ const Layout = () => {
             <ScrollRestoration />
 
             <Helmet>
-                {isTablet(width) &&
-                    <meta name="viewport" content="width=1280" />
+                {isTablet(width)
+                    ? <meta name="viewport" content="width=1280" />
+                    : <meta name="viewport" content="width=device-width, initial-scale=1" />
                 }
             </Helmet>
 
