@@ -76,7 +76,7 @@ const Footer = () => {
             <div className={styles.top}>
                 <div className={styles.menu}>
                     {data.map(column =>
-                        <div>
+                        <div key={column.title}>
                             <div className={styles.columnTitle}>
                                 {column.title}
                             </div>
@@ -87,6 +87,7 @@ const Footer = () => {
                                         <NavLink
                                             to={item.path}
                                             className={styles.columnItem}
+                                            key={item.path}
                                         >
                                             {item.name}
                                         </NavLink>
@@ -95,6 +96,7 @@ const Footer = () => {
                                             className={styles.columnItem}
                                             target={"_blank"}
                                             href={item.path}
+                                            key={item.path}
                                         >
                                             {item.name}
                                         </a>

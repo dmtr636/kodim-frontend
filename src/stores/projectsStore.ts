@@ -9,15 +9,23 @@ export class ProjectsStore {
     projects: any[] = []
     cases: any[] = []
 
+    setProjects(data: any[]) {
+        this.projects = data
+    }
+
+    setCases(data: any[]) {
+        this.cases = data
+    }
+
     fetchProjects() {
         axios.get("https://kodim.space/api/kodim/projects").then((res) => {
-            this.projects = res.data.result
+            this.setProjects(res.data.result)
         });
     }
 
     fetchCases() {
         axios.get("https://kodim.space/api/kodim/cases").then((res) => {
-            this.cases = res.data.result
+            this.setCases(res.data.result)
         });
     }
 }
