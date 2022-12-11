@@ -4,31 +4,31 @@ export const siteTypeOptions: ICalculatorFormSelectOption[] = [
     {
         value: "landing",
         name: "Одностраничный лендинг",
-        price: 50000,
+        price: 30000,
         pricePositionName: "Одностраничный лендинг"
     },
     {
         value: "corporate",
         name: "Корпоративный для компании",
-        price: 100000,
+        price: 50000,
         pricePositionName: "Корпоративный для компании",
     },
     {
         value: "shop",
         name: "Интернет-магазин товаров или услуг",
-        price: 150000,
+        price: 40000,
         pricePositionName: "Интернет-магазин товаров или услуг",
     },
     {
         value: "catering",
         name: "Онлайн-продажи для общепита",
-        price: 100000,
+        price: 40000,
         pricePositionName: "Онлайн-продажи для общепита",
     },
     {
         value: "portfolio",
         name: "Портфолио",
-        price: 75000,
+        price: 20000,
         pricePositionName: "Онлайн-продажи для общепита",
     }
 ]
@@ -42,7 +42,13 @@ export const logotypeOptions: ICalculatorFormSelectOption[] = [
     {
         value: "order",
         name: "Заказать",
-        price: 1000,
+        priceOptions: {
+            "landing": 2000,
+            "corporate": 7000,
+            "shop": 6000,
+            "catering": 6000,
+            "portfolio": 3000
+        },
         pricePositionName: "Логотип сайта"
     },
     {
@@ -59,7 +65,13 @@ export const graphicMaterialsOptions: ICalculatorFormSelectOption[] = [
     {
         value: "order",
         name: "Заказать",
-        price: 1000,
+        priceOptions: {
+            "landing": 3000,
+            "corporate": 10000,
+            "shop": 7000,
+            "catering": 4000,
+            "portfolio": 5000
+        },
         pricePositionName: "Графические материалы"
     },
     {
@@ -75,7 +87,15 @@ export const basicSeoOptions: ICalculatorFormSelectOption[] = [
     },
     {
         value: "order",
-        name: "Заказать"
+        name: "Заказать",
+        priceOptions: {
+            "landing": 1500,
+            "corporate": 4000,
+            "shop": 5000,
+            "catering": 5000,
+            "portfolio": 2000
+        },
+        pricePositionName: "Базовая SEO-настройка"
     }
 ]
 
@@ -86,7 +106,15 @@ export const seoTextOptions: ICalculatorFormSelectOption[] = [
     },
     {
         value: "order",
-        name: "Заказать"
+        name: "Заказать",
+        priceOptions: {
+            "landing": 2000,
+            "corporate": 10000,
+            "shop": 10000,
+            "catering": 10000,
+            "portfolio": 2000
+        },
+        pricePositionName: "SEO-текст и общее текстовое сопровождение"
     },
     {
         value: "no_text",
@@ -101,7 +129,15 @@ export const yandexDirectOptions: ICalculatorFormSelectOption[] = [
     },
     {
         value: "order",
-        name: "Заказать"
+        name: "Заказать",
+        priceOptions: {
+            "landing": 2000,
+            "corporate": 5000,
+            "shop": 7000,
+            "catering": 5000,
+            "portfolio": 2000
+        },
+        pricePositionName: "Рекламная компания в Яндекс Директ"
     }
 ]
 
@@ -127,6 +163,14 @@ export const adminPanelOptions: ICalculatorFormSelectOption[] = [
     },
     {
         value: "custom",
-        name: "Персонализированная"
+        name: "Персонализированная",
+        priceOptions: {
+            "landing": 8000,
+            "corporate": 20000,
+            "shop": 20000,
+            "catering": 20000,
+            "portfolio": 20000
+        },
+        pricePositionName: "Админ-панель"
     }
 ]
