@@ -34,6 +34,7 @@
   line-height: 120%;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  white-space: pre-line;
 }
 .text {
   color: $color-white;
@@ -58,12 +59,13 @@
     background-repeat: no-repeat;
   }
   .body {
-    width: 382px;
-    height: 255px;
+    width: 100%;
+    height: auto;
   }
   .h1 {
     padding-top: 24px;
     font-size: 28px;
+    padding-right: 60px;
   }
   .text {
     font-size: 22px;
@@ -72,6 +74,6 @@
   }
   .button {
     padding-top: 24px;
+    padding-bottom: 22px;
   }
-  
 }

@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Banner.module.scss";
 import Button from "../../common/Button/Button";
 import { useNavigate } from "react-router-dom";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 
 
@@ -9,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Banner = () => {
   const navigate = useNavigate();
+  const {width} = useWindowDimensions()
   const words = ["Скоростные.", "Без загрузок.", "Для всех."]
   const [currentWord,setCurrentWord] =React.useState(words[0])
   const [wordCount, setWordCount] =React.useState(1)
@@ -29,8 +31,7 @@ export const Banner = () => {
       <div className={style.bodybanner}>
         <div className={style.body}>
           <h1 className={style.h1}>
-            Делаем не просто сайты
-            <br />а веб-приложения
+            {width < 700 ?"Делаем\n не просто сайты\n а веб-приложения":"Делаем не просто сайты\n а веб-приложения"}
           </h1>
           <div className={style.text}>{currentWord}</div>
           <div className={style.button}>
