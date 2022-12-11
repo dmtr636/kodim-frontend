@@ -24,11 +24,6 @@ export const QAItem = ({ QAName, QAText, currentItem, onClick }) => {
               alt=""
             />
           }
-          {/* <img
-            onClick={onClick}
-            src={QAName == currentItem ? iconOpen : iconClose}
-            alt=""
-          /> */}
         </div>
       </div>
       <div
