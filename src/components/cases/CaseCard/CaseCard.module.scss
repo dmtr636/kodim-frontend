@@ -16,7 +16,7 @@
 }
 .leftImg {
   width: 610px;
-  height: 434px;
+  height: auto;
   margin-bottom: 30px;
   border-radius: 5px;
 }
@@ -52,4 +52,33 @@
   font-size: 20px;
   line-height: 140%;
   letter-spacing: 0.03em;
+}
+@include mobile{
+  .wrapper{
+    width: 100%;
+    flex-direction: column;
+    padding: 0 24px;
+  }
+  .leftImg {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .right {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  .rightHeader {
+    font-size: 28px;
+  }
+  .rightText {
+    font-size: 16px;
+    line-height: 140%;
+    margin-top: 16px;
+    margin-bottom: 80px;
+  }
+  .rightCategory {
+    bottom: 30px;
+    font-size: 16px;
+  }
 }

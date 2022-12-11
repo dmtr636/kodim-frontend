@@ -1,3 +1,4 @@
+@import "src/styles/vars";
 .wrapper {
   width: 1220px;
   margin: 0 auto;
@@ -5,7 +6,7 @@
 }
 .headerImg {
   width: 1220px;
-  height: 560px;
+  height: auto;
   border-radius: 5px;
 }
 .date {
@@ -33,7 +34,6 @@
 .block {
   display: flex;
   justify-content: space-between;
-
 }
 .blockGoal {
   display: inline;
@@ -46,7 +46,7 @@
   align-items: center;
   color: #52aeff;
   margin-top: 20px;
-    align-items: flex-start;
+  align-items: flex-start;
 }
 .blockText {
   margin-top: 23px;
@@ -62,11 +62,46 @@
   letter-spacing: 0.03em;
   color: #303030;
 }
-.imgBlock{
-    margin-top: 30px;
-    border-radius: 5px;
+.imgBlock {
+  margin-top: 30px;
+  border-radius: 5px;
 }
-.LastImgBlock{
+.LastImgBlock {
+  margin-top: 20px;
+  border-radius: 5px;
+}
+@include mobile {
+  .wrapper {
+    width: 100%;
+    flex-direction: column;
+    padding: 0 24px;
+  }
+  .headerImg {
+    width: 100%;
+    height: auto;
+  }
+  .block {
+    flex-direction: column;
+  }
+  .blockText {
+    margin-top: 10px;
+    right: 0;
+    width: auto;
+    font-size: 16px;
+    display: flex;
+  }
+  .blockGoal {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  .header {
+    margin-top: 10px;
+    width: auto;
+    font-size: 20px;
+    line-height: 120%;
+  }
+  .date {
+    font-size:16px;
     margin-top: 20px;
-    border-radius: 5px;
+  }
 }
