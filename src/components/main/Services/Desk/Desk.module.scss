@@ -57,10 +57,14 @@
   margin-bottom: 30px;
   width: 460px;
   height: 320px;
-  img {
+  source {
     width: 460px;
     height: 320px;
   }
+}
+.video{
+  width: 460px;
+    height: 320px;
 }
 .deskCard {
   display: flex;
@@ -111,6 +115,7 @@
   .deskCardLeftImg {
     margin-left: 24px;
     margin-bottom: 20px;
+    margin-right: 24px;
     width: auto;
     height: auto;
     img {
