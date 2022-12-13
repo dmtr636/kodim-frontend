@@ -33,6 +33,7 @@
 }
 @include mobile {
   .button {
+    width: auto;
     padding: 10px 15px;
     margin-top: 20px;
     font-family: "Raleway";
@@ -50,6 +51,7 @@
 
     }
   .activebutton {
+    width: auto;
     font-size: 14px;
     padding: 10px 15px;
     margin-top: 20px;

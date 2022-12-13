@@ -163,7 +163,7 @@ export const Desk = () => {
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className={""}
+            className="abcd"
           >
             {serviceArray}
           </Swiper>}
