@@ -44,9 +44,9 @@
     white-space: nowrap;
     margin-left:0px;
     margin-right: 0;
-    &:last-child{
+   /*  &:last-child{
       margin-right: 24px;
-    }
+    } */
 
     }
   .activebutton {
@@ -61,9 +61,9 @@
     white-space: nowrap;
     margin-left:0px;
     margin-right: 0;
-    &:last-child{
+    /* &:last-child{
       margin-right: 0px;
-    }
+    } */
     
   }
 }

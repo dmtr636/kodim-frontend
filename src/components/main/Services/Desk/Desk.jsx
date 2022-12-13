@@ -159,11 +159,11 @@ export const Desk = () => {
           {<Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={24}
-            slidesPerView={4}
+            slidesPerView={"auto"}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="mySwiper"
+            className={""}
           >
             {serviceArray}
           </Swiper>}
@@ -195,8 +195,8 @@ export const Desk = () => {
     /> */}
                     <video
                       key={el.imgUrl}
-                      width={width < 700 ? "100%" : "460"}
-                      height={width < 700 ? "100%" : "320"}
+                      width={width < 700 ? "auto" : "460"}
+                      height={width < 700 ? "auto" : "320"}
                       style={{ borderRadius: "5px" }}
                       autoPlay
                       muted
@@ -227,7 +227,7 @@ export const Desk = () => {
       ) : (
           <div className={style.deskCard}>
             <div className={style.deskCardLeft}>
-              <div className={style.deskCardLeftImg}>
+              <div className={style.swiper}>
                 {/* <ReactPlayer
               url={services[activeService].imgUrl}
               width={width < 700 ? "auto" : "460"}
@@ -239,8 +239,8 @@ export const Desk = () => {
             /> */}
                 <video
                   key={services[activeService].imgUrl}
-                  width={width < 700 ? "100%" : "460"}
-                  height={width < 700 ? "100%" : "320"}
+                  width={width < 700 ? "auto" : "460"}
+                  height={width < 700 ? "auto" : "320"}
                   style={{ borderRadius: "5px" }}
                   autoPlay
                   muted

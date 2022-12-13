@@ -57,3 +57,6 @@ html {
     scrollbar-width: auto;          /* "auto" or "thin" */
     scrollbar-color: #52AEFF transparent;   /* scroll thumb and track */
 }
+.swiper-slide{
+    width: auto!important;
+}

@@ -79,6 +79,10 @@
   margin-left: 10px;
   margin-top: 6px;
 }
+.swiper{
+  width:auto;
+  padding-left: 24px;
+}
 @include mobile {
   .desk {
     width: 100%;
