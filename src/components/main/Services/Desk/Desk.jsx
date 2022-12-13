@@ -163,7 +163,7 @@ export const Desk = () => {
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="abcd"
+            className="service-head"
           >
             {serviceArray}
           </Swiper>}
@@ -178,6 +178,7 @@ export const Desk = () => {
           modules={[FreeMode, Navigation, Thumbs]}
           onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
+          /* className="service-body" */
         >
           {services.map((el, i) => (
             <SwiperSlide key={i}>
@@ -195,8 +196,8 @@ export const Desk = () => {
     /> */}
                     <video
                       key={el.imgUrl}
-                      width={width < 700 ? "auto" : "460"}
-                      height={width < 700 ? "auto" : "320"}
+                      width={width < 700 ? "100%" : "460"}
+                      height={width < 700 ? "100%" : "320"}
                       style={{ borderRadius: "5px" }}
                       autoPlay
                       muted
