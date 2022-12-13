@@ -225,10 +225,6 @@ export const Desk = () => {
           ))}
         </Swiper>
       ) : (
-        <div className={style.desk}>
-          <div className={style.deskHeader}>
-            <div className={style.deskwrapper}>{serviceArray}</div>
-          </div>
           <div className={style.deskCard}>
             <div className={style.deskCardLeft}>
               <div className={style.deskCardLeftImg}>
@@ -269,7 +265,6 @@ export const Desk = () => {
               </div>
             </div>
           </div>
-        </div>
       )}
     </div>
   );
