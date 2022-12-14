@@ -57,3 +57,10 @@ html {
     scrollbar-width: auto;          /* "auto" or "thin" */
     scrollbar-color: #52AEFF transparent;   /* scroll thumb and track */
 }
+
+/* For sticky header */
+@media (max-width: 699px) {
+    [id] {
+        scroll-margin-top: 62px;
+    }
+}

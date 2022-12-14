@@ -12,7 +12,7 @@
   height: 328px;
   padding-top: 50px;
   position: relative;
-  background: $color-blue url("../../../../src/assets/common/footerBg.svg") no-repeat;
+  background: $color-blue url("/assets/common/footerBg.svg") no-repeat;
 
   @include mobile {
     height: auto;

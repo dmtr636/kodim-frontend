@@ -29,7 +29,7 @@ export const siteTypeOptions: ICalculatorFormSelectOption[] = [
         value: "portfolio",
         name: "Портфолио",
         price: 20000,
-        pricePositionName: "Онлайн-продажи для общепита",
+        pricePositionName: "Портфолио",
     }
 ]
 
