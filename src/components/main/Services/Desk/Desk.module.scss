@@ -4,6 +4,9 @@
   margin: 0 auto;
   margin-top: 50px;
   border-radius: 5px;
+  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -webkit-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
 }
 .deskHeader {
   height: 180px;
@@ -12,9 +15,9 @@
   background-repeat: no-repeat;
   background-position: right;
   -moz-outline-radius: 5px;
-  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  /* box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
   -webkit-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
-  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35); */
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
@@ -25,9 +28,9 @@
 }
 .deskCard {
   padding-top: 40px;
-  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  /* box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
   -webkit-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
-  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35); */
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -68,6 +71,8 @@
 }
 .deskCard {
   display: flex;
+  padding-left: 30px;
+  padding-bottom: 30px;
 }
 .deskCardRight {
   margin-left: 30px;

@@ -101,7 +101,16 @@ export const Desk = () => {
   const serviceOnClick = (i) => {
     SetActiveService(i);
   };
-  const serviceArray = services.map((el, i) => (
+  const serviceArray=services.map((el, i) => (
+      <ServiceButton
+        key={el.serviceText}
+        activeButton={activeService === i}
+        onClick={() => serviceOnClick(i)}
+      >
+        {el.serviceName}
+      </ServiceButton>
+  ));
+  const serviceArrayHeadMob = services.map((el, i) => (
     <SwiperSlide>
       <ServiceButton
         key={el.serviceText}
@@ -156,7 +165,7 @@ export const Desk = () => {
     <div className={style.desk}>
       <div className={style.deskHeader}>
         <div className={style.deskwrapper}>
-          {<Swiper
+          {width < 700 ?<Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={24}
             slidesPerView={"auto"}
@@ -165,8 +174,8 @@ export const Desk = () => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="service-head"
           >
-            {serviceArray}
-          </Swiper>}
+            {serviceArrayHeadMob}
+          </Swiper>:serviceArray}
         </div>
       </div>
       {width < 700 ? (
