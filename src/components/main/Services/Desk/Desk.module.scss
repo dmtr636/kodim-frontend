@@ -128,7 +128,7 @@
     padding-bottom: 24px;
   }
   .deskCardLeftImg {
-    margin-left: 24px;
+    margin-left: 0px;
     margin-bottom: 20px;
     margin-right: 24px;
     width: auto;
@@ -141,5 +141,8 @@
   }
   .buttonPosition {
     display: none;
+  }
+  .deskCardRight{
+    margin-left:0px
   }
 }
