@@ -30,6 +30,7 @@
   color: #ffffff;
   margin-left: 20px;
   margin-top: 24px;
+  pointer-events: none;
 }
 @include mobile {
   .button {
