@@ -59,6 +59,6 @@ html {
 }
 .service-head .swiper-slide{
     width: auto!important;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
