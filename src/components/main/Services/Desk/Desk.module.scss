@@ -108,7 +108,7 @@
   .deskwrapper {
     overflow-y: auto;
     display: flex;
-    margin-left: 14px;
+    margin-left: 0px;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -128,7 +128,7 @@
     padding-bottom: 24px;
   }
   .deskCardLeftImg {
-    margin-left: 0px;
+    margin-left: 24px;
     margin-bottom: 20px;
     margin-right: 24px;
     width: auto;

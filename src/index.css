@@ -62,3 +62,8 @@ html {
     padding-left: 10px;
     padding-right: 10px;
 }
+.service-head .swiper-slide:first-child{
+
+    padding-left: 24px;
+
+}
