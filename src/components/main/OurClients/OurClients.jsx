@@ -7,7 +7,7 @@ export const OurClients = () => {
   return (
     <div className={style.wrapper}>
       <div className={style.left}>
-        {width < 700 ?<OurClientsMob/>:"Наши клиенты это ‑ малый бизнес,\nи все те, кому нужен реально\n быстрый сайт"}
+        {width < 700 ?<OurClientsMob/>:"Наши клиенты это\xA0—\xA0малый бизнес,\nи все те, кому нужен реально\n быстрый сайт"}
       </div>
       <div className={style.right}>Скорость вашего <br /> будущего <br /> сайта</div>
     </div>
@@ -20,4 +20,5 @@ export const OurClientsMob = () => {
     быстрый сайт</>
   )
 }
+
 

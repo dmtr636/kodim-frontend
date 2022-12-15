@@ -15,9 +15,6 @@
   background-repeat: no-repeat;
   background-position: right;
   -moz-outline-radius: 5px;
-  /* box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
-  -webkit-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
-  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35); */
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
@@ -65,9 +62,9 @@
     height: 320px;
   }
 }
-.video{
+.video {
   width: 460px;
-    height: 320px;
+  height: 320px;
 }
 .deskCard {
   display: flex;
@@ -84,22 +81,29 @@
   margin-left: 10px;
   margin-top: 6px;
 }
-.slider{
-  width: auto!important;
+.slider {
+  width: auto !important;
   padding-left: 24px;
 }
 @include mobile {
   .desk {
     width: 100%;
+    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
   .deskCard {
     flex-direction: column;
     padding-top: 24px;
     box-shadow: none;
+    border-radius: 5px;
   }
   .deskHeader {
     height: 76px;
     margin-bottom: 24px;
+    -moz-outline-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
   }
   .deskwrapper {
     overflow-y: auto;
@@ -135,7 +139,7 @@
       height: auto;
     }
   }
-  .buttonPosition{
+  .buttonPosition {
     display: none;
   }
 }
