@@ -62,6 +62,11 @@ html {
     padding-left: 10px;
     padding-right: 10px;
 }
+.service-head .swiper-slide:first-child{
+
+    padding-left: 24px;
+
+}
 
 /* For sticky header */
 @media (max-width: 699px) {
