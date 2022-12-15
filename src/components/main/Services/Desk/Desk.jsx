@@ -4,6 +4,14 @@ import style from "./Desk.module.scss";
 import ServiceButton from "./ServiceButton/ServiceButton";
 import ReactPlayer from "react-player";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper";
+
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
 import { useNavigate } from "react-router-dom";
 import useWindowDimensions from "../../../../hooks/useWindowDimensions";
 
@@ -26,9 +34,10 @@ import CODINGPoster from "../Desk/img/posters/programmer.png";
 import MARKETINGPoster from "../Desk/img/posters/MARKETING.png";
 
 export const Desk = () => {
+  const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
   const { width } = useWindowDimensions();
   console.log(width);
-  let serviceNameMob = width < 700 ? "UX‑XUI" : "UX/UI-дизайн";
+  let serviceNameMob = width < 700 ? "UX‑UI" : "UX/UI-дизайн";
   const [activeService, SetActiveService] = React.useState(0);
   const navigate = useNavigate();
   const services = [
@@ -92,24 +101,144 @@ export const Desk = () => {
   const serviceOnClick = (i) => {
     SetActiveService(i);
   };
-  const serviceArray = services.map((el, i) => (
-    <ServiceButton
-      key={el.serviceText}
-      activeButton={activeService === i}
-      onClick={() => serviceOnClick(i)}
-    >
-      {el.serviceName}
-    </ServiceButton>
+  const serviceArray=services.map((el, i) => (
+      <ServiceButton
+        key={el.serviceText}
+        activeButton={activeService === i}
+        onClick={() => serviceOnClick(i)}
+      >
+        {el.serviceName}
+      </ServiceButton>
   ));
+  const serviceArrayHeadMob = services.map((el, i) => (
+    <SwiperSlide>
+      <ServiceButton
+        key={el.serviceText}
+        activeButton={activeService === i}
+        onClick={() => serviceOnClick(i)}
+      >
+        {el.serviceName}
+      </ServiceButton>
+    </SwiperSlide>
+  ));
+  const serviceArrayMob = services.map((el, i) => (
+    <SwiperSlide key={el.i}>
+      {" "}
+      <div className={style.deskCardLeft}>
+        <div className={style.deskCardLeftImg}>
+          {/* <ReactPlayer
+        url={services[activeService].imgUrl}
+        width={width < 700 ? "auto" : "460"}
+        height={width < 700 ? "auto" : "320"}
+        playing="true"
+        loop="true"
+        volume="0"
+        fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
+      /> */}
+          <video
+            key={el.imgUrl}
+            width={width < 700 ? "100%" : "460"}
+            height={width < 700 ? "100%" : "320"}
+            style={{ borderRadius: "5px" }}
+            autoPlay
+            muted
+            loop
+            poster={el.posterUrl}
+          >
+            <source src={el.imgUrl} />
+          </video>
+        </div>
+      </div>
+      <div className={style.deskCardRight}>
+        <div className={style.deskCardRightHeader}>{el.serviceName}</div>
+        <div className={style.deskCardRightText}>{el.serviceText}</div>
+        <div className={style.buttonPosition}>
+          <Button onClick={() => navigate("/calculator")}>
+            Рассчитать стоимость
+          </Button>
+        </div>
+      </div>
+    </SwiperSlide>
+  ));
+  console.log(activeService);
   return (
     <div className={style.desk}>
       <div className={style.deskHeader}>
-        <div className={style.deskwrapper}>{serviceArray}</div>
+        <div className={style.deskwrapper}>
+          {width < 700 ?<Swiper
+            onSwiper={setThumbsSwiper}
+            spaceBetween={24}
+            slidesPerView={"auto"}
+            freeMode={true}
+            watchSlidesProgress={true}
+            modules={[FreeMode, Navigation, Thumbs]}
+            className="service-head"
+          >
+            {serviceArrayHeadMob}
+          </Swiper>:serviceArray}
+        </div>
       </div>
-      <div className={style.deskCard}>
-        <div className={style.deskCardLeft}>
-          <div className={style.deskCardLeftImg}>
-            {/* <ReactPlayer
+      {width < 700 ? (
+        <Swiper
+          loop={false}
+          spaceBetween={50}
+          slidesPerView={1}
+          thumbs={{ swiper: thumbsSwiper }}
+          modules={[FreeMode, Navigation, Thumbs]}
+          onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
+          onSwiper={(swiper) => console.log(swiper.activeIndex)}
+          /* className="service-body" */
+        >
+          {services.map((el, i) => (
+            <SwiperSlide key={i}>
+              <div className={style.deskCard}>
+                <div className={style.deskCardLeft}>
+                  <div className={style.deskCardLeftImg}>
+                    {/* <ReactPlayer
+      url={services[activeService].imgUrl}
+      width={width < 700 ? "auto" : "460"}
+      height={width < 700 ? "auto" : "320"}
+      playing="true"
+      loop="true"
+      volume="0"
+      fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
+    /> */}
+                    <video
+                      key={el.imgUrl}
+                      width={width < 700 ? "100%" : "460"}
+                      height={width < 700 ? "100%" : "320"}
+                      style={{ borderRadius: "5px" }}
+                      autoPlay
+                      muted
+                      loop
+                      poster={el.posterUrl}
+                    >
+                      <source src={el.imgUrl} />
+                    </video>
+                  </div>
+                </div>
+                <div className={style.deskCardRight}>
+                  <div className={style.deskCardRightHeader}>
+                    {el.serviceName}
+                  </div>
+                  <div className={style.deskCardRightText}>
+                    {el.serviceText}
+                  </div>
+                  <div className={style.buttonPosition}>
+                    <Button onClick={() => navigate("/calculator")}>
+                      Рассчитать стоимость
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+          <div className={style.deskCard}>
+            <div className={style.deskCardLeft}>
+              <div className={style.swiper}>
+                {/* <ReactPlayer
               url={services[activeService].imgUrl}
               width={width < 700 ? "auto" : "460"}
               height={width < 700 ? "auto" : "320"}
@@ -118,33 +247,35 @@ export const Desk = () => {
               volume="0"
               fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
             /> */}
-            <video
-              key={services[activeService].imgUrl}
-              width={width < 700 ? "100%" : "460"}
-              height={width < 700 ? "100%" : "320"}
-              autoPlay
-              muted
-              loop
-              poster={services[activeService].posterUrl}
-            >
-              <source src={services[activeService].imgUrl} />
-            </video>
+                <video
+                  key={services[activeService].imgUrl}
+                  width={width < 700 ? "auto" : "460"}
+                  height={width < 700 ? "auto" : "320"}
+                  style={{ borderRadius: "5px" }}
+                  autoPlay
+                  muted
+                  loop
+                  poster={services[activeService].posterUrl}
+                >
+                  <source src={services[activeService].imgUrl} />
+                </video>
+              </div>
+            </div>
+            <div className={style.deskCardRight}>
+              <div className={style.deskCardRightHeader}>
+                {services[activeService].serviceName}
+              </div>
+              <div className={style.deskCardRightText}>
+                {services[activeService].serviceText}
+              </div>
+              <div className={style.buttonPosition}>
+                <Button onClick={() => navigate("/calculator")}>
+                  Рассчитать стоимость
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className={style.deskCardRight}>
-          <div className={style.deskCardRightHeader}>
-            {services[activeService].serviceName}
-          </div>
-          <div className={style.deskCardRightText}>
-            {services[activeService].serviceText}
-          </div>
-          <div className={style.buttonPosition}>
-            <Button onClick={() => navigate("/calculator")}>
-              Рассчитать стоимость
-            </Button>
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

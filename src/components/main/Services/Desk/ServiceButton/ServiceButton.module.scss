@@ -33,6 +33,7 @@
 }
 @include mobile {
   .button {
+    width: auto;
     padding: 10px 15px;
     margin-top: 20px;
     font-family: "Raleway";
@@ -42,13 +43,16 @@
     line-height: 130%;
     letter-spacing: 0.03em;
     white-space: nowrap;
-    &:last-child{
+    margin-left:0px;
+    margin-right: 0;
+   /*  &:last-child{
       margin-right: 24px;
-    }
+    } */
 
     }
 
   .activebutton {
+    width: auto;
     font-size: 14px;
     padding: 10px 15px;
     margin-top: 20px;
@@ -58,9 +62,11 @@
     line-height: 130%;
     letter-spacing: 0.03em;
     white-space: nowrap;
-    &:last-child{
-      margin-right: 24px;
-    }
+    margin-left:0px;
+    margin-right: 0;
+    /* &:last-child{
+      margin-right: 0px;
+    } */
+    
   }
 }
-
