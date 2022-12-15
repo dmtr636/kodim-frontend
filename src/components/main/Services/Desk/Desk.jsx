@@ -40,6 +40,19 @@ export const Desk = () => {
   let serviceNameMob = width < 700 ? "UX‑UI" : "UX/UI-дизайн";
   const [activeService, SetActiveService] = React.useState(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (thumbsSwiper) {
+      const interval = setInterval(() => {
+        thumbsSwiper.updateSlides()
+      }, 100)
+
+      return () => {
+        clearInterval(interval)
+      }
+    }
+  }, [thumbsSwiper])
+
   const services = [
     {
       serviceName: serviceNameMob,
