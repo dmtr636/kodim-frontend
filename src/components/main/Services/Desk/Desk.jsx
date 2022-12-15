@@ -167,7 +167,7 @@ export const Desk = () => {
         <div className={style.deskwrapper}>
           {width < 700 ?<Swiper
             onSwiper={setThumbsSwiper}
-            spaceBetween={24}
+            spaceBetween={0}
             slidesPerView={"auto"}
             freeMode={true}
             watchSlidesProgress={true}
