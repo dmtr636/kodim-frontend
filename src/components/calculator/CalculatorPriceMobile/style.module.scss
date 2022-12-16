@@ -88,6 +88,8 @@ $ANIMATION_DURATION: 0.5s;
   font-size: 20px;
   line-height: 130%;
   color: #FFFFFF;
+
+  transition: color $ANIMATION_DURATION;
 }
 
 .containerExpanded .total {
