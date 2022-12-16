@@ -1,6 +1,6 @@
 @import "src/styles/vars";
 
-$ANIMATION_DURATION: 0.5s;
+$ANIMATION_DURATION: 0.35s;
 
 .container {
   position: fixed;
@@ -37,9 +37,6 @@ $ANIMATION_DURATION: 0.5s;
   letter-spacing: 0.03em;
   color: #FFFFFF;
   margin-bottom: 14px;
-
-  transition: color $ANIMATION_DURATION;
-  will-change: auto;
 }
 
 .containerExpanded .title {
@@ -92,9 +89,6 @@ $ANIMATION_DURATION: 0.5s;
   font-size: 20px;
   line-height: 130%;
   color: #FFFFFF;
-
-  transition: color $ANIMATION_DURATION;
-  will-change: auto;
 }
 
 .containerExpanded .total {
