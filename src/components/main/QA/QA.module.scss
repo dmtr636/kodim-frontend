@@ -102,19 +102,23 @@
   }
   .qatext {
     width: 100%;
+    height: 0;
     font-size: 16px;
     margin-top: 16px;
-    display: none;
+    visibility: hidden;
     white-space: pre-line;
+    transition: all 3s ease;
   }
   .qatextactive {
     /* width: 853px; */
+    height: auto;
     width: 100%;
     font-size: 16px;
     margin-top: 16px;
-    /* display: none; */
+    visibility: visible;
     white-space: pre-line;
     margin-right: 24px;
+    transition: all 3s ease ;
   }
   .qaHeaderIcon {
     cursor: pointer;
