@@ -1,6 +1,6 @@
 @import "src/styles/vars";
 
-$ANIMATION_DURATION: 0.3s;
+$ANIMATION_DURATION: 0.25s;
 
 .container {
   position: fixed;
@@ -17,15 +17,13 @@ $ANIMATION_DURATION: 0.3s;
   transition: background-color $ANIMATION_DURATION, height ease-out $ANIMATION_DURATION;
   height: 122px;
 
-  display: flex;
-  flex-direction: column;
-
-  will-change: auto;
+  will-change: contents;
 }
 
 .containerExpanded {
   height: 100%;
   background-color: #FFFFFF;
+  box-shadow: none;
 }
 
 .title {
@@ -112,7 +110,7 @@ $ANIMATION_DURATION: 0.3s;
   margin-bottom: auto;
   display: grid;
   grid-gap: 10px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .position {
