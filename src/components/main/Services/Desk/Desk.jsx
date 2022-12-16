@@ -29,7 +29,7 @@ import UXUIPoster from "../Desk/img/posters/uxui.png";
 import LOGOPoster from "../Desk/img/posters/logo.png";
 import SEOPoster from "../Desk/img/posters/SEO.png";
 import TGBOTPoster from "../Desk/img/posters/telegram.png";
-import COPYPoster from "../Desk/img/posters/copyr.png";
+import COPYPoster from "../Desk/img/posters/COPYR.webp";
 import CODINGPoster from "../Desk/img/posters/programmer.png";
 import MARKETINGPoster from "../Desk/img/posters/MARKETING.png";
 
