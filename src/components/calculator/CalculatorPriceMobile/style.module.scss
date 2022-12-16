@@ -19,6 +19,8 @@ $ANIMATION_DURATION: 0.5s;
 
   display: flex;
   flex-direction: column;
+
+  will-change: auto;
 }
 
 .containerExpanded {
