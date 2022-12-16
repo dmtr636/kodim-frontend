@@ -24,13 +24,13 @@ import COPY from "../Desk/img/copyr.mp4";
 import CODING from "../Desk/img/programmer.mp4";
 import MARKETING from "../Desk/img/MARKETING.mp4";
 
-import HTMLcodingPoster from "../Desk/img/posters/verstka.png";
-import UXUIPoster from "../Desk/img/posters/uxui.png";
+import HTMLcodingPoster from "../Desk/img/posters/VERSTKA.webp";
+import UXUIPoster from "../Desk/img/posters/UXUI.webp";
 import LOGOPoster from "../Desk/img/posters/logo.png";
-import SEOPoster from "../Desk/img/posters/SEO.png";
+import SEOPoster from "../Desk/img/posters/SEO.webp";
 import TGBOTPoster from "../Desk/img/posters/telegram.png";
 import COPYPoster from "../Desk/img/posters/COPYR.webp";
-import CODINGPoster from "../Desk/img/posters/programmer.png";
+import CODINGPoster from "../Desk/img/posters/PROGRAMMER.webp";
 import MARKETINGPoster from "../Desk/img/posters/MARKETING.png";
 
 export const Desk = () => {
