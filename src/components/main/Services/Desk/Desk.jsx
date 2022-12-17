@@ -153,7 +153,6 @@ export const Desk = () => {
         fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
       /> */}
           <video
-            ref={videoRef[i]}
             key={el.imgUrl}
             width={width < 700 ? "100%" : "460"}
             height={width < 700 ? "100%" : "320"}
@@ -226,6 +225,7 @@ export const Desk = () => {
       fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
     /> */}
                     <video
+                      ref={(ref) => videoRef.current[i] = ref}
                       key={el.imgUrl}
                       width={width < 700 ? "100%" : "460"}
                       height={width < 700 ? "100%" : "320"}
