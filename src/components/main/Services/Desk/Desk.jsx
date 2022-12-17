@@ -174,9 +174,6 @@ export const Desk = () => {
     </SwiperSlide>
   ));
   console.log(activeService);
-
-  const videoRefs = useRef({})
-
   return (
     <div className={style.desk}>
       <div className={style.deskHeader}>
@@ -202,10 +199,7 @@ export const Desk = () => {
           slidesPerView={1}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
-          onSlideChange={(swiper) => {
-            SetActiveService(swiper.activeIndex)
-            videoRefs.current[swiper.activeIndex]?.load()
-          }}
+          onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
           virtual
           /* className="service-body" */
@@ -225,16 +219,14 @@ export const Desk = () => {
       fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
     /> */}
                     <video
-                      ref={(ref) => videoRefs.current[i] = ref}
                       key={el.imgUrl}
                       width={width < 700 ? "100%" : "460"}
                       height={width < 700 ? "100%" : "320"}
                       style={{ borderRadius: "5px" }}
-                      // autoPlay
+                      autoPlay
                       muted
                       loop
                       poster={el.posterUrl}
-                      onLoadedData={(event) => {event.target.play()}}
                     >
                       <source src={el.imgUrl} />
                     </video>
