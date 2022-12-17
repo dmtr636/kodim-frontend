@@ -5,7 +5,7 @@ import ServiceButton from "./ServiceButton/ServiceButton";
 import ReactPlayer from "react-player";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper";
+import {FreeMode, Navigation, Thumbs, Virtual} from "swiper";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -197,13 +197,14 @@ export const Desk = () => {
           spaceBetween={50}
           slidesPerView={1}
           thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs]}
+          modules={[FreeMode, Navigation, Thumbs, Virtual]}
           onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
+          virtual
           /* className="service-body" */
         >
           {services.map((el, i) => (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} virtualIndex={i}>
               <div className={style.deskCard}>
                 <div className={style.deskCardLeft}>
                   <div className={style.deskCardLeftImg}>
