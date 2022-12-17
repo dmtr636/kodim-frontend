@@ -34,6 +34,8 @@ import CODINGPoster from "../Desk/img/posters/programmer.png";
 import MARKETINGPoster from "../Desk/img/posters/MARKETING.png";
 
 export const Desk = () => {
+  const swiperRef = useRef<Swiper>(null)
+  const thumbsSwiperRef = useRef<Swiper>(null)
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
   const { width } = useWindowDimensions();
   console.log(width);
@@ -46,9 +48,11 @@ export const Desk = () => {
       const interval = setInterval(() => {
         thumbsSwiper.updateSlides()
         // videoRef.current[activeService]?.load()
-        videoRef.current[activeService]?.play()
-        console.log(videoRef.current[activeService])
-      }, 100)
+        // videoRef.current[activeService]?.play()
+        // console.log(videoRef.current)
+        // console.log(activeService)
+        // console.log(videoRef.current[activeService])
+      }, 1000)
 
       return () => {
         clearInterval(interval)
@@ -205,7 +209,9 @@ export const Desk = () => {
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
           onSlideChange={(swiper) => {
+            console.log(swiper)
             SetActiveService(swiper.activeIndex)
+            console.log(videoRef.current[swiper.activeIndex])
             videoRef.current[swiper.activeIndex]?.play()
           }}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
@@ -213,7 +219,7 @@ export const Desk = () => {
           /* className="service-body" */
         >
           {services.map((el, i) => (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} virtualIndex={i}>
               <div className={style.deskCard}>
                 <div className={style.deskCardLeft}>
                   <div className={style.deskCardLeftImg}>
