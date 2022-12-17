@@ -30,7 +30,7 @@
 
   @include mobile {
     width: 100%;
-    height: 38px;
+    height: 42px;
     padding: 0 15px;
     font-size: 14px;
     line-height: 130%;
@@ -59,7 +59,7 @@
 
   @include mobile {
     height: auto;
-    padding: 10px 15px;
+    padding: 12px 15px;
   }
 }
 
@@ -96,7 +96,7 @@
   z-index: 20;
 
   @include mobile {
-    top: 48px;
+
   }
 }
 
