@@ -124,7 +124,7 @@ export const Desk = () => {
       </ServiceButton>
   ));
   const serviceArrayHeadMob = services.map((el, i) => (
-    <SwiperSlide>
+    <SwiperSlide key={i}>
       <ServiceButton
         key={el.serviceText}
         activeButton={activeService === i}
@@ -180,6 +180,7 @@ export const Desk = () => {
         <div className={style.deskwrapper}>
           {width < 700 ?<Swiper
             onSwiper={setThumbsSwiper}
+            onDestroy={() => setThumbsSwiper(null)}
             spaceBetween={0}
             slidesPerView={"auto"}
             freeMode={true}
