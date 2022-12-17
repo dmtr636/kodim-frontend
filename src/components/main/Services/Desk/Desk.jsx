@@ -233,7 +233,7 @@ export const Desk = () => {
                       width={width < 700 ? "100%" : "460"}
                       height={width < 700 ? "100%" : "320"}
                       style={{ borderRadius: "5px" }}
-                      autoPlay
+                      // autoPlay
                       muted
                       loop
                       poster={el.posterUrl}
