@@ -226,6 +226,7 @@ export const Desk = () => {
                       muted
                       loop
                       poster={el.posterUrl}
+                      controls
                     >
                       <source src={el.imgUrl} />
                     </video>
