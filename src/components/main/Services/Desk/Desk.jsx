@@ -45,7 +45,9 @@ export const Desk = () => {
     if (thumbsSwiper) {
       const interval = setInterval(() => {
         thumbsSwiper.updateSlides()
+        videoRef.current[activeService]?.load()
         videoRef.current[activeService]?.play()
+        console.log(videoRef.current[activeService])
       }, 100)
 
       return () => {
