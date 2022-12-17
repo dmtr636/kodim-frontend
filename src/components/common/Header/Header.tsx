@@ -71,7 +71,7 @@ const Header = observer(() => {
                         styles.overlay,
                         {[styles.overlayFadingOut]: isMenuExiting}
                     )}
-                    onClick={() => setShowMenu(false)}
+                    onClick={toggleMenu}
                 >
                     <div
                         className={classNames(
@@ -89,7 +89,7 @@ const Header = observer(() => {
                                         {[styles.navLinkActive]: isActive && !route.path.includes("#")}
                                     )}
                                     key={route.path}
-                                    onClick={() => setShowMenu(false)}
+                                    onClick={toggleMenu}
                                     preventScrollReset={route.preventScrollReset}
                                     end
                                 >
