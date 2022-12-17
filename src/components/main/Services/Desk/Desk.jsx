@@ -204,10 +204,7 @@ export const Desk = () => {
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
           onSlideChange={(swiper) => {
             SetActiveService(swiper.activeIndex)
-            setTimeout(() => {
-              console.log(videoRefs.current[swiper.activeIndex])
-              videoRefs.current[swiper.activeIndex]?.load()
-            }, 500)
+            videoRefs.current[swiper.activeIndex]?.load()
           }}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
           virtual
@@ -237,7 +234,7 @@ export const Desk = () => {
                       muted
                       loop
                       poster={el.posterUrl}
-                      controls
+                      onLoadedData={(event) => {event.target.play()}}
                     >
                       <source src={el.imgUrl} />
                     </video>
