@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useRef} from "react";
 import Button from "../../../common/Button/Button";
 import style from "./Desk.module.scss";
 import ServiceButton from "./ServiceButton/ServiceButton";
@@ -134,6 +134,9 @@ export const Desk = () => {
       </ServiceButton>
     </SwiperSlide>
   ));
+
+  const videoRef = useRef({})
+
   const serviceArrayMob = services.map((el, i) => (
     <SwiperSlide key={el.i}>
       {" "}
@@ -149,6 +152,7 @@ export const Desk = () => {
         fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
       /> */}
           <video
+            ref={videoRef[i]}
             key={el.imgUrl}
             width={width < 700 ? "100%" : "460"}
             height={width < 700 ? "100%" : "320"}
@@ -198,39 +202,40 @@ export const Desk = () => {
           slidesPerView={1}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
-          onSlideChange={(swiper) => {SetActiveService(swiper.activeIndex)}}
+          onSlideChange={(swiper) => {
+            SetActiveService(swiper.activeIndex)
+            videoRef.current[swiper.activeIndex]?.play()
+          }}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
           virtual
           /* className="service-body" */
         >
           {services.map((el, i) => (
-            <SwiperSlide key={i} virtualIndex={i}>
+            <SwiperSlide key={i}>
               <div className={style.deskCard}>
                 <div className={style.deskCardLeft}>
                   <div className={style.deskCardLeftImg}>
-                    <ReactPlayer
+                    {/* <ReactPlayer
       url={services[activeService].imgUrl}
-      width={width < 700 ? "100%" : "460"}
-      height={width < 700 ? "100%" : "320"}
-      playing
-      loop
-      muted
-      playsinline
-      stopOnUnmount
-      config={{ file: {attributes: { poster: services[activeService].posterUrl }} }}
-    />
-                    {/*<video*/}
-                    {/*  key={el.imgUrl}*/}
-                    {/*  width={width < 700 ? "100%" : "460"}*/}
-                    {/*  height={width < 700 ? "100%" : "320"}*/}
-                    {/*  style={{ borderRadius: "5px" }}*/}
-                    {/*  autoPlay*/}
-                    {/*  muted*/}
-                    {/*  loop*/}
-                    {/*  poster={el.posterUrl}*/}
-                    {/*>*/}
-                    {/*  <source src={el.imgUrl} />*/}
-                    {/*</video>*/}
+      width={width < 700 ? "auto" : "460"}
+      height={width < 700 ? "auto" : "320"}
+      playing="true"
+      loop="true"
+      volume="0"
+      fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
+    /> */}
+                    <video
+                      key={el.imgUrl}
+                      width={width < 700 ? "100%" : "460"}
+                      height={width < 700 ? "100%" : "320"}
+                      style={{ borderRadius: "5px" }}
+                      autoPlay
+                      muted
+                      loop
+                      poster={el.posterUrl}
+                    >
+                      <source src={el.imgUrl} />
+                    </video>
                   </div>
                 </div>
                 <div className={style.deskCardRight}>
