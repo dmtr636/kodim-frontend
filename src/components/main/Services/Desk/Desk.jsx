@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Button from "../../../common/Button/Button";
 import style from "./Desk.module.scss";
 import ServiceButton from "./ServiceButton/ServiceButton";
@@ -34,8 +34,7 @@ import CODINGPoster from "../Desk/img/posters/programmer.png";
 import MARKETINGPoster from "../Desk/img/posters/MARKETING.png";
 
 export const Desk = () => {
-  const swiperRef = useRef<Swiper>(null)
-  const thumbsSwiperRef = useRef<Swiper>(null)
+  const [swiper, setSwiper] = useState(null)
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
   const { width } = useWindowDimensions();
   console.log(width);
@@ -47,11 +46,6 @@ export const Desk = () => {
     if (thumbsSwiper) {
       const interval = setInterval(() => {
         thumbsSwiper.updateSlides()
-        // videoRef.current[activeService]?.load()
-        // videoRef.current[activeService]?.play()
-        // console.log(videoRef.current)
-        // console.log(activeService)
-        // console.log(videoRef.current[activeService])
       }, 1000)
 
       return () => {
@@ -59,6 +53,20 @@ export const Desk = () => {
       }
     }
   }, [thumbsSwiper])
+
+  useEffect(() => {
+    if (swiper) {
+      const interval = setInterval(() => {
+        console.log(swiper.activeIndex)
+        console.log(videoRef.current[swiper.activeIndex])
+        videoRef.current[swiper.activeIndex]?.play()
+      }, 1000)
+
+      return () => {
+        clearInterval(interval)
+      }
+    }
+  }, [swiper])
 
   const services = [
     {
@@ -214,7 +222,7 @@ export const Desk = () => {
             console.log(videoRef.current[swiper.activeIndex])
             videoRef.current[swiper.activeIndex]?.play()
           }}
-          onSwiper={(swiper) => console.log(swiper.activeIndex)}
+          onSwiper={(swiper) => setSwiper(swiper)}
           virtual
           /* className="service-body" */
         >
