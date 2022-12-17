@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useRef} from "react";
 import Button from "../../../common/Button/Button";
 import style from "./Desk.module.scss";
 import ServiceButton from "./ServiceButton/ServiceButton";
@@ -174,6 +174,9 @@ export const Desk = () => {
     </SwiperSlide>
   ));
   console.log(activeService);
+
+  const videoRefs = useRef({})
+
   return (
     <div className={style.desk}>
       <div className={style.deskHeader}>
@@ -199,7 +202,10 @@ export const Desk = () => {
           slidesPerView={1}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
-          onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
+          onSlideChange={(swiper) => {
+            SetActiveService(swiper.activeIndex)
+            videoRefs.current[swiper.activeIndex]?.load()
+          }}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
           virtual
           /* className="service-body" */
@@ -219,6 +225,7 @@ export const Desk = () => {
       fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
     /> */}
                     <video
+                      ref={(ref) => videoRefs.current[i] = ref}
                       key={el.imgUrl}
                       width={width < 700 ? "100%" : "460"}
                       height={width < 700 ? "100%" : "320"}
