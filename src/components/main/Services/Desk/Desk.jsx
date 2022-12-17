@@ -207,7 +207,7 @@ export const Desk = () => {
             setTimeout(() => {
               console.log(videoRefs.current[swiper.activeIndex])
               videoRefs.current[swiper.activeIndex]?.load()
-            }, 100)
+            }, 500)
           }}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
           virtual
