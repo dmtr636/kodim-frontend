@@ -198,7 +198,10 @@ export const Desk = () => {
           slidesPerView={1}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
-          onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
+          onSlideChange={(swiper) => {
+            SetActiveService(swiper.activeIndex)
+            swiper.updateSlides()
+          }}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
           virtual
           /* className="service-body" */
