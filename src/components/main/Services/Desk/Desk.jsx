@@ -1,11 +1,11 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect } from "react";
 import Button from "../../../common/Button/Button";
 import style from "./Desk.module.scss";
 import ServiceButton from "./ServiceButton/ServiceButton";
 import ReactPlayer from "react-player";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import {FreeMode, Navigation, Thumbs, Virtual} from "swiper";
+import { FreeMode, Navigation, Thumbs } from "swiper";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -34,7 +34,6 @@ import CODINGPoster from "../Desk/img/posters/programmer.png";
 import MARKETINGPoster from "../Desk/img/posters/MARKETING.png";
 
 export const Desk = () => {
-  const [swiper, setSwiper] = useState(null)
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
   const { width } = useWindowDimensions();
   console.log(width);
@@ -46,27 +45,13 @@ export const Desk = () => {
     if (thumbsSwiper) {
       const interval = setInterval(() => {
         thumbsSwiper.updateSlides()
-      }, 1000)
+      }, 100)
 
       return () => {
         clearInterval(interval)
       }
     }
   }, [thumbsSwiper])
-
-  useEffect(() => {
-    if (swiper) {
-      const interval = setInterval(() => {
-        console.log(swiper.activeIndex)
-        console.log(videoRef.current[swiper.activeIndex])
-        videoRef.current[swiper.activeIndex]?.play()
-      }, 1000)
-
-      return () => {
-        clearInterval(interval)
-      }
-    }
-  }, [swiper])
 
   const services = [
     {
@@ -149,9 +134,6 @@ export const Desk = () => {
       </ServiceButton>
     </SwiperSlide>
   ));
-
-  const videoRef = useRef({})
-
   const serviceArrayMob = services.map((el, i) => (
     <SwiperSlide key={el.i}>
       {" "}
@@ -215,19 +197,13 @@ export const Desk = () => {
           spaceBetween={50}
           slidesPerView={1}
           thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs, Virtual]}
-          onSlideChange={(swiper) => {
-            console.log(swiper)
-            SetActiveService(swiper.activeIndex)
-            console.log(videoRef.current[swiper.activeIndex])
-            videoRef.current[swiper.activeIndex]?.play()
-          }}
-          onSwiper={(swiper) => setSwiper(swiper)}
-          virtual
+          modules={[FreeMode, Navigation, Thumbs]}
+          onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
+          onSwiper={(swiper) => console.log(swiper.activeIndex)}
           /* className="service-body" */
         >
           {services.map((el, i) => (
-            <SwiperSlide key={i} virtualIndex={i}>
+            <SwiperSlide key={i}>
               <div className={style.deskCard}>
                 <div className={style.deskCardLeft}>
                   <div className={style.deskCardLeftImg}>
@@ -241,7 +217,6 @@ export const Desk = () => {
       fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
     /> */}
                     <video
-                      ref={(ref) => videoRef.current[i] = ref}
                       key={el.imgUrl}
                       width={width < 700 ? "100%" : "460"}
                       height={width < 700 ? "100%" : "320"}
