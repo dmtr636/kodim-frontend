@@ -7,28 +7,32 @@ import {Helmet} from "react-helmet";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import {isTablet} from "../../../utils/utils";
 import {Outlet, ScrollRestoration} from "react-router-dom";
+import Cookies from "../Cookies/Cookies";
 
 const Layout = () => {
     const {width} = useWindowDimensions()
 
     return (
-        <div className={styles.layout}>
-            <ScrollRestoration />
-
+        <>
             <Helmet>
                 {isTablet(width)
                     ? <meta name="viewport" content="width=1280" />
                     : <meta name="viewport" content="width=device-width, initial-scale=1" />
                 }
             </Helmet>
+            <ScrollRestoration />
+            <Cookies/>
 
-            <Header/>
-            <BreadCrumbs/>
-            <main className={styles.main}>
-                <Outlet />
-            </main>
-            <Footer/>
-        </div>
+            <div className={styles.layout}>
+                <Header/>
+                <BreadCrumbs/>
+                <main className={styles.main}>
+                    <Outlet />
+                </main>
+                <Footer/>
+            </div>
+        </>
+
     );
 };
 
