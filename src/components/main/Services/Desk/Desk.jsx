@@ -204,6 +204,7 @@ export const Desk = () => {
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
           onSlideChange={(swiper) => {
             SetActiveService(swiper.activeIndex)
+            console.log(videoRefs.current[swiper.activeIndex])
             videoRefs.current[swiper.activeIndex]?.load()
           }}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
