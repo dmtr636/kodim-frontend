@@ -51,7 +51,14 @@
   color: #ffffff;
   margin-top: 18px;
   display: none;
+  /* visibility: hidden; */
+  transition:max-height ease-out 3s;
+  max-height: 0;
   white-space: pre-line;
+  
+  /* animation-name: qa-open;
+  animation-duration: 1s;
+  animation-timing-function: ease; */
 }
 .qatextactive {
   width: 853px;
@@ -63,12 +70,39 @@
   letter-spacing: 0.03em;
   color: #ffffff;
   margin-top: 18px;
+  transition:max-height linear 1s;
+  max-height: auto;
   white-space: pre-line;
+  display: block;
+  
+  /* animation-name: qa-open;
+  animation-duration: 1s;
+  animation-timing-function: linear; */
 }
 .qaHeaderIcon {
   cursor: pointer;
   margin-top: 27px;
 }
+@keyframes qa-open {
+  0%{
+    max-height: 0;
+  }
+  /* 25%{
+    height: 65px;
+  }
+  50%{
+    height: 85px;
+  }
+  75%{
+    height: 110px;
+  } */
+  100%{
+    height: auto;
+  }
+}
+
+
+
 @include mobile {
   .body {
     width: 100%;
@@ -107,7 +141,6 @@
     margin-top: 16px;
     visibility: hidden;
     white-space: pre-line;
-    transition: all 3s ease;
   }
   .qatextactive {
     /* width: 853px; */
@@ -115,10 +148,10 @@
     width: 100%;
     font-size: 16px;
     margin-top: 16px;
-    visibility: visible;
+    display: block;
     white-space: pre-line;
     margin-right: 24px;
-    transition: all 3s ease ;
+
   }
   .qaHeaderIcon {
     cursor: pointer;

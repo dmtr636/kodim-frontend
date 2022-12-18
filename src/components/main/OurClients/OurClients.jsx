@@ -16,7 +16,7 @@ export const OurClients = () => {
 
 export const OurClientsMob = () => {
   return (
-    <>Наши клиенты <span style={{ whiteSpace: 'nowrap' }}>это ‑ малый бизнес</span>, <span style={{ whiteSpace: 'nowrap' }}>и все те</span>, кому нужен реально
+    <>Наши клиенты <span style={{ whiteSpace: 'nowrap' }}>это — малый бизнес</span>, <span style={{ whiteSpace: 'nowrap' }}>и все те</span>, кому нужен реально
     быстрый сайт</>
   )
 }
