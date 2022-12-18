@@ -2,7 +2,7 @@
 .wrapper {
   width: 1220px;
   margin: 0 auto;
-  border-bottom: 3px solid #52aeff;
+  /* border-bottom: 3px solid #52aeff; */
   border-radius: 1px;
   margin-top: 30px;
   display: flex;
@@ -53,15 +53,22 @@
   line-height: 140%;
   letter-spacing: 0.03em;
 }
+.divider{
+  width: 1220px;
+  margin: 0 auto;
+ height: 3px;
+ background-color: $color-blue;
+
+}
 @include mobile{
   .wrapper{
     width: 100%;
     flex-direction: column;
-    /* padding: 0 24px; */
-    padding-right: 24px;
-    margin-left:24px;
-    margin-right: 24px;
+    padding: 0 24px;
+/*     margin-left:24px;
+    margin-right: 24px; */
   }
+  
   .leftImg {
     width: 100%;
     height: auto;
@@ -83,5 +90,8 @@
   .rightCategory {
     bottom: 30px;
     font-size: 16px;
+  }
+  .divider{
+    margin: 0 24px;
   }
 }
