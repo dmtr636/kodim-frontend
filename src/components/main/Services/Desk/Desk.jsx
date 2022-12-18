@@ -37,7 +37,7 @@ export const Desk = () => {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
   const { width } = useWindowDimensions();
   console.log(width);
-  let serviceNameMob = width < 700 ? "UX‑UI" : "UX/UI-дизайн";
+  let serviceNameMob = width < 700 ? "UX/UI" : "UX/UI-дизайн";
   const [activeService, SetActiveService] = React.useState(0);
   const navigate = useNavigate();
   const services = [
