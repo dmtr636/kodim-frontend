@@ -18,7 +18,7 @@ export const Ticker = () => {
     { caseName: "Дизайнер", link: "/projects" },
     { caseName: "Продажа дома", link: "/projects" },
   ];
-  const caseElement= cases.map((el,i)=><TickerLinks key={i+el.caseName} link={el.link} caseName={el.caseName}/>)
+  const caseElement= cases.map((el,i)=><TickerLinks key={i+el.caseName}  link={el.link} caseName={el.caseName}/>)
   return (
     <div className={style.wrapper}>
       <Marquee gradient={false}  >

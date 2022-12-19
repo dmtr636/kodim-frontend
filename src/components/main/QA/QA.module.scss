@@ -115,14 +115,14 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 130%;
+    margin-bottom: 23px;
   }
   .qablock {
-    margin-top: 20px;
+    margin-top: 0px;
     &:last-child {
       border-bottom: none;
     }
   }
-
   .qaheader {
     display: flex;
     justify-content: space-between;
@@ -143,7 +143,6 @@
     white-space: pre-line;
   }
   .qatextactive {
-    /* width: 853px; */
     height: auto;
     width: 100%;
     font-size: 16px;
@@ -154,7 +153,11 @@
 
   }
   .qaHeaderIcon {
+    display: block;
     cursor: pointer;
-    margin-top: 27px;
+    /* margin-bottom: 34px; */
+    margin-top: 0px;
+
+    margin: auto 0;
   }
 }
