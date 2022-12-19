@@ -22,7 +22,7 @@ import SEO from "../Desk/img/seo.mp4";
 import TGBOT from "../Desk/img/telegram.mp4";
 import COPY from "../Desk/img/copyr.mp4";
 import CODING from "../Desk/img/programmer.mp4";
-import MARKETING from "../Desk/img/REKLAMA.mp4";
+import MARKETING from "../Desk/img/MARKETING.mp4";
 
 import HTMLcodingPoster from "../Desk/img/posters/VERSTKA.webp";
 import UXUIPoster from "../Desk/img/posters/UXUI.webp";
@@ -31,7 +31,7 @@ import SEOPoster from "../Desk/img/posters/SEO.webp";
 import TGBOTPoster from "../Desk/img/posters/TELEGRAM.webp";
 import COPYPoster from "../Desk/img/posters/COPYR.webp";
 import CODINGPoster from "../Desk/img/posters/PROGRAMMER.webp";
-import MARKETINGPoster from "../Desk/img/posters/REKLAMA.webp";
+import MARKETINGPoster from "../Desk/img/posters/MARKETING.webp";
 
 export const Desk = () => {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
