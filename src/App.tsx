@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {createRoutes} from "./constants/routes";
+import {createRoutes} from "./routes/routes";
 import {projectsStore} from "./stores/projectsStore";
 
 function App() {

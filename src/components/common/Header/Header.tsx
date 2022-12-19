@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from "./Header.module.scss"
-import {navRoutes} from "../../../constants/navRoutes";
+import {navRoutes} from "../../../routes/navRoutes";
 import Button from "../Button/Button";
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {logo} from "../../../assets/common";

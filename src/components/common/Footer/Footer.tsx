@@ -16,11 +16,6 @@ const data = [
                 path: "/documents/contract",
                 navLink: true,
             },
-            {
-                name: "Справка о постановке на учёт",
-                path: "/documents/certificate",
-                navLink: true,
-            }
         ]
     },
     {

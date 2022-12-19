@@ -60,6 +60,12 @@
 }
 
 .logo {
+  @include desktop {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   @include mobile {
     width: 82px;
     height: 14px;
