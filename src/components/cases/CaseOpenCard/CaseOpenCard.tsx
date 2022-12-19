@@ -28,11 +28,19 @@ export const CaseOpenCard = (props: any) => {
         />
       </div>
       <div className={style.LastImgBlock}>
-        <img
+        {
+          props.project_images[2].image?
+          <img
           className={style.headerImg}
           src={domain + props.project_images[2].image}
           alt="тут должна быть картинка"
-        />
+        />:<></>
+        }
+        {/* <img
+          className={style.headerImg}
+          src={domain + props.project_images[2].image}
+          alt="тут должна быть картинка"
+        /> */}
       </div>
     </div>
   );

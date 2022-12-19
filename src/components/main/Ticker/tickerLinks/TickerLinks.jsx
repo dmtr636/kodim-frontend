@@ -7,6 +7,6 @@ export const TickerLinks  = (props) => {
     const navigate = useNavigate()
   return (
 
-    <div className={style.body} style={{marginLeft:"70px"}} onClick={()=>navigate(`${props.link}`)}>{props.caseName}</div>
+    <div className={style.body} /* style={{marginLeft:"70px"}} */ onClick={()=>navigate(`${props.link}`)}>{props.caseName}</div>
   )
 }
