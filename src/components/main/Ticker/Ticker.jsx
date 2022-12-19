@@ -5,7 +5,7 @@ import { TickerLinks } from "./tickerLinks/TickerLinks";
 
 export const Ticker = () => {
   const cases = [
-    { caseName: "Кафе", link: "/projects" },
+    { caseName: "Кафе", link: "/projects"},
     { caseName: "Агенство недвижимости", link: "/projects" },
     { caseName: "Водитель газели", link: "/projects" },
     { caseName: "Строительная компания", link: "/projects" },
@@ -13,9 +13,9 @@ export const Ticker = () => {
     { caseName: "Продажа дома", link: "/projects" },
     { caseName: "Кафе", link: "/projects" },
     { caseName: "Агенство недвижимости", link: "/projects" },
-    { caseName: "Водитель газели", link: "/projects" },
-    { caseName: "Строительная компания", link: "/projects" },
-    { caseName: "Дизайнер", link: "/projects" },
+    { caseName: "Водитель газели", link: "/projects"},
+    { caseName: "Строительная компания", link: "/projects"},
+    { caseName: "Дизайнер", link: "/projects"},
     { caseName: "Продажа дома", link: "/projects" },
   ];
   const caseElement= cases.map((el,i)=><TickerLinks key={i+el.caseName}  link={el.link} caseName={el.caseName}/>)
