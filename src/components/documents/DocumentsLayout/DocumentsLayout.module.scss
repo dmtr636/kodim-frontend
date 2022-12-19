@@ -6,4 +6,10 @@
   grid-template-columns: 414px 756px;
   grid-gap: 50px;
   margin: 30px auto 0;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+    margin: 24px 24px 0 24px;
+  }
 }

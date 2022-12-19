@@ -25,20 +25,15 @@ const Header = observer(() => {
                         to={route.path}
                         className={({isActive}) => classNames(
                             styles.navLink,
-                            {[styles.navLinkActive]: isActive}
+                            {[styles.navLinkActive]: isActive && !route.path.includes("#")}
                         )}
                         key={route.path}
+                        preventScrollReset={route.preventScrollReset}
                         end
                     >
-                        {route.name}
+                        {route.breadcrumb}
                     </NavLink>
                 )}
-                <NavLink
-                    to={"/#faq"}
-                    className={styles.navLink}
-                >
-                    FAQ
-                </NavLink>
             </nav>
             <div className={styles.button}>
                 <Button onClick={() => {
@@ -47,6 +42,7 @@ const Header = observer(() => {
                     Начать проект
                 </Button>
             </div>
+
             <button
                 className={styles.burger}
                 onClick={() => setShowMenu(!isShowMenu)}
@@ -71,21 +67,16 @@ const Header = observer(() => {
                                     to={route.path}
                                     className={({isActive}) => classNames(
                                         styles.navLink,
-                                        {[styles.navLinkActive]: isActive}
+                                        {[styles.navLinkActive]: isActive && !route.path.includes("#")}
                                     )}
                                     key={route.path}
-                                    end
                                     onClick={() => setShowMenu(false)}
+                                    preventScrollReset={route.preventScrollReset}
+                                    end
                                 >
-                                    {route.name}
+                                    {route.breadcrumb}
                                 </NavLink>
                             )}
-                            <NavLink
-                                to={"/#faq"}
-                                className={styles.navLink}
-                            >
-                                FAQ
-                            </NavLink>
                         </nav>
                         <div className={styles.menuButton}>
                             <Button onClick={() => {

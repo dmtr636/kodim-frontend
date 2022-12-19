@@ -5,7 +5,9 @@ import TextareaAutosize from 'react-textarea-autosize';
 const CalculatorFormTextArea = (props: {
     value: string,
     onChange: (value: string) => void,
-    placeholder: string
+    placeholder: string,
+    minRows?: number,
+    maxLength?: number
 }) => {
     const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
         props.onChange(event.target.value)
@@ -17,7 +19,8 @@ const CalculatorFormTextArea = (props: {
             onChange={handleChange}
             className={styles.input}
             placeholder={props.placeholder}
-            minRows={4}
+            minRows={props.minRows}
+            maxLength={props.maxLength}
         />
     );
 };

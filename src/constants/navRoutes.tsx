@@ -2,27 +2,33 @@ import {MainPage} from "../pages/MainPage";
 import {CasesPage} from "../pages/CasesPage";
 import {ProjectsPage} from "../pages/ProjectsPage";
 import {CalculatorPage} from "../pages/CalculatorPage";
-import {FAQPage} from "../pages/FAQPage";
+import React from "react";
 
 export const navRoutes = [
     {
-        name: "Главная",
-        path: "",
-        component: <MainPage/>,
+        path: "/",
+        element: <MainPage/>,
+        breadcrumb: "Главная",
     },
     {
-        name: "Кейсы",
-        path: "cases",
-        component: <CasesPage/>
+        path: "/cases",
+        element: <CasesPage/>,
+        breadcrumb: "Кейсы",
     },
     {
-        name: "Наши проекты",
-        path: "projects",
-        component: <ProjectsPage/>
+        path: "/projects",
+        element: <ProjectsPage/>,
+        breadcrumb: "Наши проекты",
     },
     {
-        name: "Калькулятор услуг",
-        path: "calculator",
-        component: <CalculatorPage/>
+        path: "/calculator",
+        element: <CalculatorPage/>,
+        breadcrumb: "Калькулятор услуг",
+    },
+    {
+        path: "/#faq",
+        element: <MainPage key={"faq"}/>,
+        breadcrumb: "FAQ",
+        preventScrollReset: true
     }
 ]

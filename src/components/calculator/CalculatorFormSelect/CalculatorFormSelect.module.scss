@@ -27,6 +27,21 @@
   &:hover {
     background: $color-blue-hover;
   }
+
+  @include mobile {
+    width: 100%;
+    height: 38px;
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 130%;
+  }
+}
+
+.selectedOption {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 20px;
 }
 
 .selectActive {
@@ -41,6 +56,11 @@
 .listItem {
   composes: select;
   border-radius: 0;
+
+  @include mobile {
+    height: auto;
+    padding: 10px 15px;
+  }
 }
 
 .listItemActive {
@@ -54,7 +74,14 @@
 .arrow {
   width: 24px;
   height: 15px;
-  background: url("../../../../src/assets/calculator/arrowDown.svg");
+  background: url("../../../../src/assets/calculator/arrowDown.svg") no-repeat;
+  flex-shrink: 0;
+
+  @include mobile {
+    width: 16px;
+    height: 11px;
+    background-size: contain;
+  }
 }
 
 .popover {
@@ -67,6 +94,10 @@
   border-radius: 5px;
   background: white;
   z-index: 20;
+
+  @include mobile {
+    top: 48px;
+  }
 }
 
 .overlay {

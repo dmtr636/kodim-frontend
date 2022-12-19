@@ -92,20 +92,23 @@ export const calculatorFormSecondStep: ICalculatorFormSection[] = [
         hideDivider: true,
         items: [
             {
-                type: "textField",
+                type: "textArea",
                 label:
                     "Был ли у вас уже сайт этого проекта?\n" +
                     "Если да, то вставьте ссылку",
                 name: "old_site",
-                placeholder: "Оставьте поле пустым, если не было"
+                placeholder: "Оставьте поле пустым, если не было",
+                minRows: 1
             },
             {
-                type: "textField",
+                type: "textArea",
                 label:
                     "Есть ли пример сайта или сайтов, которые вам понравились\n" +
                     "или вдохновили для вашего проекта?",
                 name: "reference_sites",
-                placeholder: "Оставьте поле пустым, если таких нет"
+                placeholder: "Оставьте поле пустым, если таких нет",
+                minRows: 1,
+                maxLength: 500
             },
             {
                 type: "textArea",
@@ -115,7 +118,9 @@ export const calculatorFormSecondStep: ICalculatorFormSection[] = [
                     "В пример. Мне нужен сайт, на котором будут представлены " +
                     "мои услуги. Хочу, чтобы мне поступали заявки, чтобы я смог " +
                     "перезвонить своим заинтересованным клиентам и назначить " +
-                    "им встречу."
+                    "им встречу.",
+                minRows: 4,
+                maxLength: 2500
             }
         ]
     },

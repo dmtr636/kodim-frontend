@@ -1,5 +1,4 @@
 import DocumentsCertificate from "../components/documents/DocumentsCertificate/DocumentsCertificate";
-import DocumentsContent from "../components/documents/DocumentsContent/DocumentsContent";
 import DocumentsText from "../components/documents/DocumentsText/DocumentsText";
 import {privacyPolicy} from "./documents";
 

@@ -10,6 +10,12 @@
   display: flex;
   align-items: center;
   gap: 18px;
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    margin-top: 24px;
+  }
 }
 
 .checkbox {
@@ -59,9 +65,19 @@
   display: grid;
   grid-template-columns: 193px 463px;
   grid-gap: 20px;
+
+  @include mobile {
+    margin-top: 24px;
+    grid-template-columns: 102px 1fr;
+  }
 }
 
 .privacyText {
   margin-top: 10px;
   text-align: center;
+
+  @include mobile {
+    margin-top: 24px;
+    text-align: start;
+  }
 }

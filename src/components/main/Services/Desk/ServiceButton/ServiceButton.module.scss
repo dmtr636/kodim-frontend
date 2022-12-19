@@ -49,10 +49,9 @@
       background: #ffffff;
       color: #303030;
     }
-   /*  &:last-child{
-      margin-right: 0px;
-    } */
+
     }
+
   .activebutton {
     width: auto;
     font-size: 14px;
@@ -64,11 +63,5 @@
     line-height: 130%;
     letter-spacing: 0.03em;
     white-space: nowrap;
-    margin-left:0px;
-    margin-right: 0;
-    /* &:last-child{
-      margin-right: 0px;
-    } */
-    
-  }
-}
+
+}}

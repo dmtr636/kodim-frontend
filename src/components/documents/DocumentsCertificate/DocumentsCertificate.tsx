@@ -5,7 +5,7 @@ import {certificate} from "../../../assets/documents";
 const DocumentsCertificate = () => {
     return (
         <div>
-            <img src={certificate}/>
+            <img src={certificate} width={"100%"}/>
         </div>
     );
 };

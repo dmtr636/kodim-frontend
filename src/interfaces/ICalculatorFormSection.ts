@@ -10,7 +10,17 @@ export interface ICalculatorFormSelectOptionWithPrice {
     pricePositionName: string
 }
 
-export type ICalculatorFormSelectOption = ICalculatorFormSelectOptionWithPrice | ICalculatorFormSelectOptionWithoutPrice
+export interface ICalculatorFormSelectOptionWithPriceOptions {
+    value: string,
+    name: string,
+    priceOptions: Record<string, number>,
+    pricePositionName: string
+}
+
+export type ICalculatorFormSelectOption =
+    ICalculatorFormSelectOptionWithPrice |
+    ICalculatorFormSelectOptionWithoutPrice |
+    ICalculatorFormSelectOptionWithPriceOptions
 
 export interface ICalculatorFormSelect {
     type: "select",
@@ -37,7 +47,9 @@ export interface ICalculatorFormTextArea {
     type: "textArea",
     label: string,
     name: string,
-    placeholder: string
+    placeholder: string,
+    minRows?: number,
+    maxLength?: number
 }
 
 export type ICalculatorFormItem =

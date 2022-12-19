@@ -6,9 +6,15 @@
   border-radius: 5px;
   padding: 20px 40px;
   height: min-content;
+
+  @include mobile {
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 .sticky {
   position: sticky;
-  toP: 30px;
+  top: 30px;
 }

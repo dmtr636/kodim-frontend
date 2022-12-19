@@ -27,7 +27,9 @@ const CalculatorFormSelect = (props: {
                 className={classNames(styles.select, styles.selectActive)}
                 onClick={() => setOpen(!isOpen)}
             >
-                {selectedOption?.name}
+                <div className={styles.selectedOption}>
+                    {selectedOption?.name}
+                </div>
                 <div
                     className={styles.arrow}
                     style={{transform: `rotate(${isOpen ? "180deg" : "0"})`}}

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react"
 import CalculatorLayout from "../components/calculator/CalculatorLayout/CalculatorLayout";
-import CalculatorForm from "../components/calculator/CalculatorStepper/CalculatorStepper";
+import CalculatorForm from "../components/calculator/CalculatorForm/CalculatorForm";
 import CalculatorCard from "../components/calculator/CalculatorCard/CalculatorCard";
 import {calculatorFormFirstStep, calculatorFormSecondStep} from "../constants/calculatorForm";
 import {useSearchParams} from "react-router-dom";
@@ -9,6 +9,8 @@ import {calculatorStore} from "../stores/calculatorStore";
 import {observer} from "mobx-react-lite";
 import CalculatorPrice from "../components/calculator/CalculatorPrice/CalculatorPrice";
 import CalculatorSubmitResult from "../components/calculator/CalculatorSubmitResult/CalculatorSubmitResult";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+import {isMobile} from "../utils/utils";
 
 const getCalculatorFormData = (stepNumber: string) => {
     switch (stepNumber) {
@@ -23,6 +25,7 @@ const getCalculatorFormData = (stepNumber: string) => {
 
 export const CalculatorPage = observer(() => {
     const [searchParams, setSearchParams] = useSearchParams();
+    const {width} = useWindowDimensions()
     const store = calculatorStore
     const step = searchParams.get("step")
 
@@ -104,9 +107,11 @@ export const CalculatorPage = observer(() => {
     return (
         <CalculatorLayout>
             {getFirstColumn()}
-            <CalculatorCard sticky>
-                <CalculatorPrice/>
-            </CalculatorCard>
+            {!isMobile(width) &&
+                <CalculatorCard sticky>
+                    <CalculatorPrice/>
+                </CalculatorCard>
+            }
         </CalculatorLayout>
     )
 })

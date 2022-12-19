@@ -61,6 +61,7 @@ class CalculatorStore {
 
     get pricePositions() {
         const positions: ICalculatorPricePosition[] = []
+        const siteType = this.formValues["site_type"]
         calculatorFormFirstStep.forEach((section: ICalculatorFormSection) => {
             section.items.forEach((item: ICalculatorFormItem) => {
                 if (item.type === "select" || item.type === "toggleButtons") {
@@ -70,6 +71,11 @@ class CalculatorStore {
                         positions.push({
                             name: selectedOption.pricePositionName,
                             price: selectedOption.price
+                        })
+                    } else if ("priceOptions" in selectedOption) {
+                        positions.push({
+                            name: selectedOption.pricePositionName,
+                            price: selectedOption.priceOptions[siteType]
                         })
                     }
                 }

@@ -16,7 +16,7 @@ const DocumentsMenu = () => {
                         {[styles.itemActive]: isActive}
                     )}
                 >
-                    <div className={styles.arrow} />
+                    <div className={styles.circle} />
                     {route.name}
                 </NavLink>
             )}
