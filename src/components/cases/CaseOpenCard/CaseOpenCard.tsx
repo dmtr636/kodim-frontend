@@ -5,6 +5,15 @@ export const CaseOpenCard = (props: any) => {
   const domain = "https://kodim.space/";
   console.log(props);
   console.log(props.project_images);
+  const imgArray=props.project_images.map((el:any,i:number)=>(
+    <div key={i+el} className={style.imgBlock}>
+    <img
+      className={style.headerImg}
+      src={domain + el.image}
+      alt="тут должна быть картинка"
+    />
+  </div>
+  ))
   return (
     <div className={style.wrapper}>
       <div>
@@ -20,28 +29,21 @@ export const CaseOpenCard = (props: any) => {
         <div className={style.blockGoal}>{props.category}</div>
         <div className={style.blockText}>{props.description}</div>
       </div>
-      <div className={style.imgBlock}>
+      {imgArray}
+      {/* <di className={style.imgBlock}>
         <img
           className={style.headerImg}
           src={domain + props.project_images[1].image}
           alt="тут должна быть картинка"
         />
-      </div>
-      <div className={style.LastImgBlock}>
-        {
-          props.project_images[2].image?
-          <img
+      </di>
+      <di className={style.LastImgBlock}>
+        <img
           className={style.headerImg}
           src={domain + props.project_images[2].image}
           alt="тут должна быть картинка"
-        />:<></>
-        }
-        {/* <img
-          className={style.headerImg}
-          src={domain + props.project_images[2].image}
-          alt="тут должна быть картинка"
-        /> */}
-      </div>
+        />
+      </di> */}
     </div>
   );
 };
