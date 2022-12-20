@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./CaseOpenCard.module.scss";
+import {Helmet} from "react-helmet";
+import {isTablet} from "../../../utils/utils";
 
 export const CaseOpenCard = (props: any) => {
   const domain = "https://kodim.space/";
@@ -15,22 +17,26 @@ export const CaseOpenCard = (props: any) => {
   </div>
   ))
   return (
-    <div className={style.wrapper}>
-      <div>
-        <img
-          className={style.headerImg}
-          src={domain + props.project_images[0].image}
-          alt="тут должна быть картинка"
-        />
-      </div>
-      <div className={style.date}>{props.date}</div>
-      <h1 className={style.header}>{props.name}</h1>
-      <div className={style.block}>
-        <div className={style.blockGoal}>Цель проекта</div>
-        <div className={style.blockText}>{props.purpose}</div>
-      </div>
-      {imgArray.slice(1)}
-      {/* <di className={style.imgBlock}>
+    <>
+      <Helmet>
+        <title>{props.name}</title>
+      </Helmet>
+      <div className={style.wrapper}>
+        <div>
+          <img
+              className={style.headerImg}
+              src={domain + props.project_images[0].image}
+              alt="тут должна быть картинка"
+          />
+        </div>
+        <div className={style.date}>{props.date}</div>
+        <h1 className={style.header}>{props.name}</h1>
+        <div className={style.block}>
+          <div className={style.blockGoal}>Цель проекта</div>
+          <div className={style.blockText}>{props.purpose}</div>
+        </div>
+        {imgArray.slice(1)}
+        {/* <di className={style.imgBlock}>
         <img
           className={style.headerImg}
           src={domain + props.project_images[1].image}
@@ -44,6 +50,7 @@ export const CaseOpenCard = (props: any) => {
           alt="тут должна быть картинка"
         />
       </di> */}
-    </div>
+      </div>
+    </>
   );
 };

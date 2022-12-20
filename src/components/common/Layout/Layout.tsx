@@ -8,9 +8,21 @@ import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import {isTablet} from "../../../utils/utils";
 import {Outlet, ScrollRestoration} from "react-router-dom";
 import Cookies from "../Cookies/Cookies";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import {createRoutes} from "../../../routes/routes";
+import {projectsStore} from "../../../stores/projectsStore";
 
 const Layout = () => {
+    const breadcrumbs = useBreadcrumbs(createRoutes(projectsStore));
     const {width} = useWindowDimensions()
+
+    const getTitle = () => {
+        if (breadcrumbs.length === 1) {
+            return "Создание высокоскоростных сайтов под ключ"
+        } else {
+            return breadcrumbs.slice(-1)[0]?.match?.route?.breadcrumb?.toString()
+        }
+    }
 
     return (
         <>
@@ -19,6 +31,7 @@ const Layout = () => {
                     ? <meta name="viewport" content="width=1280" />
                     : <meta name="viewport" content="width=device-width, initial-scale=1" />
                 }
+                <title>{getTitle()}</title>
             </Helmet>
             <ScrollRestoration />
             <Cookies/>
