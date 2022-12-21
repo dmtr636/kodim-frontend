@@ -44,6 +44,8 @@ const CalculatorPriceMobile = observer(() => {
                         overflow: 'visible',
                     }
                 }}
+                disableBackdropTransition={true}
+                disableScrollLock={false}
             >
                 <div className={classNames(
                     styles.container,
