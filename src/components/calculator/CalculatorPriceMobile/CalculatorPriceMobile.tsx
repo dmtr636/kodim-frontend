@@ -1,29 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {observer} from "mobx-react-lite";
 import styles from "./style.module.scss"
 import classNames from "classnames";
 import {calculatorStore} from "../../../stores/calculatorStore";
-import {Box, Skeleton, styled, SwipeableDrawer, Typography} from "@mui/material";
-import {grey} from "@mui/material/colors";
-import {Global} from "@emotion/react";
-
-const Puller = styled(Box)(({ theme }) => ({
-    width: 30,
-    height: 6,
-    backgroundColor: theme.palette.mode === 'light' ? grey[300] : grey[900],
-    borderRadius: 3,
-    position: 'absolute',
-    top: 8,
-    left: 'calc(50% - 15px)',
-}));
+import {SwipeableDrawer} from "@mui/material";
 
 const drawerHeaderHeight = 60
 const bottomPanelHeight = 62
 
 const CalculatorPriceMobile = observer(() => {
     const store = calculatorStore
-    const [expanded, setExpanded] = useState(false)
-
     const [open, setOpen] = React.useState(false);
 
     return (
@@ -37,15 +23,16 @@ const CalculatorPriceMobile = observer(() => {
                 disableSwipeToOpen={false}
                 ModalProps={{
                     keepMounted: true,
+                    style: {
+                    }
                 }}
                 PaperProps={{
                     style: {
-                        height: `calc(100% - ${drawerHeaderHeight + bottomPanelHeight}px)`,
+                        height: `calc(100% - ${bottomPanelHeight + drawerHeaderHeight}px)`,
                         overflow: 'visible',
                     }
                 }}
                 disableBackdropTransition={true}
-                disableScrollLock={false}
             >
                 <div className={classNames(
                     styles.container,

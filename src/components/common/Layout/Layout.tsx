@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import styles from "./Layout.module.scss"
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
 import {Helmet} from "react-helmet";
-import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import {isTablet} from "../../../utils/utils";
 import {Outlet, ScrollRestoration} from "react-router-dom";
 import Cookies from "../Cookies/Cookies";
@@ -14,7 +13,16 @@ import {projectsStore} from "../../../stores/projectsStore";
 
 const Layout = () => {
     const breadcrumbs = useBreadcrumbs(createRoutes(projectsStore));
-    const {width} = useWindowDimensions()
+    const [width, setWidth] = useState(window.outerWidth)
+
+    const onResize = () => {
+        setWidth(window.outerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener("resize", onResize)
+        return () => window.removeEventListener("resize", onResize)
+    }, [])
 
     const getTitle = () => {
         if (breadcrumbs.length === 1) {
@@ -28,19 +36,19 @@ const Layout = () => {
         <>
             <Helmet>
                 {isTablet(width)
-                    ? <meta name="viewport" content="width=1280" />
-                    : <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    ? <meta name="viewport" content="width=1280"/>
+                    : <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 }
                 <title>{getTitle()}</title>
             </Helmet>
-            <ScrollRestoration />
+            <ScrollRestoration/>
             <Cookies/>
 
             <div className={styles.layout}>
                 <Header/>
                 <BreadCrumbs/>
                 <main className={styles.main}>
-                    <Outlet />
+                    <Outlet/>
                 </main>
                 <Footer/>
             </div>
