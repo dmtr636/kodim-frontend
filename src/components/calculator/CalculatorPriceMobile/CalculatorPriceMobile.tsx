@@ -12,6 +12,9 @@ const CalculatorPriceMobile = observer(() => {
     const store = calculatorStore
     const [open, setOpen] = React.useState(false);
 
+    const iOS =
+        typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
+
     return (
         <div>
             <SwipeableDrawer
@@ -31,7 +34,8 @@ const CalculatorPriceMobile = observer(() => {
                         background: 'none'
                     }
                 }}
-                disableBackdropTransition={true}
+                disableBackdropTransition={!iOS}
+                disableDiscovery={iOS}
             >
                 <div className={classNames(
                     styles.container,
@@ -60,6 +64,7 @@ const CalculatorPriceMobile = observer(() => {
                     </div>
                 </div>
             </SwipeableDrawer>
+
             <div className={classNames(
                 styles.bottomPanel,
                 {[styles.bottomPanelOpen]: open}
