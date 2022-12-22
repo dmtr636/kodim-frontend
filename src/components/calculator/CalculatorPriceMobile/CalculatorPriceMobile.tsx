@@ -23,13 +23,12 @@ const CalculatorPriceMobile = observer(() => {
                 disableSwipeToOpen={false}
                 ModalProps={{
                     keepMounted: true,
-                    style: {
-                    }
                 }}
                 PaperProps={{
                     style: {
-                        height: `calc(100% - ${bottomPanelHeight + drawerHeaderHeight}px)`,
+                        height: open ? "100%" : `calc(100% - ${bottomPanelHeight + drawerHeaderHeight}px)`,
                         overflow: 'visible',
+                        background: 'none'
                     }
                 }}
                 disableBackdropTransition={true}
