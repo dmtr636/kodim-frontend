@@ -80,6 +80,8 @@
 .deskwrapper {
   margin-left: 10px;
   margin-top: 6px;
+  display:flex;
+  flex-wrap: wrap;
 }
 .slider {
   width: auto !important;
@@ -108,6 +110,7 @@
   .deskwrapper {
     overflow-y: auto;
     display: flex;
+    flex-wrap: nowrap;
     margin-left: 0px;
     &::-webkit-scrollbar {
       display: none;
