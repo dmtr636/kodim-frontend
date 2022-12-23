@@ -92,13 +92,12 @@ $ANIMATION_DURATION: 0.25s;
 }
 
 .divider {
-  height: 2px;
-  background-color: #FFFFFF;
-  flex-shrink: 0;
+  border: none;
+  border-top: 2px solid #FFFFFF;
 }
 
 .bottomPanelOpen .divider, .containerOpen .divider {
-  background-color: $color-blue;
+  border-top: 2px solid $color-blue;
 }
 
 .total {

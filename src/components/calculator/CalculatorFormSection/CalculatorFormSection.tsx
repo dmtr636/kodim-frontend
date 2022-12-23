@@ -13,7 +13,7 @@ const CalculatorFormSection = (props: {
             </div>
             {props.children}
             {!props.hideDivider &&
-                <div className={styles.divider} />
+                <hr className={styles.divider} />
             }
         </>
     );
