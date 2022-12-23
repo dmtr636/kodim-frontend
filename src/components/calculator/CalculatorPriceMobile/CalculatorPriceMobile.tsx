@@ -48,6 +48,9 @@ const CalculatorPriceMobile = observer(() => {
                         <div className={styles.title}>
                             Список выбранных услуг
                         </div>
+                        <div className={styles.positionsCount}>
+                            {store.pricePositions.length}
+                        </div>
                     </div>
                     <div className={styles.positions}>
                         {store.pricePositions.map(position =>

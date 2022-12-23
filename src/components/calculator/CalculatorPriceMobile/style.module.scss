@@ -7,7 +7,7 @@ $ANIMATION_DURATION: 0.25s;
   background-color: $color-black;
   color: #FFFFFF;
 
-  transition: background-color $ANIMATION_DURATION, height ease-out $ANIMATION_DURATION;
+  transition: background-color $ANIMATION_DURATION;
 }
 
 .containerOpen {
@@ -27,7 +27,10 @@ $ANIMATION_DURATION: 0.25s;
   visibility: visible;
   background-color: $color-black;
   color: #FFFFFF;
-  transition: background-color $ANIMATION_DURATION, height ease-out $ANIMATION_DURATION;
+  display: flex;
+  justify-content: space-between;
+
+  transition: background-color $ANIMATION_DURATION;
 }
 
 .containerOpen .header {
@@ -61,6 +64,11 @@ $ANIMATION_DURATION: 0.25s;
   line-height: 140%;
   letter-spacing: 0.03em;
   margin-bottom: 14px;
+}
+
+.positionsCount {
+  composes: title;
+  font-family: 'Montserrat';
 }
 
 .bottomPanel {
