@@ -13,7 +13,7 @@ export const QAItem = ({ QAName, QAText, currentItem, onClick }) => {
       <div className={style.qaheader}>
         <div className={style.qaHeaderText}>{QAName}</div>
         <div className={style.qaHeaderIcon}>
-          {120<width < 700 ? <img
+          {width < 700 ? <img
             onClick={onClick}
             src={QAName == currentItem ? MobileIconOpen : MobileIconClose}
             alt=""

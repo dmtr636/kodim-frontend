@@ -22,7 +22,7 @@ export const StartProject = () => {
         </div>
       </div>
       <div className={style.right}>
-        <img src={120<width < 700 ?houseBGMob:houseBG} alt="" />
+        <img src={width < 700 ?houseBGMob:houseBG} alt="" />
       </div>
     </div>
   );
