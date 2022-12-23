@@ -83,7 +83,7 @@ $ANIMATION_DURATION: 0.25s;
   z-index: 10000;
   pointer-events: none;
 
-  transition: background-color $ANIMATION_DURATION, height ease-out $ANIMATION_DURATION;
+  transition: background-color $ANIMATION_DURATION;
 }
 
 .bottomPanelOpen {
