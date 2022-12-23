@@ -4,7 +4,6 @@ import style from "./QA.module.scss";
 import { QAItem } from "./QAItem";
 
 export const QA = () => {
- 
   const QAArray = [
     {
       QAName: "Кто мы?",
@@ -18,8 +17,28 @@ export const QA = () => {
     },
     {
       QAName: "О какой скорости сайта мы говорим?",
-      QAText:
-        "Ваши посетители, переходя на\xA0сайт, должны получать максимально быстрый отклик, чтобы сайт загружался у\xA0них на\xA0устройствах моментально и\xA0они не закрыли его преждевременно. Для\xA0замера скорости мы пользуемся сервисом от\xA0Google\xA0-\xA0PageSpeed Insights. Мы ценим ваше время и время ваших клиентов.",
+      QAText: (
+        <>
+          {
+            "Ваши посетители, переходя на\xA0сайт, должны получать максимально быстрый отклик, чтобы сайт загружался у\xA0них на\xA0устройствах моментально и\xA0они не закрыли его преждевременно. Для\xA0замера скорости мы пользуемся сервисом от\xA0"
+          }
+          <a style={{
+              whiteSpace: "nowrap",
+              textDecoration: "none",
+              color: "white",
+            }}
+            href="https://pagespeed.web.dev" target="_blank"> Google - PageSpeed</a> 
+          <a style={{
+              textDecoration: "none",
+              color: "white",
+            }}
+            href="https://pagespeed.web.dev"
+            target="_blank"
+          > Insights. </a>
+          Мы ценим ваше время и время ваших клиентов.
+        </>
+      ),
+      /* "Ваши посетители, переходя на\xA0сайт, должны получать максимально быстрый отклик, чтобы сайт загружался у\xA0них на\xA0устройствах моментально и\xA0они не закрыли его преждевременно. Для\xA0замера скорости мы пользуемся сервисом от\xA0Google\xA0-\xA0PageSpeed Insights. Мы ценим ваше время и время ваших клиентов." */
     },
     {
       QAName: "Как я буду управлять сайтом?",
@@ -38,14 +57,13 @@ export const QA = () => {
     },
   ];
   const [currentItem, setCurrentItem] = React.useState("");
-  const changeCurrentItem=(item)=>{
-    if(currentItem!=item){
-      setCurrentItem(item)
+  const changeCurrentItem = (item) => {
+    if (currentItem != item) {
+      setCurrentItem(item);
+    } else {
+      setCurrentItem("");
     }
-    else{
-      setCurrentItem("")
-    }
-  }
+  };
   const QAList = QAArray.map((el) => (
     <QAItem
       onClick={() => changeCurrentItem(el.QAName)}
@@ -55,7 +73,7 @@ export const QA = () => {
       QAText={el.QAText}
     />
   ));
-  console.log(currentItem)
+  console.log(currentItem);
   return (
     <div className={style.wrapper} id={"faq"}>
       <div className={style.body}>
