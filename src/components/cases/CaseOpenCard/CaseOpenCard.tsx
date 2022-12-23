@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./CaseOpenCard.module.scss";
 import {Helmet} from "react-helmet";
-import {isTablet} from "../../../utils/utils";
 
 export const CaseOpenCard = (props: any) => {
   const domain = "https://kodim.space/";
@@ -36,20 +35,7 @@ export const CaseOpenCard = (props: any) => {
           <div className={style.blockText}>{props.purpose}</div>
         </div>
         {imgArray.slice(1)}
-        {/* <di className={style.imgBlock}>
-        <img
-          className={style.headerImg}
-          src={domain + props.project_images[1].image}
-          alt="тут должна быть картинка"
-        />
-      </di>
-      <di className={style.LastImgBlock}>
-        <img
-          className={style.headerImg}
-          src={domain + props.project_images[2].image}
-          alt="тут должна быть картинка"
-        />
-      </di> */}
+
       </div>
     </>
   );
