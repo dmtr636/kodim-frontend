@@ -30,20 +30,6 @@ export const CaseOpenCard = (props: any) => {
         <div className={style.blockText}>{props.description}</div>
       </div>
       {imgArray.slice(1)}
-      {/* <di className={style.imgBlock}>
-        <img
-          className={style.headerImg}
-          src={domain + props.project_images[1].image}
-          alt="тут должна быть картинка"
-        />
-      </di>
-      <di className={style.LastImgBlock}>
-        <img
-          className={style.headerImg}
-          src={domain + props.project_images[2].image}
-          alt="тут должна быть картинка"
-        />
-      </di> */}
     </div>
   );
 };
