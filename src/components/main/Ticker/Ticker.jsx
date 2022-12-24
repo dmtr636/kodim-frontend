@@ -9,11 +9,10 @@ export const Ticker = observer(() => {
   const cases = projectsStore.cases.filter(item => item.in_marquee)
   console.log(cases)
   /* const casesNew=cases.filter(case => case.in_marquee) */
-  const caseElement= cases.map((el,i)=><TickerLinks key={i+el.marquee_name}  link={"/cases/"+el.id} caseName={el.marquee_name}/>)
+  const caseElement= [...cases, ...cases].map((el,i)=><TickerLinks key={i+el.marquee_name}  link={"/cases/"+el.id} caseName={el.marquee_name}/>)
   return (
     <div className={style.wrapper}>
       <Marquee gradient={false}  >
-      {caseElement}
       {caseElement}
       </Marquee>
     </div>
