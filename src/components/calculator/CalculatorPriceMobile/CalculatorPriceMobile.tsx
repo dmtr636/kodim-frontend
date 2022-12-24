@@ -12,7 +12,7 @@ const CalculatorPriceMobile = observer(() => {
         <>
             <div className={classNames(
                 styles.drawer,
-                {[styles.containerOpen]: isOpen}
+                {[styles.drawerOpen]: isOpen}
             )}>
                 <div
                     className={styles.header}

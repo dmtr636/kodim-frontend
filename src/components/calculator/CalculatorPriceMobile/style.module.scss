@@ -17,22 +17,23 @@ $ANIMATION_DURATION: 0.25s;
 
   z-index: 20;
 
-  transition: background-color $ANIMATION_DURATION, transform $ANIMATION_DURATION, height $ANIMATION_DURATION;
+  transition: background-color $ANIMATION_DURATION, height $ANIMATION_DURATION;
 }
 
-.containerOpen {
-  //transform: translateY(calc(-100vh + 122px));
+.drawerOpen {
   height: 100%;
   background-color: white;
   color: $color-black;
 }
 
 .content {
-  height: 100vh;
+  height: 100%;
   background-color: $color-black;
+
+  transition: background-color $ANIMATION_DURATION,
 }
 
-.containerOpen .content {
+.drawerOpen .content {
   background-color: white;
 }
 
@@ -50,7 +51,7 @@ $ANIMATION_DURATION: 0.25s;
   transition: background-color $ANIMATION_DURATION;
 }
 
-.containerOpen .header {
+.drawerOpen .header {
   background-color: $color-white;
   color: $color-black;
   box-shadow: none;
@@ -65,7 +66,7 @@ $ANIMATION_DURATION: 0.25s;
   transform: rotate(180deg);
 }
 
-.containerOpen .arrow {
+.drawerOpen .arrow {
   background-color: $color-black;
   transform: rotate(0);
 }
@@ -108,7 +109,7 @@ $ANIMATION_DURATION: 0.25s;
   border-top: 2px solid #FFFFFF;
 }
 
-.footerOpen .divider, .containerOpen .divider {
+.footerOpen .divider, .drawerOpen .divider {
   border-top: 2px solid $color-blue;
 }
 
@@ -135,11 +136,6 @@ $ANIMATION_DURATION: 0.25s;
   display: grid;
   grid-gap: 10px;
   padding: 0 24px;
-  background-color: $color-black;
-}
-
-.containerOpen .positions {
-  background-color: $color-white;
 }
 
 .position {
@@ -157,7 +153,7 @@ $ANIMATION_DURATION: 0.25s;
   color: $color-white;
 }
 
-.containerOpen .positionName {
+.drawerOpen .positionName {
   color: $color-blue;
 }
 
