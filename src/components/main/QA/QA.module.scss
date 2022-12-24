@@ -40,8 +40,11 @@
   font-weight: 700;
   font-size: 28px;
   line-height: 130%;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.7);
   padding-top: 30px;
+  &:hover{
+    color: #ffffff;
+  }
 }
 .qatext {
   width: 853px;
