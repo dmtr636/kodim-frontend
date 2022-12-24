@@ -187,22 +187,13 @@ export const Desk = () => {
           modules={[FreeMode, Navigation, Thumbs]}
           onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
-          /* className="service-body" */
+          className="service-body"
         >
           {services.map((el, i) => (
             <SwiperSlide key={i}>
               <div className={style.deskCard}>
                 <div className={style.deskCardLeft}>
                   <div className={style.deskCardLeftImg}>
-                    {/* <ReactPlayer
-      url={services[activeService].imgUrl}
-      width={width < 700 ? "auto" : "460"}
-      height={width < 700 ? "auto" : "320"}
-      playing="true"
-      loop="true"
-      volume="0"
-      fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
-    /> */}
                     <video
                       key={el.imgUrl}
                       width={width < 700 ? "100%" : "460"}
