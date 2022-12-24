@@ -7,16 +7,11 @@ $ANIMATION_DURATION: 0.25s;
   bottom: 0;
   left: 0;
   right: 0;
-
   height: 122px;
-
   background-color: $color-black;
   color: #FFFFFF;
-
   border-radius: 5px 5px 0 0;
-
   z-index: 20;
-
   transition: background-color $ANIMATION_DURATION, height $ANIMATION_DURATION;
 }
 
@@ -26,23 +21,11 @@ $ANIMATION_DURATION: 0.25s;
   color: $color-black;
 }
 
-.content {
-  background-color: $color-black;
-
-  transition: background-color $ANIMATION_DURATION,
-}
-
-.drawerOpen .content {
-  background-color: white;
-}
-
 .header {
   padding: 24px;
-
   background-color: $color-black;
   color: #FFFFFF;
   border-radius: 5px 5px 0 0;
-
   transition: background-color $ANIMATION_DURATION;
 }
 
@@ -64,10 +47,8 @@ $ANIMATION_DURATION: 0.25s;
   mask-image: url("/assets/calculator/arrow.svg");
   background-color: #FFFFFF;
   mask-size: contain;
-
   width: 16px;
   height: 10px;
-
   transform: rotate(180deg);
 }
 
@@ -83,25 +64,6 @@ $ANIMATION_DURATION: 0.25s;
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0.03em;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 62px;
-  padding: 0 24px;
-  background-color: $color-black;
-  color: white;
-  z-index: 30;
-
-  transition: background-color $ANIMATION_DURATION;
-}
-
-.footerOpen {
-  background-color: white;
-  color: $color-black;
 }
 
 .divider {
@@ -130,8 +92,6 @@ $ANIMATION_DURATION: 0.25s;
   line-height: 140%;
 }
 
-
-
 .positions {
   display: grid;
   grid-gap: 10px;
@@ -150,10 +110,6 @@ $ANIMATION_DURATION: 0.25s;
   font-size: 14px;
   line-height: 140%;
   letter-spacing: 0.03em;
-  color: $color-white;
-}
-
-.drawerOpen .positionName {
   color: $color-blue;
 }
 
@@ -165,3 +121,21 @@ $ANIMATION_DURATION: 0.25s;
   line-height: 140%;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 62px;
+  padding: 0 24px;
+  background-color: $color-black;
+  color: white;
+  z-index: 30;
+
+  transition: background-color $ANIMATION_DURATION;
+}
+
+.footerOpen {
+  background-color: white;
+  color: $color-black;
+}

@@ -35,20 +35,18 @@ const CalculatorPriceMobile = observer(() => {
                         <div className={styles.arrow}/>
                     </button>
                 </div>
-                <div className={styles.content}>
-                    <div className={styles.positions}>
-                        {store.pricePositions.map(position =>
-                            <div className={styles.position} key={position.name}>
-                                <div className={styles.positionName}>
-                                    {position.name}
-                                </div>
-                                <div className={styles.positionPrice}>
-                                    {position.price.toLocaleString()} ₽
-                                </div>
-                                <hr className={styles.divider}/>
+                <div className={styles.positions}>
+                    {store.pricePositions.map(position =>
+                        <div className={styles.position} key={position.name}>
+                            <div className={styles.positionName}>
+                                {position.name}
                             </div>
-                        )}
-                    </div>
+                            <div className={styles.positionPrice}>
+                                {position.price.toLocaleString()} ₽
+                            </div>
+                            <hr className={styles.divider}/>
+                        </div>
+                    )}
                 </div>
             </div>
 
