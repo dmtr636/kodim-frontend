@@ -74,13 +74,13 @@
 .arrow {
   width: 24px;
   height: 15px;
-  background: url("../../../../src/assets/calculator/arrowDown.svg") no-repeat;
+  background: url("../../../assets/calculator/arrow.svg") no-repeat;
+  background-size: contain;
   flex-shrink: 0;
 
   @include mobile {
     width: 16px;
     height: 11px;
-    background-size: contain;
   }
 }
 

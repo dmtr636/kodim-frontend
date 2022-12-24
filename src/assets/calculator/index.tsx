@@ -1,4 +1,4 @@
-import arrowDown from "./arrowDown.svg"
+import arrowDown from "./arrow.svg"
 import submitResultBg from "./submitResultBg.svg"
 
 const checkboxChecked =
