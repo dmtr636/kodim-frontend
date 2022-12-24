@@ -26,7 +26,7 @@ const Layout = () => {
 
     const getTitle = () => {
         if (breadcrumbs.length === 1) {
-            return "Создание быстрых сайтов под ключ"
+            return "Создание быстрых сайтов под ключ — Студия веб-дизайна"
         } else {
             return breadcrumbs.slice(-1)[0]?.match?.route?.breadcrumb?.toString()
         }
