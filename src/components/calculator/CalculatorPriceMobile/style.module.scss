@@ -27,7 +27,6 @@ $ANIMATION_DURATION: 0.25s;
 }
 
 .content {
-  //height: 100%;
   background-color: $color-black;
 
   transition: background-color $ANIMATION_DURATION,
@@ -56,9 +55,9 @@ $ANIMATION_DURATION: 0.25s;
 
 .arrowButton {
   position: absolute;
-  top: 18px;
-  right: 12px;
-  padding: 12px;
+  top: 15px;
+  right: 9px;
+  padding: 15px;
 }
 
 .arrow {
@@ -84,11 +83,6 @@ $ANIMATION_DURATION: 0.25s;
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0.03em;
-}
-
-.positionsCount {
-  composes: title;
-  font-family: 'Montserrat';
 }
 
 .footer {
