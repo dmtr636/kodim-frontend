@@ -2,10 +2,9 @@ import React, {useEffect, useRef} from "react";
 import Button from "../../../common/Button/Button";
 import style from "./Desk.module.scss";
 import ServiceButton from "./ServiceButton/ServiceButton";
-import ReactPlayer from "react-player";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import {FreeMode, Navigation, Thumbs, Virtual} from "swiper";
+import { FreeMode, Navigation, Thumbs } from "swiper";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -198,26 +197,16 @@ export const Desk = () => {
           spaceBetween={50}
           slidesPerView={1}
           thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs, Virtual]}
+          modules={[FreeMode, Navigation, Thumbs]}
           onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
-          virtual
-          /* className="service-body" */
+          className="service-body"
         >
           {services.map((el, i) => (
-            <SwiperSlide key={i} virtualIndex={i}>
+            <SwiperSlide key={i}>
               <div className={style.deskCard}>
                 <div className={style.deskCardLeft}>
                   <div className={style.deskCardLeftImg}>
-                    {/* <ReactPlayer
-      url={services[activeService].imgUrl}
-      width={width < 700 ? "auto" : "460"}
-      height={width < 700 ? "auto" : "320"}
-      playing="true"
-      loop="true"
-      volume="0"
-      fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
-    /> */}
                     <video
                       key={el.imgUrl}
                       width={width < 700 ? "100%" : "460"}
