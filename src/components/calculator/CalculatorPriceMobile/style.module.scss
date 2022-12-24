@@ -17,11 +17,12 @@ $ANIMATION_DURATION: 0.25s;
 
   z-index: 20;
 
-  transition: background-color $ANIMATION_DURATION, transform $ANIMATION_DURATION;
+  transition: background-color $ANIMATION_DURATION, transform $ANIMATION_DURATION, height $ANIMATION_DURATION;
 }
 
 .containerOpen {
-  transform: translateY(calc(-100vh + 122px));
+  //transform: translateY(calc(-100vh + 122px));
+  height: 100%;
   background-color: white;
   color: $color-black;
 }
