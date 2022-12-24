@@ -10,16 +10,16 @@ export const QAItem = ({ QAName, QAText, currentItem, onClick }) => {
   const {width} = useWindowDimensions()
   return (
     <>
-      <div className={style.qaheader}>
+      <div onClick={onClick} className={style.qaheader}>
         <div className={style.qaHeaderText}>{QAName}</div>
         <div className={style.qaHeaderIcon}>
           {width < 700 ? <img
-            onClick={onClick}
+            /* onClick={onClick} */
             src={QAName == currentItem ? MobileIconOpen : MobileIconClose}
             alt=""
           /> : 
             <img
-              onClick={onClick}
+              /* onClick={onClick} */
               src={QAName == currentItem ? iconOpen : iconClose}
               alt=""
             />

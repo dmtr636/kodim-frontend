@@ -33,6 +33,11 @@
 .qaheader {
   display: flex;
   justify-content: space-between;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  &:hover{
+    color: #ffffff;
+  }
 }
 .qaHeaderText {
   font-family: "Raleway";
@@ -40,11 +45,11 @@
   font-weight: 700;
   font-size: 28px;
   line-height: 130%;
-  color: rgba(255, 255, 255, 0.7);
+  /* color: rgba(255, 255, 255, 0.7); */
   padding-top: 30px;
-  &:hover{
+  /* &:hover{
     color: #ffffff;
-  }
+  } */
 }
 .qatext {
   width: 853px;
@@ -57,14 +62,8 @@
   color: #ffffff;
   margin-top: 18px;
   display: none;
-  /* visibility: hidden; */
-  transition:max-height ease-out 3s;
   max-height: 0;
   white-space: pre-line;
-  
-  /* animation-name: qa-open;
-  animation-duration: 1s;
-  animation-timing-function: ease; */
 }
 .qatextactive {
   width: 853px;
@@ -76,35 +75,14 @@
   letter-spacing: 0.03em;
   color: #ffffff;
   margin-top: 18px;
-  transition:max-height linear 1s;
   max-height: auto;
   white-space: pre-line;
   display: block;
-  
-  /* animation-name: qa-open;
-  animation-duration: 1s;
-  animation-timing-function: linear; */
+
 }
 .qaHeaderIcon {
   cursor: pointer;
   margin-top: 27px;
-}
-@keyframes qa-open {
-  0%{
-    max-height: 0;
-  }
-  /* 25%{
-    height: 65px;
-  }
-  50%{
-    height: 85px;
-  }
-  75%{
-    height: 110px;
-  } */
-  100%{
-    height: auto;
-  }
 }
 
 
@@ -132,6 +110,7 @@
   .qaheader {
     display: flex;
     justify-content: space-between;
+    color: #ffffff;
   }
   .qaHeaderText {
     font-size: 20px;
@@ -140,6 +119,7 @@
     margin-right: 24px;
     width: 222px;
     margin-bottom: 16px;
+    color: #ffffff;
     
   }
   .qatext {
