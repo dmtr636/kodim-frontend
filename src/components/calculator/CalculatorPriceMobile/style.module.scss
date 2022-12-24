@@ -44,10 +44,6 @@ $ANIMATION_DURATION: 0.25s;
   color: #FFFFFF;
   border-radius: 5px 5px 0 0;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   transition: background-color $ANIMATION_DURATION;
 }
 
@@ -58,11 +54,21 @@ $ANIMATION_DURATION: 0.25s;
   top: 0;
 }
 
+.arrowButton {
+  position: absolute;
+  top: 18px;
+  right: 12px;
+  padding: 12px;
+}
+
 .arrow {
   mask-image: url("/assets/calculator/arrow.svg");
   background-color: #FFFFFF;
+  mask-size: contain;
+
   width: 16px;
   height: 10px;
+
   transform: rotate(180deg);
 }
 

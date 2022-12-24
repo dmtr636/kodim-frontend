@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {observer} from "mobx-react-lite";
 import styles from "./style.module.scss"
 import classNames from "classnames";
@@ -7,6 +7,14 @@ import {calculatorStore} from "../../../stores/calculatorStore";
 const CalculatorPriceMobile = observer(() => {
     const store = calculatorStore
     const [isOpen, setOpen] = React.useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "initial"
+        }
+    }, [isOpen])
 
     return (
         <>
@@ -21,9 +29,11 @@ const CalculatorPriceMobile = observer(() => {
                         Список выбранных услуг
                     </div>
                     <button
-                        className={styles.arrow}
+                        className={styles.arrowButton}
                         onClick={() => setOpen(!isOpen)}
-                    />
+                    >
+                        <div className={styles.arrow}/>
+                    </button>
                 </div>
                 <div className={styles.content}>
                     <div className={styles.positions}>
