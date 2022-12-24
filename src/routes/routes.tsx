@@ -1,6 +1,3 @@
-import {privacyPolicy} from "./documents";
-import DocumentsCertificate from "../components/documents/DocumentsCertificate/DocumentsCertificate";
-import DocumentsPage from "../pages/DocumentsPage";
 import {Navigate} from "react-router-dom";
 import React from "react";
 import {CaseOpen} from "../components/cases/CaseOpen/CaseOpen";
@@ -9,6 +6,8 @@ import {BreadcrumbComponentProps, BreadcrumbsRoute} from "use-react-router-bread
 import {ProjectsStore} from "../stores/projectsStore";
 import Layout from "../components/common/Layout/Layout";
 import {navRoutes} from "./navRoutes";
+import {documentsRoutes} from "./documentsRoutes";
+import DocumentsPage from "../pages/DocumentsPage";
 
 
 export const createRoutes = (projectStore: ProjectsStore): BreadcrumbsRoute[] => {
@@ -31,23 +30,15 @@ export const createRoutes = (projectStore: ProjectsStore): BreadcrumbsRoute[] =>
                 ...navRoutes,
                 {
                     path: "/documents",
-                    element: <Navigate to={"/documents/privacy"} replace/>,
-                    breadcrumb: "Документы"
-                },
-                {
-                    path: "/documents/privacy",
-                    element: <DocumentsPage title={"Политика конфиденциальности"} text={privacyPolicy}/>,
-                    breadcrumb: "Политика конфиденциальности"
-                },
-                {
-                    path: "/documents/contract",
-                    element: <DocumentsPage title={"Договор-оферта"} text={privacyPolicy}/>,
-                    breadcrumb: "Договор-оферта"
-                },
-                {
-                    path: "/documents/certificate",
-                    element: <DocumentsPage title={"Договор-оферта"} component={<DocumentsCertificate/>}/>,
-                    breadcrumb: "Справка о постановке на учёт"
+                    element: <DocumentsPage/>,
+                    breadcrumb: "Документы",
+                    children: [
+                        ...documentsRoutes,
+                        {
+                            index: true,
+                            element: <Navigate to={documentsRoutes[0].path} replace/>,
+                        },
+                    ]
                 },
                 {
                     path: "/cases/:id",

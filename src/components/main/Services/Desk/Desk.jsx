@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useRef} from "react";
 import Button from "../../../common/Button/Button";
 import style from "./Desk.module.scss";
 import ServiceButton from "./ServiceButton/ServiceButton";
 import ReactPlayer from "react-player";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper";
+import {FreeMode, Navigation, Thumbs, Virtual} from "swiper";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -40,6 +40,19 @@ export const Desk = () => {
   let serviceNameMob = width < 700 ? "UX/UI" : "UX/UI-дизайн";
   const [activeService, SetActiveService] = React.useState(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (thumbsSwiper) {
+      const interval = setInterval(() => {
+        thumbsSwiper.updateSlides()
+      }, 100)
+
+      return () => {
+        clearInterval(interval)
+      }
+    }
+  }, [thumbsSwiper])
+
   const services = [
     {
       serviceName: serviceNameMob,
@@ -111,7 +124,7 @@ export const Desk = () => {
       </ServiceButton>
   ));
   const serviceArrayHeadMob = services.map((el, i) => (
-    <SwiperSlide>
+    <SwiperSlide key={i}>
       <ServiceButton
         key={el.serviceText}
         activeButton={activeService === i}
@@ -167,6 +180,7 @@ export const Desk = () => {
         <div className={style.deskwrapper}>
           {width < 700 ?<Swiper
             onSwiper={setThumbsSwiper}
+            onDestroy={() => setThumbsSwiper(null)}
             spaceBetween={0}
             slidesPerView={"auto"}
             freeMode={true}
@@ -184,13 +198,13 @@ export const Desk = () => {
           spaceBetween={50}
           slidesPerView={1}
           thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs]}
+          modules={[FreeMode, Navigation, Thumbs, Virtual]}
           onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
-          className="service-body"
+          /* className="service-body" */
         >
           {services.map((el, i) => (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} virtualIndex={i}>
               <div className={style.deskCard}>
                 <div className={style.deskCardLeft}>
                   <div className={style.deskCardLeftImg}>

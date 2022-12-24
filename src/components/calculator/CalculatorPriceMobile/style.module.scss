@@ -1,0 +1,138 @@
+@import "src/styles/vars";
+
+$ANIMATION_DURATION: 0.25s;
+
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-blue;
+  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  border-radius: 5px 5px 0px 0px;
+  padding: 24px 24px 64px 24px;
+
+  z-index: 10;
+
+  transition: background-color $ANIMATION_DURATION, height ease-out $ANIMATION_DURATION;
+  height: 122px;
+
+  will-change: contents;
+}
+
+.containerExpanded {
+  height: 100%;
+  background-color: #FFFFFF;
+  box-shadow: none;
+}
+
+.title {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.containerExpanded .title {
+  color: $color-black;
+  margin-bottom: 20px;
+}
+
+.divider {
+  height: 2px;
+  background: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.containerExpanded .divider {
+  background: $color-blue;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  padding: 10px;
+}
+
+.arrow {
+  mask-image: url("/assets/calculator/arrowDown.svg");
+  mask-size: contain;
+  background-color: white;
+  width: 16px;
+  height: 11px;
+
+  transition: transform $ANIMATION_DURATION;
+  will-change: transform;
+}
+
+.containerExpanded .arrow {
+  fill: $color-blue;
+  color: $color-blue;
+  background-color: $color-black;
+  transform: rotate(180deg);
+}
+
+.total {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+  color: #FFFFFF;
+}
+
+.containerExpanded .total {
+  color: $color-black;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+}
+
+.totalPrice {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.positions {
+  margin-bottom: auto;
+  display: grid;
+  grid-gap: 10px;
+  overflow: hidden;
+}
+
+.position {
+  display: grid;
+  grid-gap: 6px;
+}
+
+.positionName {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  color: $color-blue;
+}
+
+.positionPrice {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: $color-black;
+}

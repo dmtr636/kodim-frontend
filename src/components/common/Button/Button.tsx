@@ -7,7 +7,7 @@ const Button = ({onClick, children, fullWidth, variant, disabled}: {
     children: ReactNode,
     fullWidth?: boolean,
     variant?: "filled" | "outlined",
-    disabled?: boolean
+    disabled?: boolean,
 }) => {
     return (
         <button

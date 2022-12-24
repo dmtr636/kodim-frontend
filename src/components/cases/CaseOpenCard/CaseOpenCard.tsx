@@ -26,8 +26,8 @@ export const CaseOpenCard = (props: any) => {
       <div className={style.date}>{props.date}</div>
       <h1 className={style.header}>{props.name}</h1>
       <div className={style.block}>
-        <div className={style.blockGoal}>{props.category}</div>
-        <div className={style.blockText}>{props.description}</div>
+        <div className={style.blockGoal}>Цель проекта</div>
+        <div className={style.blockText}>{props.purpose}</div>
       </div>
       {imgArray.slice(1)}
     </div>

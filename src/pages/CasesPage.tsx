@@ -8,3 +8,5 @@ export const CasesPage = () => {
     </div>
   );
 };
+
+export default CasesPage

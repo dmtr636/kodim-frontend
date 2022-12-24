@@ -11,6 +11,7 @@ import CalculatorPrice from "../components/calculator/CalculatorPrice/Calculator
 import CalculatorSubmitResult from "../components/calculator/CalculatorSubmitResult/CalculatorSubmitResult";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import {isMobile} from "../utils/utils";
+import CalculatorPriceMobile from "../components/calculator/CalculatorPriceMobile/CalculatorPriceMobile";
 
 const getCalculatorFormData = (stepNumber: string) => {
     switch (stepNumber) {
@@ -107,10 +108,13 @@ export const CalculatorPage = observer(() => {
     return (
         <CalculatorLayout>
             {getFirstColumn()}
-            {!isMobile(width) &&
+            {!isMobile(width)
+                ?
                 <CalculatorCard sticky>
                     <CalculatorPrice/>
                 </CalculatorCard>
+                :
+                <CalculatorPriceMobile/>
             }
         </CalculatorLayout>
     )

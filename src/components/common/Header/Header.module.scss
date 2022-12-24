@@ -16,6 +16,8 @@
     top: 0;
     background: white;
     z-index: 10;
+
+    box-shadow: 0px 2px 6px rgba(52, 182, 255, 0.15);
   }
 }
 
@@ -58,6 +60,12 @@
 }
 
 .logo {
+  @include desktop {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   @include mobile {
     width: 82px;
     height: 14px;
@@ -80,12 +88,64 @@
   height: 100vh;
   top: 62px;
   left: 0;
-  background: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.5);
+  overflow: hidden;
+
+  animation: fadeIn $ANIMATION_DURATION ease-out;
+
+  @keyframes fadeIn {
+    from {
+      background-color: transparent;
+    }
+    to {
+      background-color: rgba(0,0,0,.5);
+    }
+  }
+}
+
+.overlayFadingOut {
+  background-color: transparent;
+  animation: fadeOut $ANIMATION_DURATION ease-out;
+
+  @keyframes fadeOut {
+    from {
+      background-color: rgba(0,0,0,.5);
+    }
+    to {
+      background-color: transparent;
+    }
+  }
 }
 
 .menu {
   padding: 24px;
   background: white;
+
+  transition: transform $ANIMATION_DURATION ease-out;
+  animation: enter 0.25s ease-out;
+
+  @keyframes enter {
+    from {
+      transform: translate(0, -100%);
+    }
+    to {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.menuExiting {
+  transform: translate(0, -100%);
+  animation: exit 0.25s ease-out;
+
+  @keyframes exit {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(0, -100%);
+    }
+  }
 }
 
 .menuNav {

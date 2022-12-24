@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from "./Header.module.scss"
-import {navRoutes} from "../../../constants/navRoutes";
+import {navRoutes} from "../../../routes/navRoutes";
 import Button from "../Button/Button";
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {logo} from "../../../assets/common";
@@ -13,6 +13,19 @@ const Header = observer(() => {
     const navigate = useNavigate()
     const location = useLocation()
     const [isShowMenu, setShowMenu] = useState(false)
+    const [isMenuExiting, setMenuExiting] = useState(false)
+
+    const toggleMenu = () => {
+        if (!isShowMenu) {
+            setShowMenu(true)
+        } else {
+            setMenuExiting(true)
+            setTimeout(() => {
+                setMenuExiting(false)
+                setShowMenu(false)
+            }, 250)
+        }
+    }
 
     return (
         <header className={styles.header}>
@@ -45,7 +58,7 @@ const Header = observer(() => {
 
             <button
                 className={styles.burger}
-                onClick={() => setShowMenu(!isShowMenu)}
+                onClick={toggleMenu}
             >
                 {isShowMenu
                     ? <CloseMenuIcon />
@@ -54,11 +67,17 @@ const Header = observer(() => {
             </button>
             {isShowMenu &&
                 <div
-                    className={styles.overlay}
-                    onClick={() => setShowMenu(false)}
+                    className={classNames(
+                        styles.overlay,
+                        {[styles.overlayFadingOut]: isMenuExiting}
+                    )}
+                    onClick={toggleMenu}
                 >
                     <div
-                        className={styles.menu}
+                        className={classNames(
+                            styles.menu,
+                            {[styles.menuExiting]: isMenuExiting}
+                        )}
                         onClick={(event) => event.stopPropagation()}
                     >
                         <nav className={styles.menuNav}>
@@ -70,7 +89,7 @@ const Header = observer(() => {
                                         {[styles.navLinkActive]: isActive && !route.path.includes("#")}
                                     )}
                                     key={route.path}
-                                    onClick={() => setShowMenu(false)}
+                                    onClick={toggleMenu}
                                     preventScrollReset={route.preventScrollReset}
                                     end
                                 >
