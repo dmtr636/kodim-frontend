@@ -71,9 +71,6 @@ html {
     padding-right: 24px;
     
 }
-.service-body .swiper-slide{
-   height: auto;
-}
 
 /* For sticky header */
 @media (max-width: 699px) {

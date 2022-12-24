@@ -79,7 +79,7 @@
 }
 .deskwrapper {
   margin-left: 10px;
-  margin-top: 6px;
+  padding-top: 6px;
   display:flex;
   flex-wrap: wrap;
 }
@@ -107,7 +107,7 @@
   }
   .deskHeader {
     height: 76px;
-    margin-bottom: 24px;
+    margin-bottom: 0px;
     -moz-outline-radius: 5px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
@@ -117,6 +117,7 @@
     display: flex;
     flex-wrap: nowrap;
     margin-left: 0px;
+    padding-top: 0px;
     &::-webkit-scrollbar {
       display: none;
     }
