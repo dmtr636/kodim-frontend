@@ -204,7 +204,7 @@ export const Desk = () => {
           virtual={true}
         >
           {services.map((el, i) => (
-            <SwiperSlide key={i} virtualIndex={i}>
+            <SwiperSlide key={i}>
               <div className={style.deskCard}>
                 <div className={style.deskCardLeft}>
                   <div className={style.deskCardLeftImg}>
