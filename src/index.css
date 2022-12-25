@@ -74,7 +74,7 @@ html {
     
 }
 .service-body .swiper-slide{
- height: 100%;
+ height: auto;
 }
 
 
