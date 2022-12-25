@@ -53,19 +53,28 @@
 }
 .qatext {
   width: 853px;
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 19px;
-  line-height: 140%;
-  letter-spacing: 0.03em;
-  color: #ffffff;
   margin-top: 18px;
-  display: none;
   max-height: 0;
-  white-space: pre-line;
+  overflow: hidden;
+  &.qatextactive {
+    width: 853px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    margin-top: 20px;
+    max-height: 100%;
+    white-space: pre-line;
+    display: block;
+    overflow: visible;
+    transition: max-height  1s ease
+  
+  }
 }
-.qatextactive {
+/* .qatextactive {
   width: 853px;
   font-family: "Raleway";
   font-style: normal;
@@ -79,7 +88,7 @@
   white-space: pre-line;
   display: block;
 
-}
+} */
 .qaHeaderIcon {
   cursor: pointer;
   margin-top: 27px;

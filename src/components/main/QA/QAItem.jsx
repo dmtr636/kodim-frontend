@@ -5,6 +5,7 @@ import iconOpen from "../QA/icon/iconOpen.svg";
 import MobileIconClose from "../QA/icon/MobileIconClose.svg";
 import MobileIconOpen from "../QA/icon/MobileIconOpen.svg";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import classNames from "classnames";
 
 export const QAItem = ({ QAName, QAText, currentItem, onClick }) => {
   const {width} = useWindowDimensions()
@@ -27,7 +28,11 @@ export const QAItem = ({ QAName, QAText, currentItem, onClick }) => {
         </div>
       </div>
       <div
-        className={QAName == currentItem ? style.qatextactive : style.qatext}
+        className={classNames(
+          style.qatext,
+          {[style.qatextactive]: QAName == currentItem}
+      )}
+         
       >
         {QAText}
       </div>
