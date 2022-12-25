@@ -1,9 +1,14 @@
 import React from 'react';
 import styles from "./style.module.scss";
+import {Helmet} from "react-helmet";
 
 const PrivacyPolicy = () => {
     return (
         <div className={styles.text}>
+            <Helmet>
+                <title>Политика конфиденциальности</title>
+            </Helmet>
+
             <h2>1. Общие положения</h2>
             <p>
                 Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального

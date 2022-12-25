@@ -15,6 +15,7 @@ const DocumentsMenu = () => {
                         styles.item,
                         {[styles.itemActive]: isActive}
                     )}
+                    key={route.path}
                 >
                     <div className={styles.circle} />
                     {route.breadcrumb}

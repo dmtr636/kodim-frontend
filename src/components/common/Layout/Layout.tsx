@@ -5,14 +5,12 @@ import styles from "./Layout.module.scss"
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
 import {Helmet} from "react-helmet";
 import {isTablet} from "../../../utils/utils";
-import {Outlet, ScrollRestoration} from "react-router-dom";
+import {Outlet, ScrollRestoration, useLocation} from "react-router-dom";
 import Cookies from "../Cookies/Cookies";
-import useBreadcrumbs from "use-react-router-breadcrumbs";
-import {createRoutes} from "../../../routes/routes";
-import {projectsStore} from "../../../stores/projectsStore";
+import {getMetaByPath} from "../../../constants/pageMeta";
 
 const Layout = () => {
-    const breadcrumbs = useBreadcrumbs(createRoutes(projectsStore));
+    const location = useLocation()
     const [width, setWidth] = useState(window.outerWidth)
 
     const onResize = () => {
@@ -24,13 +22,7 @@ const Layout = () => {
         return () => window.removeEventListener("resize", onResize)
     }, [])
 
-    const getTitle = () => {
-        if (breadcrumbs.length === 1) {
-            return "Создание быстрых сайтов под ключ — Студия веб-дизайна"
-        } else {
-            return breadcrumbs.slice(-1)[0]?.match?.route?.breadcrumb?.toString()
-        }
-    }
+    const meta = getMetaByPath(location.pathname)
 
     return (
         <>
@@ -39,8 +31,16 @@ const Layout = () => {
                     ? <meta name="viewport" content="width=1280"/>
                     : <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 }
-                <title>{getTitle()}</title>
             </Helmet>
+
+            {meta &&
+                <Helmet>
+                    <title>{meta.title}</title>
+                    <meta name={"description"} content={meta.description}/>
+                    <meta name={"keywords"} content={meta.keywords}/>
+                </Helmet>
+            }
+
             <ScrollRestoration/>
             <Cookies/>
 

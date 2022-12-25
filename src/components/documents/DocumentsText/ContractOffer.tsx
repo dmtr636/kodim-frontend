@@ -1,9 +1,14 @@
 import React from 'react';
 import styles from "./style.module.scss";
+import {Helmet} from "react-helmet";
 
 const ContractOffer = () => {
     return (
         <div className={styles.text}>
+            <Helmet>
+                <title>Договор-оферта</title>
+            </Helmet>
+
             <h2>1. Общие положения</h2>
             <p>
                 1.1. Настоящий Договор является официальным предложением (публичной офертой) Старосты Кирилла Юрьевича

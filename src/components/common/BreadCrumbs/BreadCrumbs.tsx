@@ -23,7 +23,7 @@ const BreadCrumbs = observer(() => {
         <div className={styles.wrapper}>
             <div className={styles.content}>
                 {breadcrumbs.map((item, index) =>
-                    <>
+                    <React.Fragment key={item.key}>
                         {index > 0 &&
                             <div className={styles.separator}/>
                         }
@@ -33,7 +33,7 @@ const BreadCrumbs = observer(() => {
                         >
                             {item.breadcrumb}
                         </NavLink>
-                    </>
+                    </React.Fragment>
                 )}
             </div>
         </div>
