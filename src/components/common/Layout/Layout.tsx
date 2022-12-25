@@ -58,7 +58,7 @@ const Layout = () => {
                     <CSSTransition
                         key={location.pathname}
                         nodeRef={nodeRef}
-                        timeout={200}
+                        timeout={100}
                         classNames={{
                             enter: styles.mainEnter,
                             enterActive: styles.mainEnterActive,
@@ -66,6 +66,8 @@ const Layout = () => {
                             exitActive: styles.mainExitActive
                         }}
                         unmountOnExit
+                        enter={!location.pathname.includes("/documents")}
+                        exit={!location.pathname.includes("/documents")}
                     >
                         {(state) => (
                             <div ref={nodeRef} className={styles.main}>

@@ -17,22 +17,18 @@
 
 .mainEnter {
   opacity: 0;
-  transform: scale(0.95);
 }
 
 .mainEnterActive {
   opacity: 1;
-  transform: scale(1.0);
-  transition: opacity 200ms ease-out, transform 200ms;
+  transition: opacity 100ms ease-out;
 }
 
 .mainExit {
   opacity: 1;
-  transform: scale(1.0);
 }
 
 .mainExitActive {
   opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 200ms ease-out, transform 200ms;
+  transition: opacity 100ms ease-out;
 }
