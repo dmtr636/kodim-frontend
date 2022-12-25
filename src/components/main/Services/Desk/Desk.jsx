@@ -248,15 +248,6 @@ export const Desk = () => {
           <div className={style.deskCard}>
             <div className={style.deskCardLeft}>
               <div className={style.swiper}>
-                {/* <ReactPlayer
-              url={services[activeService].imgUrl}
-              width={width < 700 ? "auto" : "460"}
-              height={width < 700 ? "auto" : "320"}
-              playing="true"
-              loop="true"
-              volume="0"
-              fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
-            /> */}
                 <video
                   key={services[activeService].imgUrl}
                   width={width < 700 ? "auto" : "460"}
