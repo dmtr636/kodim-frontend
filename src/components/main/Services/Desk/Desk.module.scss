@@ -87,6 +87,9 @@
   width: auto !important;
   padding-left: 24px;
 }
+.buttonPositionMob{
+  display: none;
+}
 @include mobile {
   .desk {
     width: 100%;
@@ -103,7 +106,16 @@
     height: 100%;
     padding-bottom: 24px;
     padding-left: 24px;
+    
+  }
+  .deskCardRight {
     position: relative;
+  }
+  .buttonPositionMob{
+    display: block;
+    margin-top:20px;
+    position: absolute;
+    bottom: 20px;
   }
   .deskHeader {
     height: 76px;

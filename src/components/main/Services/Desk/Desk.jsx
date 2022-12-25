@@ -229,12 +229,17 @@ export const Desk = () => {
                   <div className={style.deskCardRightText}>
                     {el.serviceText}
                   </div>
-                  <div className={style.buttonPosition}>
+                  {/* <div className={style.buttonPosition}>
                     <Button onClick={() => navigate("/calculator")}>
                       Рассчитать стоимость
                     </Button>
-                  </div>
+                  </div> */}
                 </div>
+                <div className={style.buttonPositionMob}>
+                <Button onClick={() => navigate("/calculator")}>
+                  Рассчитать стоимость
+                </Button>
+              </div>  
               </div>
             </SwiperSlide>
           ))}
@@ -278,7 +283,7 @@ export const Desk = () => {
                   Рассчитать стоимость
                 </Button>
               </div>
-            </div>
+            </div> 
           </div>
       )}
     </div>
