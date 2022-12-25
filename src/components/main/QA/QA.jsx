@@ -79,7 +79,7 @@ export const QA = () => {
   return (
     <div className={style.wrapper} id={"faq"}>
       <div className={style.body}>
-        <div className={style.header}>{width < 700 ?<>Ответы <br/> на популярные<br/> вопросы</>:"Ответы на популярные вопросы"}</div>
+        <div className={style.header}>Ответы на популярные вопросы</div>
         {QAList}
       </div>
     </div>
