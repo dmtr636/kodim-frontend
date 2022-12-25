@@ -57,6 +57,8 @@ html {
     scrollbar-width: auto;          /* "auto" or "thin" */
     scrollbar-color: #52AEFF transparent;   /* scroll thumb and track */
 }
+
+/* Swiper */
 .service-head .swiper-slide{
     width: auto!important;
     padding-left: 10px;
