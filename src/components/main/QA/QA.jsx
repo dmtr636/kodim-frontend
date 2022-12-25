@@ -1,9 +1,11 @@
 import React from "react";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 import style from "./QA.module.scss";
 import { QAItem } from "./QAItem";
 
 export const QA = () => {
+  const {width} = useWindowDimensions()
   const QAArray = [
     {
       QAName: "Кто мы?",
@@ -77,7 +79,7 @@ export const QA = () => {
   return (
     <div className={style.wrapper} id={"faq"}>
       <div className={style.body}>
-        <div className={style.header}>Ответы на популярные вопросы</div>
+        <div className={style.header}>{width < 700 ?<>Ответы <br/> на популярные<br/> вопросы</>:"Ответы на популярные вопросы"}</div>
         {QAList}
       </div>
     </div>
