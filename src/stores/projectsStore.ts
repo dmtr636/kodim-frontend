@@ -9,6 +9,9 @@ export class ProjectsStore {
     projects: any[] = []
     cases: any[] = []
 
+    isProjectsLoaded = false
+    isCasesLoaded = false
+
     setProjects(data: any[]) {
         this.projects = data
     }
@@ -17,15 +20,25 @@ export class ProjectsStore {
         this.cases = data
     }
 
+    setProjectsLoaded(value: boolean) {
+        this.isProjectsLoaded = value
+    }
+
+    setCasesLoaded(value: boolean) {
+        this.isCasesLoaded = value
+    }
+
     fetchProjects() {
         axios.get("https://kodim.space/api/kodim/projects").then((res) => {
             this.setProjects(res.data.result)
+            this.setProjectsLoaded(true)
         });
     }
 
     fetchCases() {
         axios.get("https://kodim.space/api/kodim/cases").then((res) => {
             this.setCases(res.data.result)
+            this.setCasesLoaded(true)
         });
     }
 }

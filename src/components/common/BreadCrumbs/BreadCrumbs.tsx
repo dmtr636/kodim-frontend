@@ -14,7 +14,7 @@ const BreadCrumbs = observer(() => {
     const nodeRef = useRef(null)
 
     let isShowWrapper = location.pathname !== "/"
-    let isShowBreadcrumbs = projectsStore.projects.length && projectsStore.cases.length
+    let isShowBreadcrumbs = projectsStore.isProjectsLoaded && projectsStore.isCasesLoaded
 
     return (
         <CSSTransition
@@ -37,7 +37,7 @@ const BreadCrumbs = observer(() => {
                 ref={nodeRef}
             >
                 <div className={styles.content}>
-                    {!!isShowBreadcrumbs &&
+                    {isShowBreadcrumbs &&
                         breadcrumbs.map((item, index) =>
                             <React.Fragment key={item.key}>
                                 {index > 0 &&
