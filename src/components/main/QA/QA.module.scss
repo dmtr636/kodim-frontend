@@ -52,6 +52,13 @@
     color: #ffffff;
   } */
 }
+.qaicon{
+  transform:none;
+  transition: transform 1s;
+  &qaiconactive{
+    transform:rotate(180);
+  }
+}
 .qatext {
   width: 853px;
   font-family: "Raleway";
@@ -76,10 +83,11 @@
     letter-spacing: 0.03em;
     color: #ffffff;
     margin-top: 20px;
-    max-height: 300px;
+    max-height: 165px;
     white-space: pre-line;
     overflow: visible;
-    transition: max-height 1s;
+    padding-bottom: 30px;
+
   }
 }
 /* .qatextactive {
@@ -150,10 +158,12 @@
       font-size: 16px;
       margin-top: 0px;
       display: block;
+      max-height: 300px;
       white-space: pre-line;
       margin-right: 24px;
       margin-bottom: 20px;
       padding-right: 20px;
+      padding-bottom: 0px;
     }
   }
 
