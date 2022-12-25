@@ -3,7 +3,7 @@ import CalculatorLayout from "../components/calculator/CalculatorLayout/Calculat
 import CalculatorForm from "../components/calculator/CalculatorForm/CalculatorForm";
 import CalculatorCard from "../components/calculator/CalculatorCard/CalculatorCard";
 import {calculatorFormFirstStep, calculatorFormSecondStep} from "../constants/calculatorForm";
-import {useSearchParams} from "react-router-dom";
+import {useLocation, useSearchParams} from "react-router-dom";
 import CalculatorContactForm from "../components/calculator/CalculatorContactForm/CalculatorContactForm";
 import {calculatorStore} from "../stores/calculatorStore";
 import {observer} from "mobx-react-lite";
@@ -26,6 +26,7 @@ const getCalculatorFormData = (stepNumber: string) => {
 
 export const CalculatorPage = observer(() => {
     const [searchParams, setSearchParams] = useSearchParams();
+    const location = useLocation()
     const {width} = useWindowDimensions()
     const store = calculatorStore
     const step = searchParams.get("step")
@@ -54,6 +55,10 @@ export const CalculatorPage = observer(() => {
     }, [])
 
     useEffect(() => {
+        if (location.pathname !== "/calculator") {
+            return
+        }
+
         if (step) {
             store.setCurrentStep(step)
         } else {
