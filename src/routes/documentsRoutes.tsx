@@ -1,31 +1,16 @@
-import React, {Suspense} from "react";
-import {ReactLazyPreload} from "../utils/utils";
-
-const PrivacyPolicy = ReactLazyPreload(() =>
-    import("../components/documents/DocumentsText/PrivacyPolicy")
-)
-const ContractOffer = ReactLazyPreload(() =>
-    import("../components/documents/DocumentsText/ContractOffer")
-)
-
-PrivacyPolicy.preload()
-ContractOffer.preload()
+import React from "react";
+import PrivacyPolicy from "../components/documents/DocumentsText/PrivacyPolicy";
+import ContractOffer from "../components/documents/DocumentsText/ContractOffer";
 
 export const documentsRoutes = [
     {
         path: "/documents/privacy",
-        element:
-            <Suspense>
-                <PrivacyPolicy/>
-            </Suspense>,
+        element: <PrivacyPolicy/>,
         breadcrumb: "Политика конфиденциальности"
     },
     {
         path: "/documents/contract",
-        element:
-            <Suspense>
-                <ContractOffer/>
-            </Suspense>,
+        element: <ContractOffer/>,
         breadcrumb: "Договор-оферта"
     },
 ]
