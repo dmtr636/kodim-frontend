@@ -45,6 +45,7 @@ $ANIMATION_DURATION: 0.25s;
 
 .arrow {
   mask-image: url("/assets/calculator/arrow.svg");
+  mask-repeat: no-repeat;
   background-color: #FFFFFF;
   mask-size: contain;
   width: 16px;
