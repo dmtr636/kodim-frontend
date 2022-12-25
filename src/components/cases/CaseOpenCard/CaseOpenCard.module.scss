@@ -62,11 +62,10 @@
   letter-spacing: 0.03em;
   color: #303030;
 }
-.imgBlock {
+.imgArray{
   margin-top: 30px;
-  border-radius: 5px;
 }
-.LastImgBlock {
+.imgBlock {
   margin-top: 20px;
   border-radius: 5px;
 }
@@ -75,6 +74,7 @@
     width: 100%;
     flex-direction: column;
     padding: 0 24px;
+    margin-top: 24px;
   }
   .headerImg {
     width: 100%;
@@ -102,6 +102,9 @@
   }
   .date {
     font-size:16px;
+    margin-top: 20px;
+  }
+  .imgBlock {
     margin-top: 20px;
   }
 }

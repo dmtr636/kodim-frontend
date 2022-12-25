@@ -34,7 +34,8 @@ export const CaseOpenCard = (props: any) => {
           <div className={style.blockGoal}>Цель проекта</div>
           <div className={style.blockText}>{props.purpose}</div>
         </div>
-        {imgArray.slice(1)}
+        <div className={style.imgArray}>{imgArray.slice(1)}</div>
+        {/* {imgArray.slice(1)} */}
 
       </div>
     </>
