@@ -5,9 +5,11 @@ import styles from "./Layout.module.scss"
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
 import {Helmet} from "react-helmet";
 import {isTablet} from "../../../utils/utils";
-import {Outlet, ScrollRestoration, useLocation} from "react-router-dom";
+import {Outlet, ScrollRestoration, useLocation, useOutlet} from "react-router-dom";
 import Cookies from "../Cookies/Cookies";
 import {getMetaByPath} from "../../../constants/pageMeta";
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
+import {navRoutes} from "../../../routes/navRoutes";
 
 const Layout = () => {
     const location = useLocation()
@@ -23,6 +25,10 @@ const Layout = () => {
     }, [])
 
     const meta = getMetaByPath(location.pathname)
+
+
+    const { nodeRef } = navRoutes.find((route) => route.path === location.pathname) ?? {}
+    const outlet = useOutlet()
 
     return (
         <>
@@ -47,9 +53,28 @@ const Layout = () => {
             <div className={styles.layout}>
                 <Header/>
                 <BreadCrumbs/>
-                <main className={styles.main}>
-                    <Outlet/>
-                </main>
+
+                <SwitchTransition>
+                    <CSSTransition
+                        key={location.pathname}
+                        nodeRef={nodeRef}
+                        timeout={200}
+                        classNames={{
+                            enter: styles.mainEnter,
+                            enterActive: styles.mainEnterActive,
+                            exit: styles.mainExit,
+                            exitActive: styles.mainExitActive
+                        }}
+                        unmountOnExit
+                    >
+                        {(state) => (
+                            <div ref={nodeRef} className={styles.main}>
+                                {outlet}
+                            </div>
+                        )}
+                    </CSSTransition>
+                </SwitchTransition>
+
                 <Footer/>
             </div>
         </>
