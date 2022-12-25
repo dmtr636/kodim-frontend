@@ -37,7 +37,7 @@ const BreadCrumbs = observer(() => {
                 ref={nodeRef}
             >
                 <div className={styles.content}>
-                    {isShowBreadcrumbs &&
+                    {!!isShowBreadcrumbs &&
                         breadcrumbs.map((item, index) =>
                             <React.Fragment key={item.key}>
                                 {index > 0 &&
