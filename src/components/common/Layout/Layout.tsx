@@ -58,7 +58,10 @@ const Layout = () => {
                     <CSSTransition
                         key={location.pathname}
                         nodeRef={nodeRef}
-                        timeout={100}
+                        timeout={{
+                            enter: 150,
+                            exit: 50
+                        }}
                         classNames={{
                             enter: styles.mainEnter,
                             enterActive: styles.mainEnterActive,
