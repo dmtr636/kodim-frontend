@@ -106,17 +106,18 @@
     height: 100%;
     padding-bottom: 24px;
     padding-left: 24px;
+    position: relative;
     
   }
   .deskCardRight {
-    position: relative;
+    /* position: relative; */
   }
-  .buttonPositionMob{
+/*   .buttonPositionMob{
     display: block;
     margin-top:20px;
     position: absolute;
     bottom: 20px;
-  }
+  } */
   .deskHeader {
     height: 76px;
     margin-bottom: 0px;

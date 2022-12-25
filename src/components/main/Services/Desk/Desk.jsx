@@ -235,11 +235,11 @@ export const Desk = () => {
                     </Button>
                   </div> */}
                 </div>
-                <div className={style.buttonPositionMob}>
-                <Button onClick={() => navigate("/calculator")}>
-                  Рассчитать стоимость
-                </Button>
-              </div>  
+                <div className={style.buttonPosition}>
+                    <Button onClick={() => navigate("/calculator")}>
+                      Рассчитать стоимость
+                    </Button>
+                  </div>
               </div>
             </SwiperSlide>
           ))}
@@ -248,6 +248,15 @@ export const Desk = () => {
           <div className={style.deskCard}>
             <div className={style.deskCardLeft}>
               <div className={style.swiper}>
+                {/* <ReactPlayer
+              url={services[activeService].imgUrl}
+              width={width < 700 ? "auto" : "460"}
+              height={width < 700 ? "auto" : "320"}
+              playing="true"
+              loop="true"
+              volume="0"
+              fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
+            /> */}
                 <video
                   key={services[activeService].imgUrl}
                   width={width < 700 ? "auto" : "460"}
@@ -268,13 +277,23 @@ export const Desk = () => {
               </div>
               <div className={style.deskCardRightText}>
                 {services[activeService].serviceText}
-              </div>
-              <div className={style.buttonPosition}>
+                <div className={style.buttonPosition}>
                 <Button onClick={() => navigate("/calculator")}>
                   Рассчитать стоимость
                 </Button>
               </div>
-            </div> 
+              </div>
+              {/* <div className={style.buttonPosition}>
+                <Button onClick={() => navigate("/calculator")}>
+                  Рассчитать стоимость
+                </Button>
+              </div> */}
+            </div>
+            <div className={style.buttonPositionMob}>
+                <Button onClick={() => navigate("/calculator")}>
+                  Рассчитать стоимость
+                </Button>
+              </div>  
           </div>
       )}
     </div>
