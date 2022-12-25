@@ -133,45 +133,6 @@ export const Desk = () => {
       </ServiceButton>
     </SwiperSlide>
   ));
-  const serviceArrayMob = services.map((el, i) => (
-    <SwiperSlide key={el.i}>
-      {" "}
-      <div className={style.deskCardLeft}>
-        <div className={style.deskCardLeftImg}>
-          {/* <ReactPlayer
-        url={services[activeService].imgUrl}
-        width={width < 700 ? "auto" : "460"}
-        height={width < 700 ? "auto" : "320"}
-        playing="true"
-        loop="true"
-        volume="0"
-        fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
-      /> */}
-          <video
-            key={el.imgUrl}
-            width={width < 700 ? "100%" : "460"}
-            height={width < 700 ? "100%" : "320"}
-            style={{ borderRadius: "5px" }}
-            autoPlay
-            muted
-            loop
-            poster={el.posterUrl}
-          >
-            <source src={el.imgUrl} />
-          </video>
-        </div>
-      </div>
-      <div className={style.deskCardRight}>
-        <div className={style.deskCardRightHeader}>{el.serviceName}</div>
-        <div className={style.deskCardRightText}>{el.serviceText}</div>
-        <div className={style.buttonPosition}>
-          <Button onClick={() => navigate("/calculator")}>
-            Рассчитать стоимость
-          </Button>
-        </div>
-      </div>
-    </SwiperSlide>
-  ));
   console.log(activeService);
   return (
     <div className={style.desk}>
@@ -200,7 +161,7 @@ export const Desk = () => {
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
           onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
-          virtual={true}
+          virtual={false}
           className="service-body"
         >
           {services.map((el, i) => (
@@ -248,15 +209,6 @@ export const Desk = () => {
           <div className={style.deskCard}>
             <div className={style.deskCardLeft}>
               <div className={style.swiper}>
-                {/* <ReactPlayer
-              url={services[activeService].imgUrl}
-              width={width < 700 ? "auto" : "460"}
-              height={width < 700 ? "auto" : "320"}
-              playing="true"
-              loop="true"
-              volume="0"
-              fileConfig={{ attributes: { poster: services[activeService].posterUrl } }}
-            /> */}
                 <video
                   key={services[activeService].imgUrl}
                   width={width < 700 ? "auto" : "460"}
@@ -277,17 +229,12 @@ export const Desk = () => {
               </div>
               <div className={style.deskCardRightText}>
                 {services[activeService].serviceText}
-                <div className={style.buttonPosition}>
+              </div>
+              <div className={style.buttonPosition}>
                 <Button onClick={() => navigate("/calculator")}>
                   Рассчитать стоимость
                 </Button>
               </div>
-              </div>
-              {/* <div className={style.buttonPosition}>
-                <Button onClick={() => navigate("/calculator")}>
-                  Рассчитать стоимость
-                </Button>
-              </div> */}
             </div>
             <div className={style.buttonPositionMob}>
                 <Button onClick={() => navigate("/calculator")}>

@@ -73,9 +73,11 @@
 }
 .deskCardRight {
   margin-left: 30px;
+  display: flex;
+  flex-direction: column;
 }
 .buttonPosition {
-  margin-top: 40px;
+  margin-top: auto;
 }
 .deskwrapper {
   margin-left: 10px;
