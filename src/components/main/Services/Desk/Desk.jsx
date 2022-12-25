@@ -52,6 +52,10 @@ export const Desk = () => {
     }
   }, [thumbsSwiper])
 
+  useEffect(() => {
+    thumbsSwiper?.slideTo(activeService)
+  }, [activeService])
+
   const services = [
     {
       serviceName: serviceNameMob,
