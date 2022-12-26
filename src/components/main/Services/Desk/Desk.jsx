@@ -151,6 +151,8 @@ export const Desk = () => {
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
             className="service-head"
+            centeredSlides={true}
+            centeredSlidesBounds={true}
           >
             {serviceArrayHeadMob}
           </Swiper>:serviceArray}
