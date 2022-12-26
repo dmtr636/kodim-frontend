@@ -42,7 +42,6 @@ const CalculatorPriceMobile = observer(() => {
                     <div
                         className={styles.header}
                     >
-                        <div className={styles.puller}/>
                         <div className={styles.title}>
                             Список выбранных услуг
                         </div>

@@ -29,3 +29,7 @@
   composes: input;
   font-family: 'Montserrat';
 }
+
+.phoneInput::placeholder {
+  font-family: 'Raleway';
+}
