@@ -29,7 +29,9 @@
     display: none;
   }
 }
-
+.qaicon{
+  opacity:0.8
+}
 .qaheader {
   display: flex;
   justify-content: space-between;
@@ -39,7 +41,7 @@
   &:hover {
     color: #ffffff;
     .qaicon{
-      opacity:0.8
+      opacity:1
     }
   }
 }
@@ -76,7 +78,7 @@
   max-height: 0;
   overflow: hidden;
   color: #ffffff;
-  transition: max-height 0.25s ease-out;
+  transition: all 0.25s ease-out;
   &.qatextactive {
     width: 853px;
     font-family: "Raleway";
@@ -89,26 +91,11 @@
     margin-top: 20px;
     max-height: 165px;
     white-space: pre-line;
-    overflow: visible;
+    /* overflow: visible; */
     padding-bottom: 30px;
 
   }
 }
-/* .qatextactive {
-  width: 853px;
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 19px;
-  line-height: 140%;
-  letter-spacing: 0.03em;
-  color: #ffffff;
-  margin-top: 20px;
-  max-height: auto;
-  white-space: pre-line;
-  display: block;
-
-} */
 .qaHeaderIcon {
   cursor: pointer;
   margin-top: 27px;
@@ -152,7 +139,7 @@
   }
   .qatext {
     width: 100%;
-    height: 0;
+    /* height: 0; */
     font-size: 16px;
     margin-top: 16px;
     white-space: pre-line;
@@ -178,5 +165,8 @@
     margin-top: 0px;
 
     margin: auto 0;
+  }
+  .qaicon{
+    opacity:1
   }
 }
