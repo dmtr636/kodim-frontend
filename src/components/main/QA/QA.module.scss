@@ -38,6 +38,9 @@
   cursor: pointer;
   &:hover {
     color: #ffffff;
+    .qaicon{
+      opacity:0.8
+    }
   }
 }
 .qaHeaderText {
@@ -59,6 +62,7 @@
     transform:rotate(180deg);
   }
 }
+
 .qatext {
   width: 853px;
   font-family: "Raleway";
