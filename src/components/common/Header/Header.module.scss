@@ -40,6 +40,7 @@
   letter-spacing: 0.03em;
   color: $color-black;
   opacity: 0.5;
+  user-select: none;
 
   &:hover {
     opacity: 1;

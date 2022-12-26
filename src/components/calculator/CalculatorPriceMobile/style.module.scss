@@ -2,60 +2,58 @@
 
 $ANIMATION_DURATION: 0.25s;
 
-.drawer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 122px;
-  background-color: $color-black;
-  color: #FFFFFF;
-  border-radius: 5px 5px 0 0;
-  z-index: 20;
-  transition: background-color $ANIMATION_DURATION, height $ANIMATION_DURATION;
-}
-
-.drawerOpen {
+.container {
   height: 100%;
-  background-color: white;
-  color: $color-black;
-}
-
-.header {
-  padding: 24px;
   background-color: $color-black;
   color: #FFFFFF;
-  border-radius: 5px 5px 0 0;
+
   transition: background-color $ANIMATION_DURATION;
 }
 
-.drawerOpen .header {
+.containerOpen {
+  background-color: white;
+  color: $color-black;
+  border-radius: 5px 5px 0 0;
+}
+
+.header {
+  position: absolute;
+  top: -122px;
+  left: 0;
+  right: 0;
+  height: 123px;
+  padding: 24px 24px 14px 24px;
+  border-radius: 5px 5px 0 0;
+  visibility: visible;
+  background-color: $color-black;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+
+  transition: background-color $ANIMATION_DURATION;
+}
+
+.containerOpen .header {
   background-color: $color-white;
   color: $color-black;
   box-shadow: none;
   top: 0;
 }
 
-.arrowButton {
+.puller {
   position: absolute;
-  top: 15px;
-  right: 9px;
-  padding: 15px;
-}
-
-.arrow {
-  mask-image: url("/assets/calculator/arrow.svg");
-  mask-repeat: no-repeat;
+  top: 8px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 80px;
+  height: 5px;
   background-color: #FFFFFF;
-  mask-size: contain;
-  width: 16px;
-  height: 10px;
-  transform: rotate(180deg);
+  border-radius: 20px;
 }
 
-.drawerOpen .arrow {
+.containerOpen .puller {
   background-color: $color-black;
-  transform: rotate(0);
 }
 
 .title {
@@ -65,6 +63,32 @@ $ANIMATION_DURATION: 0.25s;
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0.03em;
+  margin-bottom: 14px;
+}
+
+.positionsCount {
+  composes: title;
+  font-family: 'Montserrat';
+}
+
+.bottomPanel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 62px;
+  padding: 0 24px;
+  background-color: $color-black;
+  color: white;
+  z-index: 10000;
+  pointer-events: none;
+
+  transition: background-color $ANIMATION_DURATION;
+}
+
+.bottomPanelOpen {
+  background-color: white;
+  color: $color-black;
 }
 
 .divider {
@@ -72,7 +96,7 @@ $ANIMATION_DURATION: 0.25s;
   border-top: 2px solid #FFFFFF;
 }
 
-.footerOpen .divider, .drawerOpen .divider {
+.bottomPanelOpen .divider, .containerOpen .divider {
   border-top: 2px solid $color-blue;
 }
 
@@ -97,6 +121,11 @@ $ANIMATION_DURATION: 0.25s;
   display: grid;
   grid-gap: 10px;
   padding: 0 24px;
+  transform: translateY(-56px);
+}
+
+.containerOpen .positions {
+  transform: translateY(66px);
 }
 
 .position {
@@ -111,6 +140,10 @@ $ANIMATION_DURATION: 0.25s;
   font-size: 14px;
   line-height: 140%;
   letter-spacing: 0.03em;
+  color: $color-white;
+}
+
+.containerOpen .positionName {
   color: $color-blue;
 }
 
@@ -122,21 +155,25 @@ $ANIMATION_DURATION: 0.25s;
   line-height: 140%;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 62px;
-  padding: 0 24px;
-  background-color: $color-black;
-  color: white;
-  z-index: 30;
-
-  transition: background-color $ANIMATION_DURATION;
+.arrowButton {
+  position: absolute;
+  top: 15px;
+  right: 9px;
+  padding: 15px;
+  pointer-events: auto;
 }
 
-.footerOpen {
-  background-color: white;
-  color: $color-black;
+.arrow {
+  mask-image: url("/assets/calculator/arrow.svg");
+  mask-repeat: no-repeat;
+  background-color: #FFFFFF;
+  mask-size: contain;
+  width: 16px;
+  height: 10px;
+  transform: rotate(180deg);
+}
+
+.containerOpen .arrow {
+  background-color: $color-black;
+  transform: rotate(0);
 }

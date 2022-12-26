@@ -28,12 +28,5 @@ export const navRoutes = [
         element: <CalculatorPage/>,
         breadcrumb: "Калькулятор услуг",
         nodeRef: createRef<HTMLDivElement>(),
-    },
-    {
-        path: "/#faq",
-        element: <MainPage key={"faq"}/>,
-        breadcrumb: "FAQ",
-        preventScrollReset: true,
-        nodeRef: createRef<HTMLDivElement>(),
     }
 ]

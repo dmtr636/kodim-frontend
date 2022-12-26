@@ -8,6 +8,7 @@ import classNames from "classnames";
 import {observer} from "mobx-react-lite";
 import {CloseMenuIcon} from "../../../assets/common/closeMenuIcon";
 import {BurgerIcon} from "../../../assets/common/burgerIcon";
+import {HashLink} from "react-router-hash-link";
 
 const Header = observer(() => {
     const navigate = useNavigate()
@@ -41,12 +42,18 @@ const Header = observer(() => {
                             {[styles.navLinkActive]: isActive && !route.path.includes("#")}
                         )}
                         key={route.path}
-                        preventScrollReset={route.preventScrollReset}
                         end
                     >
                         {route.breadcrumb}
                     </NavLink>
                 )}
+                <HashLink
+                    to={"/#faq"}
+                    className={styles.navLink}
+                    smooth={true}
+                >
+                    FAQ
+                </HashLink>
             </nav>
             <div className={styles.button}>
                 <Button onClick={() => {
@@ -90,12 +97,19 @@ const Header = observer(() => {
                                     )}
                                     key={route.path}
                                     onClick={toggleMenu}
-                                    preventScrollReset={route.preventScrollReset}
                                     end
                                 >
                                     {route.breadcrumb}
                                 </NavLink>
                             )}
+                            <HashLink
+                                to={"/#faq"}
+                                className={styles.navLink}
+                                onClick={toggleMenu}
+                                smooth={true}
+                            >
+                                FAQ
+                            </HashLink>
                         </nav>
                         <div className={styles.menuButton}>
                             <Button onClick={() => {
