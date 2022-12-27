@@ -58,13 +58,10 @@ const Layout = () => {
                         nodeRef={nodeRef}
                         timeout={{
                             enter: 200,
-                            exit: 50
                         }}
                         classNames={{
                             enter: styles.mainEnter,
-                            enterActive: styles.mainEnterActive,
-                            exit: styles.mainExit,
-                            exitActive: styles.mainExitActive
+                            enterActive: styles.mainEnterActive
                         }}
                         unmountOnExit
                         enter={!location.pathname.includes("/documents")}
