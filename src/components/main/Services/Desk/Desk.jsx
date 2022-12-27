@@ -167,7 +167,7 @@ export const Desk = () => {
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
           onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
           onSwiper={(swiper) => console.log(swiper.activeIndex)}
-          virtual={false}
+          virtual={true}
           className="service-body"
         >
           {services.map((el, i) => (
