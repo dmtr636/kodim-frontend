@@ -17,6 +17,7 @@
 
 .mainEnter {
   opacity: 0;
+  will-change: opacity;
 }
 
 .mainEnterActive {
@@ -26,6 +27,7 @@
 
 .mainExit {
   opacity: 1;
+  will-change: opacity;
 }
 
 .mainExitActive {
