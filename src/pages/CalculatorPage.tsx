@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {Suspense, useEffect} from "react"
 import CalculatorLayout from "../components/calculator/CalculatorLayout/CalculatorLayout";
 import CalculatorForm from "../components/calculator/CalculatorForm/CalculatorForm";
 import CalculatorCard from "../components/calculator/CalculatorCard/CalculatorCard";
@@ -11,7 +11,9 @@ import CalculatorPrice from "../components/calculator/CalculatorPrice/Calculator
 import CalculatorSubmitResult from "../components/calculator/CalculatorSubmitResult/CalculatorSubmitResult";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import {isMobile} from "../utils/utils";
-import CalculatorPriceMobile from "../components/calculator/CalculatorPriceMobile/CalculatorPriceMobile";
+// import CalculatorPriceMobile from "../components/calculator/CalculatorPriceMobile/CalculatorPriceMobile";
+
+const CalculatorPriceMobile = React.lazy(() => import("../components/calculator/CalculatorPriceMobile/CalculatorPriceMobile"))
 
 const getCalculatorFormData = (stepNumber: string) => {
     switch (stepNumber) {
@@ -119,7 +121,9 @@ export const CalculatorPage = observer(() => {
                     <CalculatorPrice/>
                 </CalculatorCard>
                 :
-                <CalculatorPriceMobile/>
+                <Suspense>
+                    <CalculatorPriceMobile/>
+                </Suspense>
             }
         </CalculatorLayout>
     )
