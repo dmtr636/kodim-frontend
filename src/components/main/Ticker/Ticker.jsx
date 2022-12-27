@@ -7,7 +7,7 @@ import { projectsStore } from "../../../stores/projectsStore";
 
 export const Ticker = observer(() => {
   const cases = projectsStore.cases.filter((item) => item.in_marquee);
-  console.log(cases);
+  /* console.log(cases); */
   /* const casesNew=cases.filter(case => case.in_marquee) */
   const caseElement = [...cases, ...cases].map((el, i) => (
     <TickerLinks

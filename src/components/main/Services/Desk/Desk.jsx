@@ -35,7 +35,7 @@ import MARKETINGPoster from "../Desk/img/posters/MARKETING.webp";
 export const Desk = () => {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
   const { width } = useWindowDimensions();
-  console.log(width);
+  /* console.log(width); */
   let serviceNameMob = width < 700 ? "UX/UI" : "UX/UI-дизайн";
   const [activeService, SetActiveService] = React.useState(0);
   const navigate = useNavigate();
@@ -137,7 +137,7 @@ export const Desk = () => {
       </ServiceButton>
     </SwiperSlide>
   ));
-  console.log(activeService);
+  /* console.log(activeService); */
   return (
     <div className={style.desk}>
       <div className={style.deskHeader}>
@@ -166,7 +166,7 @@ export const Desk = () => {
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs, Virtual]}
           onSlideChange={(swiper) => SetActiveService(swiper.activeIndex)}
-          onSwiper={(swiper) => console.log(swiper.activeIndex)}
+          /* onSwiper={(swiper) => console.log(swiper.activeIndex)} */
           virtual={false}
           className="service-body"
         >
