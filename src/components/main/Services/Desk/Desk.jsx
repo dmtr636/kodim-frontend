@@ -214,11 +214,11 @@ export const Desk = () => {
       ) : (
           <div className={style.deskCard}>
             <div className={style.deskCardLeft}>
-              <div className={style.swiper}>
+              <div className={style.swiper} style={{width: "460px", height: "320px", overflow: "hidden"}}>
                 <video
                   key={services[activeService].imgUrl}
-                  width={width < 700 ? "auto" : "460"}
-                  height={width < 700 ? "auto" : "320"}
+                  width={width < 700 ? "auto" : "461"}
+                  height={width < 700 ? "auto" : "321"}
                   style={{ borderRadius: "5px" }}
                   autoPlay
                   muted
