@@ -17,7 +17,7 @@ const CalculatorPrice = observer(() => {
                         <div className={styles.positionPrice}>
                             {position.price.toLocaleString()} ₽
                         </div>
-                        <div className={styles.divider}/>
+                        <hr className={styles.divider}/>
                     </div>
                 )}
             </div>
