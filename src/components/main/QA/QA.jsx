@@ -26,13 +26,13 @@ export const QA = () => {
           <a style={{
               whiteSpace: "nowrap",
               textDecoration: "none",
-              color: "white",
+              color: "#52AEFF",
               fontWeight:"SemiBold",
             }}
-            href="https://pagespeed.web.dev" target="_blank">Google - PageSpeed</a> 
+            href="https://pagespeed.web.dev" target="_blank">Google — PageSpeed</a> 
           <a style={{
               textDecoration: "none",
-              color: "white",
+              color: "#52AEFF",
               fontWeight:"600",
             }}
             href="https://pagespeed.web.dev"
