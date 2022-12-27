@@ -7,20 +7,24 @@
 
 .wrapperEnter {
   opacity: 0;
+  height: 0;
 }
 
 .wrapperEnterActive {
   opacity: 1;
-  transition: opacity 150ms ease-out;
+  height: 43px;
+  transition: all 150ms ease-out;
 }
 
 .wrapperExit {
   opacity: 1;
+  height: 43px;
 }
 
 .wrapperExitActive {
   opacity: 0;
-  transition: opacity 50ms ease-out;
+  height: 0;
+  transition: all 50ms ease-out;
 }
 
 .content{
