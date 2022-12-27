@@ -76,7 +76,7 @@ export const QA = () => {
       QAText={el.QAText}
     />
   ));
-  console.log(currentItem);
+/*   console.log(currentItem); */
   return (
     <div className={style.wrapper} id={"faq"}>
       <div className={style.body}>
