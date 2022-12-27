@@ -1,0 +1,86 @@
+@import "src/styles/vars";
+.wrapper {
+  background: $color-blue;
+  background-image: url("../../../assets/main/bgBanner.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+.body {
+  width: 1220px;
+  height: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1520px) {
+  .wrapper {
+    background-image: url("");
+  }
+  .bodybanner {
+    margin: 0 auto;
+    width: 1520px;
+    background-image: url("../../../assets/main/bgBannerFull.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+}
+.h1 {
+  color: $color-white;
+  padding-top: 100px;
+  white-space: pre-line;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.text {
+  color: $color-white;
+  align-items: flex-start;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  padding-top: 20px;
+}
+.button {
+  padding-top: 60px;
+}
+@include mobile {
+  .wrapper {
+    width: 100%;
+    padding: 0 24px;
+    background: $color-blue;
+    background-image: url("../../../assets/main/bgBannerMobile.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+  .body {
+    width: 100%;
+    height: auto;
+  }
+  .h1 {
+    padding-top: 24px;
+    font-size: 28px;
+    padding-right: 2px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+  .text {
+    font-size: 22px;
+    color: #fdfeff;
+    padding-top: 16px;
+  }
+  .button {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}

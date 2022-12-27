@@ -1,23 +1,19 @@
-import React from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Layout from "./components/common/Layout/Layout";
-import {routes} from "./constants/routes";
-import {Page404} from "./pages/Page404";
+import React, {useEffect} from 'react';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createRoutes} from "./routes/routes";
+import {projectsStore} from "./stores/projectsStore";
 
 function App() {
+    useEffect(() => {
+        projectsStore.fetchProjects()
+        projectsStore.fetchCases()
+    }, [])
+
+    const routes = createRoutes(projectsStore)
+    const router = createBrowserRouter(routes)
+
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path={"/"} element={<Layout/>}>
-                    {routes.map(route =>
-                        route.index
-                            ? <Route index element={route.component} key={route.path}/>
-                            : <Route path={route.path} element={route.component} key={route.path}/>
-                    )}
-                    <Route path={"*"} element={<Page404/>}/>
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <RouterProvider router={router}/>
     );
 }
 

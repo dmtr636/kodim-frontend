@@ -1,0 +1,29 @@
+@import "src/styles/vars";
+
+.input {
+  width: 100%;
+  padding: 11px 28px;
+  border: 2px solid #52AEFF;
+  border-radius: 5px;
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 135%;
+  letter-spacing: 0.03em;
+  color: $color-black;
+
+  resize: none;
+  overflow: hidden;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  @include mobile {
+    padding: 9px 13px;
+    font-size: 14px;
+    line-height: 130%;
+  }
+}

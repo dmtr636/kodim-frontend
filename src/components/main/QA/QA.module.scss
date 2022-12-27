@@ -1,0 +1,173 @@
+@import "src/styles/vars";
+.wrapper {
+  background-color: $color-black;
+  padding-bottom: 50px;
+}
+.body {
+  width: 1220px;
+  margin: 0 auto;
+  /* display: flex; */
+  color: $color-white;
+}
+.header {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  color: $color-blue;
+  padding-top: 50px;
+  margin-bottom: 13px;
+}
+.qablock {
+  height: 3px;
+  background-color: $color-blue;
+  border-radius: 5px;
+  margin-top: 8px;
+
+  &:last-child {
+    display: none;
+  }
+}
+.qaicon{
+  opacity:0.8
+}
+.qaheader {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  cursor: pointer;
+  &:hover {
+    color: #ffffff;
+    .qaicon{
+      opacity:1
+    }
+  }
+}
+.qaHeaderText {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  /* color: rgba(255, 255, 255, 0.7); */
+  padding-top: 30px;
+  /* &:hover{
+    color: #ffffff;
+  } */
+}
+.qaicon{
+  transform:none;
+  transition: transform 0.25s;
+  &.qaiconactive{
+    transform:rotate(180deg);
+  }
+}
+
+.qatext {
+  width: 853px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin-top: 20px;
+  max-height: 0;
+  overflow: hidden;
+  color: #ffffff;
+  transition: all 0.25s ease-out;
+  &.qatextactive {
+    width: 853px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    margin-top: 20px;
+    max-height: 165px;
+    white-space: pre-line;
+    /* overflow: visible; */
+    padding-bottom: 30px;
+
+  }
+}
+.qaHeaderIcon {
+  cursor: pointer;
+  margin-top: 27px;
+}
+
+@include mobile {
+  .body {
+    width: 100%;
+    padding: 0 24px;
+  }
+  .wrapper {
+    padding-bottom: 24px;
+  }
+  .header {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 3px;
+    padding-top: 24px;
+    padding-right: 24px;
+  }
+  .qablock {
+    margin-top: 0px;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .qaheader {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+  }
+  .qaHeaderText {
+    font-size: 20px;
+    line-height: 130%;
+    padding-top: 20px;
+    margin-right: 24px;
+    width: 222px;
+    margin-bottom: 0px;
+    color: #ffffff;
+  }
+  .qatext {
+    width: 100%;
+    /* height: 0; */
+    font-size: 16px;
+    margin-top: 16px;
+    white-space: pre-line;
+    padding-right: 20px;
+    &.qatextactive {
+      height: auto;
+      width: 100%;
+      font-size: 16px;
+      margin-top: 16px;
+      display: block;
+      max-height: 300px;
+      white-space: pre-line;
+      margin-right: 24px;
+      margin-bottom: 20px;
+      padding-right: 20px;
+      padding-bottom: 0px;
+    }
+  }
+
+  .qaHeaderIcon {
+    display: block;
+    cursor: pointer;
+    /* margin-bottom: 34px; */
+    margin-top: 0px;
+
+    margin: auto 0;
+  }
+  .qaicon{
+    opacity:1
+  }
+}

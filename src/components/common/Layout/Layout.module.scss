@@ -4,8 +4,22 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  @include mobile {
+    margin-top: 62px;
+    overflow: hidden;
+  }
 }
 
 .main {
   flex-grow: 1;
+}
+
+.mainEnter {
+  opacity: 0;
+}
+
+.mainEnterActive {
+  opacity: 1;
+  transition: opacity 200ms ease-out;
 }

@@ -1,0 +1,15 @@
+@import "src/styles/vars";
+
+.layout {
+  display: grid;
+  grid-template-columns: 756px 414px;
+  justify-content: space-between;
+  padding: 30px 0 0 0;
+  max-width: 1220px;
+  margin: 0 auto;
+
+  @include mobile {
+    padding: 24px 24px 0 24px;
+    display: block;
+  }
+}

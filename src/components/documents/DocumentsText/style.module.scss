@@ -1,0 +1,45 @@
+@import "src/styles/vars";
+
+.text {
+
+}
+
+.text h2 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 130%;
+  color: $color-black;
+  margin-top: 20px;
+  margin-bottom: 16px;
+
+  @include mobile {
+    font-size: 16px;
+    line-height: 130%;
+    margin-top: 24px;
+  }
+}
+
+.text p {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #000000;
+  white-space: pre-line;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.text a {
+  display: inline-block;
+  color: $color-blue;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

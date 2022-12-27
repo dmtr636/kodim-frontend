@@ -1,0 +1,75 @@
+@import "src/styles/vars";
+.button {
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 13px 30px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: #303030;
+  margin-left: 20px;
+  margin-top: 24px;
+  &:hover {
+    background: #444444;
+    color: #ffffff;
+  }
+}
+.activebutton {
+  background: #303030;
+  border-radius: 5px;
+  padding: 13px 30px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin-left: 20px;
+  margin-top: 24px;
+  pointer-events: none;
+}
+@include mobile {
+  .button {
+    width: auto;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    margin-left:0px;
+    margin-right: 0;
+    &:hover {
+      background: #ffffff;
+      color: #303030;
+    }
+
+    }
+
+  .activebutton {
+    width: auto;
+    font-size: 14px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+
+    /* &:last-child{
+      margin-right: 24px;
+    } */
+
+    margin-left:0px;
+    margin-right: 0;
+    pointer-events:none
+}}

@@ -4,20 +4,38 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
+    -webkit-user-drag: none;
 }
 
 button {
     border: none;
     cursor: pointer;
+    background: none;
 }
 
+button:disabled {
+    cursor: initial;
+}
+
+img {
+    display: block;
+}
+
+input, textarea {
+    border: none;
+    outline: none;
+}
 
 /* Scrollbar */
 body::-webkit-scrollbar {
-    width: 25px;               /* width of the entire scrollbar */;
+    width: 12px;               /* width of the entire scrollbar */;
 }
 
 body::-webkit-scrollbar-track {
@@ -27,7 +45,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: #52AEFF;    /* color of the scroll thumb */
     border-radius: 50px;       /* roundness of the scroll thumb */
-    border: 5px solid white;  /* creates padding around scroll thumb */
+    border: 2px solid white;  /* creates padding around scroll thumb */
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -42,4 +60,31 @@ body {
 html {
     scrollbar-width: auto;          /* "auto" or "thin" */
     scrollbar-color: #52AEFF transparent;   /* scroll thumb and track */
+}
+
+/* Swiper */
+.service-head .swiper-slide{
+    width: auto!important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.service-head .swiper-slide:first-child{
+
+    padding-left: 24px;
+
+}
+.service-head .swiper-slide:last-child{
+    padding-right: 24px;
+    
+}
+.service-body .swiper-slide{
+ height: auto;
+}
+
+
+/* For sticky header */
+@media (max-width: 699px) {
+    [id] {
+        scroll-margin-top: 62px;
+    }
 }

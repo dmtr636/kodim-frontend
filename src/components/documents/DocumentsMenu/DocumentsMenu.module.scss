@@ -1,0 +1,55 @@
+@import "src/styles/vars";
+
+.item {
+  height: 70px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  column-gap: 21px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: $color-black;
+  user-select: none;
+
+  @include desktop {
+    &:hover {
+      background: $color-blue-hover;
+    }
+  }
+
+  @include mobile {
+    height: 47px;
+    font-size: 13px;
+    line-height: 15px;
+    padding: 0 20px;
+    column-gap: 12px;
+  }
+}
+
+.itemActive {
+  background: $color-blue;
+  pointer-events: none;
+  color: #FFFFFF;
+}
+
+.circle {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #303030;
+  border-radius: 50%;
+
+  @include mobile {
+    width: 15px;
+    height: 15px;
+    border-width: 2px;
+  }
+}
+
+.itemActive .circle {
+  border: none;
+  background: white;
+}

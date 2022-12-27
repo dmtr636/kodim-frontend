@@ -1,0 +1,178 @@
+@import "src/styles/vars";
+.desk {
+  width: 1220px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -webkit-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+}
+.deskHeader {
+  height: 180px;
+  background-color: $color-blue;
+  background-image: url("../../../../assets/main/deskBG.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  -moz-outline-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.button {
+  background-color: white;
+  color: #303030;
+  padding: 25px;
+}
+.deskCard {
+  padding-top: 40px;
+  /* box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -webkit-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  -moz-box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35); */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.deskCardRightHeader {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  color: #303030;
+}
+
+.deskCardRightText {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 140%;
+  width: 643px;
+  letter-spacing: 0.03em;
+  color: #303030;
+  margin-top: 28px;
+  white-space: pre-line;
+}
+.deskCardLeftImg {
+  margin-left: 30px;
+  margin-bottom: 30px;
+  width: 460px;
+  height: 320px;
+  source {
+    width: 460px;
+    height: 320px;
+  }
+}
+.video {
+  width: 460px;
+  height: 320px;
+}
+.deskCard {
+  display: flex;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+.deskCardRight {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.buttonPosition {
+  margin-top: auto;
+  margin-bottom: 5px;
+}
+.deskwrapper {
+  margin-left: 10px;
+  padding-top: 6px;
+  display:flex;
+  flex-wrap: wrap;
+}
+.slider {
+  width: auto !important;
+  padding-left: 24px;
+}
+.buttonPositionMob{
+  display: none;
+}
+@include mobile {
+  .desk {
+    width: 100%;
+    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top:24px;
+  }
+  .deskCard {
+    flex-direction: column;
+    padding-top: 24px;
+    box-shadow: none;
+    border-radius: 5px;
+    height: 100%;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    position: relative;
+    
+  }
+  .deskCardRight {
+    /* position: relative; */
+  }
+/*   .buttonPositionMob{
+    display: block;
+    margin-top:20px;
+    position: absolute;
+    bottom: 20px;
+  } */
+  .deskHeader {
+    height: 76px;
+    margin-bottom: 0px;
+    -moz-outline-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .deskwrapper {
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 0px;
+    padding-top: 0px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .deskCardRightHeader {
+    font-size: 20px;
+    line-height: 130%;
+  }
+  .deskCardRightText {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    width: 100%;
+    margin-top: 16px;
+    padding-right: 24px;
+    padding-bottom: 58px;
+  }
+  .deskCardLeftImg {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    margin-right: 24px;
+    width: auto;
+    height: auto;
+    img {
+      width: 100%;
+      padding-right: 24px;
+      height: auto;
+    }
+  }
+  .buttonPosition {
+    margin-top:20px;
+    position: absolute;
+    bottom: 20px;
+    margin-bottom: 0px;
+    
+    
+  }
+  .deskCardRight{
+    margin-left:0px
+  }
+}

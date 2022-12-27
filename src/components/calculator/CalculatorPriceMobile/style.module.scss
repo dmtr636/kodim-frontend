@@ -1,0 +1,179 @@
+@import "src/styles/vars";
+
+$ANIMATION_DURATION: 0.25s;
+
+.container {
+  height: 100%;
+  background-color: $color-black;
+  color: #FFFFFF;
+
+  transition: background-color $ANIMATION_DURATION;
+}
+
+.containerOpen {
+  background-color: white;
+  color: $color-black;
+  border-radius: 5px 5px 0 0;
+}
+
+.header {
+  position: absolute;
+  top: -122px;
+  left: 0;
+  right: 0;
+  height: 123px;
+  padding: 24px 24px 14px 24px;
+  border-radius: 5px 5px 0 0;
+  visibility: visible;
+  background-color: $color-black;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+
+  transition: background-color $ANIMATION_DURATION;
+}
+
+.containerOpen .header {
+  background-color: $color-white;
+  color: $color-black;
+  box-shadow: none;
+  top: 0;
+}
+
+.puller {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 80px;
+  height: 5px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+
+.containerOpen .puller {
+  background-color: $color-black;
+}
+
+.title {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  margin-bottom: 14px;
+}
+
+.positionsCount {
+  composes: title;
+  font-family: 'Montserrat';
+}
+
+.bottomPanel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 62px;
+  padding: 0 24px;
+  background-color: $color-black;
+  color: white;
+  z-index: 10000;
+  pointer-events: none;
+
+  transition: background-color $ANIMATION_DURATION;
+}
+
+.bottomPanelOpen {
+  background-color: white;
+  color: $color-black;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid #FFFFFF;
+}
+
+.bottomPanelOpen .divider, .containerOpen .divider {
+  border-top: 2px solid $color-blue;
+}
+
+.total {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+}
+
+.totalPrice {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.positions {
+  display: grid;
+  grid-gap: 10px;
+  padding: 0 24px;
+  transform: translateY(-56px);
+}
+
+.containerOpen .positions {
+  transform: translateY(66px);
+}
+
+.position {
+  display: grid;
+  grid-gap: 6px;
+}
+
+.positionName {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  color: $color-white;
+}
+
+.containerOpen .positionName {
+  color: $color-blue;
+}
+
+.positionPrice {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 15px;
+  right: 9px;
+  padding: 15px;
+  pointer-events: auto;
+}
+
+.arrow {
+  mask-image: url("/assets/calculator/arrow.svg");
+  mask-repeat: no-repeat;
+  background-color: #FFFFFF;
+  mask-size: contain;
+  width: 16px;
+  height: 10px;
+  transform: rotate(180deg);
+}
+
+.containerOpen .arrow {
+  background-color: $color-black;
+  transform: rotate(0);
+}

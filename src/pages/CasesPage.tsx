@@ -1,9 +1,12 @@
-import React from "react"
+import React from "react";
+import { CaseLayout } from "../components/cases/caseLayout/caseLayout";
 
 export const CasesPage = () => {
-    return (
-        <div>
-            It's cases page
-        </div>
-    )
-}
+  return (
+    <div>
+      <CaseLayout />
+    </div>
+  );
+};
+
+export default CasesPage

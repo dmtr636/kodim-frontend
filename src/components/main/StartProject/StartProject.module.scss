@@ -1,0 +1,55 @@
+@import "src/styles/vars";
+.wrapper {
+  background-color: $color-blue;
+  width: 1220px;
+  height: 262px;
+  margin: 0 auto;
+  margin-top: 110px;
+  display: flex;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+}
+.header {
+  width: 720px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  padding: 30px;
+  color: white;
+}
+.button {
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+@include mobile {
+  .wrapper {
+    width: auto;  
+    height: auto;
+    margin: 0 24px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    flex-direction: column;
+    box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+    
+
+  }
+  .header{
+    width: 100%;
+    font-size: 24px;
+    padding: 24px;
+    padding-right: 64px;
+  }
+  .button{
+    padding-top: 0px;
+    padding-bottom: 218px;
+    padding-left: 24px;
+  }
+}

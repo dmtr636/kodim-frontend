@@ -1,0 +1,31 @@
+@import "src/styles/vars";
+.wrapper{
+    width: 1220px;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.header {
+  width: 570px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  color: #303030;
+}
+@include mobile{
+  .wrapper{
+    width: 100%;
+    margin-top:40px;
+    margin-bottom: 40px;
+    /* padding:  0 24px; */
+  }
+  .header{
+    width: 100%;
+    font-size: 24px;
+    padding:  0 24px;
+    
+  }
+}

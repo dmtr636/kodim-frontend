@@ -1,0 +1,26 @@
+@import "src/styles/vars";
+.body {
+  height: 84px;
+  background-color: #303030;
+  color:  rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding-top: 28px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 120%;
+  margin:0 35px;
+  &:hover{
+    color: white;
+  }
+}
+@include mobile{
+  .body{
+    height: 70px;
+    font-size: 18px;
+    padding-top: 24px;
+    margin: 0 20px;
+    color: white;
+  }
+}

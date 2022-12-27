@@ -9,8 +9,16 @@ $color-blue: #52AEFF;
 $color-blue-gradient: linear-gradient(223.1deg, #89D3FF 5.85%, rgba(137, 211, 255, 0) 97.22%);
 $color-blue-hover: rgba(82, 174, 255, 0.05);
 
+$ANIMATION_DURATION: 0.25s;
+
 @mixin mobile {
   @media (max-width: 699px) { @content; }
+}
+@mixin mobileSmall {
+  @media (max-width: 429px) { @content; }
+}
+@mixin mobileBig {
+  @media (min-width: 430px) and (max-width: 699px) { @content; }
 }
 
 @mixin tablet {

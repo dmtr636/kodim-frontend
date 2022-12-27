@@ -1,0 +1,48 @@
+@import "src/styles/vars";
+
+.wrapper {
+  height: 43px;
+  background: $color-blue;
+}
+
+.content{
+  height: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include mobile {
+    padding: 0 24px;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.link {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+
+  @include mobile {
+    white-space: nowrap;
+  }
+}
+
+.separator {
+  width: 8px;
+  height: 9px;
+  background: url("../../../../src/assets/common/breadcrumbsSeparator.svg");
+
+  @include mobile {
+    flex-shrink: 0;
+  }
+}
