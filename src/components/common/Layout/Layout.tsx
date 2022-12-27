@@ -18,7 +18,6 @@ const Layout = () => {
 
     const meta = getMetaByPath(location.pathname)
     const { nodeRef } = navRoutes.find((route) => route.path === location.pathname) ?? {}
-    const isShowBreadcrumbs = location.pathname !== "/"
 
     const onResize = () => {
         setWidth(window.outerWidth)
@@ -51,13 +50,14 @@ const Layout = () => {
 
             <div className={styles.layout}>
                 <Header/>
+                <BreadCrumbs/>
 
                 <SwitchTransition>
                     <CSSTransition
                         key={location.pathname}
                         nodeRef={nodeRef}
                         timeout={{
-                            enter: 150,
+                            enter: 200,
                             exit: 50
                         }}
                         classNames={{
@@ -68,13 +68,10 @@ const Layout = () => {
                         }}
                         unmountOnExit
                         enter={!location.pathname.includes("/documents")}
-                        exit={!location.pathname.includes("/documents")}
+                        exit={false}
                     >
                         {(state) => (
                             <div ref={nodeRef} className={styles.main}>
-                                {isShowBreadcrumbs &&
-                                    <BreadCrumbs/>
-                                }
                                 {outlet}
                             </div>
                         )}

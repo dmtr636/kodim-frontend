@@ -8,7 +8,12 @@ import {observer} from "mobx-react-lite";
 
 const BreadCrumbs = observer(() => {
     const breadcrumbs = useBreadcrumbs(createRoutes(projectsStore));
+    const isShowWrapper = location.pathname !== "/"
     const isShowBreadcrumbs = projectsStore.isProjectsLoaded && projectsStore.isCasesLoaded
+
+    if (!isShowWrapper) {
+        return null
+    }
 
     return (
         <div className={styles.wrapper}>

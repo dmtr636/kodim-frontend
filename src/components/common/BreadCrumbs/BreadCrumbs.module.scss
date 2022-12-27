@@ -5,28 +5,6 @@
   background: $color-blue;
 }
 
-.wrapperEnter {
-  opacity: 0;
-  height: 0;
-}
-
-.wrapperEnterActive {
-  opacity: 1;
-  height: 43px;
-  transition: all 150ms ease-out;
-}
-
-.wrapperExit {
-  opacity: 1;
-  height: 43px;
-}
-
-.wrapperExitActive {
-  opacity: 0;
-  height: 0;
-  transition: all 50ms ease-out;
-}
-
 .content{
   height: 100%;
   max-width: 1220px;
