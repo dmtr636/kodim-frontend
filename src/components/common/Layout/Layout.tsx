@@ -13,7 +13,12 @@ import {navRoutes} from "../../../routes/navRoutes";
 
 const Layout = () => {
     const location = useLocation()
+    const outlet = useOutlet()
     const [width, setWidth] = useState(window.outerWidth)
+
+    const meta = getMetaByPath(location.pathname)
+    const { nodeRef } = navRoutes.find((route) => route.path === location.pathname) ?? {}
+    const isShowBreadcrumbs = location.pathname !== "/"
 
     const onResize = () => {
         setWidth(window.outerWidth)
@@ -23,12 +28,6 @@ const Layout = () => {
         window.addEventListener("resize", onResize)
         return () => window.removeEventListener("resize", onResize)
     }, [])
-
-    const meta = getMetaByPath(location.pathname)
-
-
-    const { nodeRef } = navRoutes.find((route) => route.path === location.pathname) ?? {}
-    const outlet = useOutlet()
 
     return (
         <>
@@ -52,7 +51,6 @@ const Layout = () => {
 
             <div className={styles.layout}>
                 <Header/>
-                <BreadCrumbs/>
 
                 <SwitchTransition>
                     <CSSTransition
@@ -74,6 +72,9 @@ const Layout = () => {
                     >
                         {(state) => (
                             <div ref={nodeRef} className={styles.main}>
+                                {isShowBreadcrumbs &&
+                                    <BreadCrumbs/>
+                                }
                                 {outlet}
                             </div>
                         )}
