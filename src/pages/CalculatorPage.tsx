@@ -10,10 +10,10 @@ import {observer} from "mobx-react-lite";
 import CalculatorPrice from "../components/calculator/CalculatorPrice/CalculatorPrice";
 import CalculatorSubmitResult from "../components/calculator/CalculatorSubmitResult/CalculatorSubmitResult";
 import useWindowDimensions from "../hooks/useWindowDimensions";
-import {isMobile} from "../utils/utils";
-// import CalculatorPriceMobile from "../components/calculator/CalculatorPriceMobile/CalculatorPriceMobile";
+import {isMobile, ReactLazyPreload} from "../utils/utils";
 
-const CalculatorPriceMobile = React.lazy(() => import("../components/calculator/CalculatorPriceMobile/CalculatorPriceMobile"))
+const CalculatorPriceMobile = ReactLazyPreload(() => import("../components/calculator/CalculatorPriceMobile/CalculatorPriceMobile"))
+CalculatorPriceMobile.preload()
 
 const getCalculatorFormData = (stepNumber: string) => {
     switch (stepNumber) {
