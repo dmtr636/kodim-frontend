@@ -219,7 +219,7 @@ export const Desk = () => {
                   key={services[activeService].imgUrl}
                   width={width < 700 ? "auto" : "460"}
                   height={width < 700 ? "auto" : "320"}
-                  style={{ borderRadius: "5px", opacity: "0.998" }}
+                  style={{ borderRadius: "5px", clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)" }}
                   autoPlay
                   muted
                   loop
