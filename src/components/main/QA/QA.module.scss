@@ -127,11 +127,12 @@
     display: flex;
     justify-content: space-between;
     color: #ffffff;
+    padding-top: 20px;
   }
   .qaHeaderText {
     font-size: 20px;
     line-height: 130%;
-    padding-top: 20px;
+    padding-top: 0px;
     margin-right: 24px;
     width: 222px;
     margin-bottom: 0px;
@@ -163,11 +164,13 @@
     display: block;
     cursor: pointer;
     /* margin-bottom: 34px; */
-    margin-top: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
 
-    margin: auto 0;
+    /* margin: auto 0; */
   }
   .qaicon{
-    opacity:1
+    opacity:1;
+
   }
 }
