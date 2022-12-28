@@ -219,7 +219,7 @@ export const Desk = () => {
                   key={services[activeService].imgUrl}
                   width={width < 700 ? "auto" : "460"}
                   height={width < 700 ? "auto" : "320"}
-                  style={{ borderRadius: "5px" }}
+                  style={{ borderRadius: "5px", opacity: "0.998" }}
                   autoPlay
                   muted
                   loop
