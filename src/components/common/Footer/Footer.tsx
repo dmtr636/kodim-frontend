@@ -27,7 +27,7 @@ const data = [
                 navLink: true,
             },
             {
-                name: "Наши проекты",
+                name: "Наши продукты",
                 path: "/projects",
                 navLink: true,
             },

@@ -20,7 +20,7 @@ export const navRoutes = [
     {
         path: "/projects",
         element: <ProjectsPage/>,
-        breadcrumb: "Наши проекты",
+        breadcrumb: "Наши продукты",
         nodeRef: createRef<HTMLDivElement>(),
     },
     {
