@@ -1,5 +1,18 @@
 @import "src/styles/vars";
 
+.headerWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: white;
+  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+
+  @include mobile {
+    box-shadow: 0px 2px 6px rgba(52, 182, 255, 0.15);
+  }
+}
+
 .header {
   width: 1220px;
   height: 82px;
@@ -8,16 +21,10 @@
   align-items: center;
 
   @include mobile {
-    width: 100vw;
+    width: 100%;
     height: 62px;
     padding: 24px;
     justify-content: space-between;
-    position: fixed;
-    top: 0;
-    background: white;
-    z-index: 10;
-
-    box-shadow: 0px 2px 6px rgba(52, 182, 255, 0.15);
   }
 }
 

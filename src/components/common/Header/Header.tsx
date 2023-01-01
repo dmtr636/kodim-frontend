@@ -29,100 +29,102 @@ const Header = observer(() => {
     }
 
     return (
-        <header className={styles.header}>
-            <NavLink to={"/"}>
-                <img className={styles.logo} src={logo} alt={"logo"}/>
-            </NavLink>
-            <nav className={styles.nav}>
-                {navRoutes.map(route =>
-                    <NavLink
-                        to={route.path}
-                        className={({isActive}) => classNames(
-                            styles.navLink,
-                            {[styles.navLinkActive]: isActive && !route.path.includes("#")}
-                        )}
-                        key={route.path}
-                        end
-                    >
-                        {route.breadcrumb}
-                    </NavLink>
-                )}
-                <HashLink
-                    to={"/#faq"}
-                    className={styles.navLink}
-                    smooth={true}
-                >
-                    FAQ
-                </HashLink>
-            </nav>
-            <div className={styles.button}>
-                <Button onClick={() => {
-                    navigate("calculator", {replace: location.pathname.startsWith("/calculator")})
-                }}>
-                    Начать проект
-                </Button>
-            </div>
-
-            <button
-                className={styles.burger}
-                onClick={toggleMenu}
-            >
-                {isShowMenu
-                    ? <CloseMenuIcon />
-                    : <BurgerIcon />
-                }
-            </button>
-            {isShowMenu &&
-                <div
-                    className={classNames(
-                        styles.overlay,
-                        {[styles.overlayFadingOut]: isMenuExiting}
+        <div className={styles.headerWrapper}>
+            <header className={styles.header}>
+                <NavLink to={"/"}>
+                    <img className={styles.logo} src={logo} alt={"logo"}/>
+                </NavLink>
+                <nav className={styles.nav}>
+                    {navRoutes.map(route =>
+                        <NavLink
+                            to={route.path}
+                            className={({isActive}) => classNames(
+                                styles.navLink,
+                                {[styles.navLinkActive]: isActive && !route.path.includes("#")}
+                            )}
+                            key={route.path}
+                            end
+                        >
+                            {route.breadcrumb}
+                        </NavLink>
                     )}
+                    <HashLink
+                        to={"/#faq"}
+                        className={styles.navLink}
+                        smooth={true}
+                    >
+                        FAQ
+                    </HashLink>
+                </nav>
+                <div className={styles.button}>
+                    <Button onClick={() => {
+                        navigate("calculator", {replace: location.pathname.startsWith("/calculator")})
+                    }}>
+                        Начать проект
+                    </Button>
+                </div>
+
+                <button
+                    className={styles.burger}
                     onClick={toggleMenu}
                 >
+                    {isShowMenu
+                        ? <CloseMenuIcon />
+                        : <BurgerIcon />
+                    }
+                </button>
+                {isShowMenu &&
                     <div
                         className={classNames(
-                            styles.menu,
-                            {[styles.menuExiting]: isMenuExiting}
+                            styles.overlay,
+                            {[styles.overlayFadingOut]: isMenuExiting}
                         )}
-                        onClick={(event) => event.stopPropagation()}
+                        onClick={toggleMenu}
                     >
-                        <nav className={styles.menuNav}>
-                            {navRoutes.map(route =>
-                                <NavLink
-                                    to={route.path}
-                                    className={({isActive}) => classNames(
-                                        styles.navLink,
-                                        {[styles.navLinkActive]: isActive && !route.path.includes("#")}
-                                    )}
-                                    key={route.path}
-                                    onClick={toggleMenu}
-                                    end
-                                >
-                                    {route.breadcrumb}
-                                </NavLink>
+                        <div
+                            className={classNames(
+                                styles.menu,
+                                {[styles.menuExiting]: isMenuExiting}
                             )}
-                            <HashLink
-                                to={"/#faq"}
-                                className={styles.navLink}
-                                onClick={toggleMenu}
-                                smooth={true}
-                            >
-                                FAQ
-                            </HashLink>
-                        </nav>
-                        <div className={styles.menuButton}>
-                            <Button onClick={() => {
-                                navigate("calculator", {replace: location.pathname.startsWith("/calculator")})
-                                setShowMenu(false)
-                            }}>
-                                Начать проект
-                            </Button>
+                            onClick={(event) => event.stopPropagation()}
+                        >
+                            <nav className={styles.menuNav}>
+                                {navRoutes.map(route =>
+                                    <NavLink
+                                        to={route.path}
+                                        className={({isActive}) => classNames(
+                                            styles.navLink,
+                                            {[styles.navLinkActive]: isActive && !route.path.includes("#")}
+                                        )}
+                                        key={route.path}
+                                        onClick={toggleMenu}
+                                        end
+                                    >
+                                        {route.breadcrumb}
+                                    </NavLink>
+                                )}
+                                <HashLink
+                                    to={"/#faq"}
+                                    className={styles.navLink}
+                                    onClick={toggleMenu}
+                                    smooth={true}
+                                >
+                                    FAQ
+                                </HashLink>
+                            </nav>
+                            <div className={styles.menuButton}>
+                                <Button onClick={() => {
+                                    navigate("calculator", {replace: location.pathname.startsWith("/calculator")})
+                                    setShowMenu(false)
+                                }}>
+                                    Начать проект
+                                </Button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
-        </header>
+                }
+            </header>
+        </div>
     );
 })
 

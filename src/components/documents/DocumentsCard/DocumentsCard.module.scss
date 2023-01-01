@@ -8,6 +8,8 @@
 }
 
 .sticky {
-  position: sticky;
-  top: 30px;
+  @include desktop {
+    position: sticky;
+    top: 112px;
+  }
 }
