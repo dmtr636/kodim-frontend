@@ -18,6 +18,7 @@ export class ProjectsStore {
 
     setCases(data: any[]) {
         this.cases = data
+        this.cases.sort((a, b) => b.position - a.position)
     }
 
     setProjectsLoaded(value: boolean) {
