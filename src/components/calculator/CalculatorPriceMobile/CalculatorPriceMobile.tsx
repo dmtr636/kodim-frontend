@@ -28,7 +28,8 @@ const CalculatorPriceMobile = observer(() => {
                 }}
                 PaperProps={{
                     style: {
-                        height: `calc(100${open ? '%' : 'vh'} - ${bottomPanelHeight + drawerHeaderHeight}px)`,
+                        top: "122px",
+                        // height: `calc(100${open ? '%' : 'vh'} - ${bottomPanelHeight + drawerHeaderHeight}px)`,
                         overflow: 'visible',
                         background: 'none'
                     }
