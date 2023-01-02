@@ -37,7 +37,7 @@ $ANIMATION_DURATION: 0.25s;
   background-color: $color-white;
   color: $color-black;
   box-shadow: none;
-
+  top: 0;
 }
 
 .puller {
@@ -125,7 +125,7 @@ $ANIMATION_DURATION: 0.25s;
 }
 
 .containerOpen .positions {
-
+  transform: translateY(66px);
 }
 
 .position {
