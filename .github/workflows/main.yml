@@ -35,4 +35,3 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         server-dir: ${{ secrets.SERVER_DIR }}
         local-dir: build/
-        protocol: ftps
