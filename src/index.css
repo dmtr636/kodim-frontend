@@ -83,6 +83,11 @@ html {
 
 
 /* For sticky header */
+@media (min-width: 700px) {
+    [id] {
+        scroll-margin-top: 82px;
+    }
+}
 @media (max-width: 699px) {
     [id] {
         scroll-margin-top: 62px;

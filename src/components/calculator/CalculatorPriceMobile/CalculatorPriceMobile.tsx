@@ -28,12 +28,13 @@ const CalculatorPriceMobile = observer(() => {
                 }}
                 PaperProps={{
                     style: {
-                        height: open ? "100%" : `calc(100% - ${bottomPanelHeight + drawerHeaderHeight}px)`,
+                        height: `calc(100${open ? '%' : 'vh'} - ${bottomPanelHeight + drawerHeaderHeight}px)`,
                         overflow: 'visible',
                         background: 'none'
                     }
                 }}
                 disableBackdropTransition={true}
+                transitionDuration={250}
             >
                 <div className={classNames(
                     styles.container,

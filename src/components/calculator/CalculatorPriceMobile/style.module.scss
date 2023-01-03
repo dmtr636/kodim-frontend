@@ -37,7 +37,6 @@ $ANIMATION_DURATION: 0.25s;
   background-color: $color-white;
   color: $color-black;
   box-shadow: none;
-  top: 0;
 }
 
 .puller {
@@ -122,10 +121,6 @@ $ANIMATION_DURATION: 0.25s;
   grid-gap: 10px;
   padding: 0 24px;
   transform: translateY(-56px);
-}
-
-.containerOpen .positions {
-  transform: translateY(66px);
 }
 
 .position {
