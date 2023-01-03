@@ -1,16 +1,24 @@
-import React from "react";
-import PrivacyPolicy from "../components/documents/DocumentsText/PrivacyPolicy";
-import ContractOffer from "../components/documents/DocumentsText/ContractOffer";
+import React, {lazy, Suspense} from "react";
+import DocumentsTextFallback from "../components/documents/DocumentsText/DocumentsTextFallback";
+
+const PrivacyPolicy = lazy(() => import("../components/documents/DocumentsText/PrivacyPolicy"))
+const ContractOffer = lazy(() => import("../components/documents/DocumentsText/ContractOffer"))
 
 export const documentsRoutes = [
     {
         path: "/documents/privacy",
-        element: <PrivacyPolicy/>,
+        element:
+            <Suspense fallback={<DocumentsTextFallback/>}>
+                <PrivacyPolicy/>
+            </Suspense>,
         breadcrumb: "Политика конфиденциальности"
     },
     {
         path: "/documents/contract",
-        element: <ContractOffer/>,
+        element:
+            <Suspense fallback={<DocumentsTextFallback/>}>
+                <ContractOffer/>
+            </Suspense>,
         breadcrumb: "Договор-оферта"
     },
 ]
