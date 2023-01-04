@@ -1,9 +1,13 @@
 import {makeAutoObservable} from "mobx";
 import {ICalculatorPricePosition} from "../interfaces/ICalculatorPricePosition";
 import {calculatorFormFirstStep, calculatorFormSecondStep} from "../constants/calculatorForm";
-import {ICalculatorFormItem, ICalculatorFormSection} from "../interfaces/ICalculatorFormSection";
+import {
+    ICalculatorFormItem,
+    ICalculatorFormSection
+} from "../interfaces/ICalculatorFormSection";
 import axios from "axios";
 import {SEND_BRIEF_ENDPOINT} from "../api/endpoints";
+import {siteTypeOptions} from "../constants/calculatorFormOptions";
 
 const getDefaultFormValues = () => {
     const formValues: Record<string, string> = {};
@@ -59,6 +63,19 @@ class CalculatorStore {
             )
     }
 
+    get siteTypePriceType() {
+        const siteType = this.formValues["site_type"]
+        const siteTypeOption = siteTypeOptions.find(
+            option => option.value === siteType
+        )
+        if (
+            siteTypeOption
+            && "priceType" in siteTypeOption
+        ) {
+            return siteTypeOption.priceType
+        }
+    }
+
     get pricePositions() {
         const positions: ICalculatorPricePosition[] = []
         const siteType = this.formValues["site_type"]
@@ -70,12 +87,14 @@ class CalculatorStore {
                     if ("price" in selectedOption) {
                         positions.push({
                             name: selectedOption.pricePositionName,
-                            price: selectedOption.price
+                            price: selectedOption.price,
+                            priceType: this.siteTypePriceType
                         })
                     } else if ("priceOptions" in selectedOption) {
                         positions.push({
                             name: selectedOption.pricePositionName,
-                            price: selectedOption.priceOptions[siteType]
+                            price: selectedOption.priceOptions[siteType],
+                            priceType: this.siteTypePriceType
                         })
                     }
                 }
@@ -85,7 +104,11 @@ class CalculatorStore {
     }
 
     get totalPrice() {
-        return this.pricePositions.reduce((acc, position) => acc + position.price, 0)
+        const price = this.pricePositions.reduce(
+            (acc, position) => acc + position.price, 0
+        ).toLocaleString()
+        let prefix = this.siteTypePriceType === "from" ? "от " : ""
+        return `${prefix}${price} ₽`
     }
 }
 

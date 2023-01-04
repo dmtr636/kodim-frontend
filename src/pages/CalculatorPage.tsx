@@ -30,7 +30,7 @@ export const CalculatorPage = observer(() => {
     const location = useLocation()
     const {width} = useWindowDimensions()
     const store = calculatorStore
-    const step = searchParams.get("step")
+    const currentStep = searchParams.get("step") ?? "1"
 
     const onChange = (fieldName: string, value: any) => {
         store.setFormValues({
@@ -40,7 +40,11 @@ export const CalculatorPage = observer(() => {
     }
 
     const updateSearchParams = (step: string, replace?: boolean) => {
-        setSearchParams(`step=${step}`, {replace})
+        if (step === "1") {
+            setSearchParams("", {replace})
+        } else {
+            setSearchParams(`step=${step}`, {replace})
+        }
     }
 
     const onMount = () => {
@@ -56,23 +60,17 @@ export const CalculatorPage = observer(() => {
     }, [])
 
     useEffect(() => {
-        if (location.pathname !== "/calculator") {
-            return
-        }
-
-        if (step) {
-            store.setCurrentStep(step)
-        } else {
-            onMount()
+        if (location.pathname === "/calculator") {
+            store.setCurrentStep(currentStep)
         }
     }, [searchParams])
 
     const onNext = () => {
-        updateSearchParams((Number(step) + 1).toString())
+        updateSearchParams((Number(currentStep) + 1).toString())
     }
 
     const onBack = () => {
-        updateSearchParams((Number(step) - 1).toString())
+        updateSearchParams((Number(currentStep) - 1).toString())
     }
 
     const onSubmit = (status: string) => {

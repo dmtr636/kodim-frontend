@@ -60,6 +60,7 @@ const CalculatorPriceMobile = observer(() => {
                                     {position.name}
                                 </div>
                                 <div className={styles.positionPrice}>
+                                    {position.priceType === "from" && "от "}
                                     {position.price.toLocaleString()} ₽
                                 </div>
                                 <hr className={styles.divider}/>
@@ -77,7 +78,7 @@ const CalculatorPriceMobile = observer(() => {
                 <div className={styles.total}>
                     Итого
                     <div className={styles.totalPrice}>
-                        {store.totalPrice.toLocaleString()} ₽
+                        {store.totalPrice}
                     </div>
                 </div>
             </div>
