@@ -47,16 +47,12 @@ export const CalculatorPage = observer(() => {
         }
     }
 
-    const onMount = () => {
+    useEffect(() => {
         if (store.currentStep === "success" || store.currentStep === "error") {
             updateSearchParams("1", true)
         } else {
             updateSearchParams(store.currentStep, true)
         }
-    }
-
-    useEffect(() => {
-        onMount()
     }, [])
 
     useEffect(() => {
@@ -78,7 +74,7 @@ export const CalculatorPage = observer(() => {
     }
 
     const getFirstColumn = () => {
-        switch (store.currentStep) {
+        switch (currentStep) {
             case "3":
                 return (
                     <CalculatorContactForm
@@ -101,9 +97,9 @@ export const CalculatorPage = observer(() => {
                     <CalculatorForm
                         formValues={store.formValues}
                         onChange={onChange}
-                        formData={getCalculatorFormData(store.currentStep)}
+                        formData={getCalculatorFormData(currentStep)}
                         onNext={onNext}
-                        onBack={calculatorStore.currentStep !== "1" ? onBack : undefined}
+                        onBack={currentStep !== "1" ? onBack : undefined}
                     />
                 )
         }
