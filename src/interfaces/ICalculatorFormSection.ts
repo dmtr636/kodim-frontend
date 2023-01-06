@@ -7,14 +7,16 @@ export interface ICalculatorFormSelectOptionWithPrice {
     value: string,
     name: string,
     price: number,
-    pricePositionName: string
+    pricePositionName: string,
+    priceType?: "fixed" | "from"
 }
 
 export interface ICalculatorFormSelectOptionWithPriceOptions {
     value: string,
     name: string,
     priceOptions: Record<string, number>,
-    pricePositionName: string
+    pricePositionName: string,
+    priceType?: "fixed" | "from"
 }
 
 export type ICalculatorFormSelectOption =

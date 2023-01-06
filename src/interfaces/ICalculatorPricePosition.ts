@@ -1,4 +1,5 @@
 export interface ICalculatorPricePosition {
     name: string,
-    price: number
+    price: number,
+    priceType?: "fixed" | "from"
 }

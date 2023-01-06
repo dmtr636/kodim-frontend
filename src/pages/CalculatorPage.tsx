@@ -30,7 +30,7 @@ export const CalculatorPage = observer(() => {
     const location = useLocation()
     const {width} = useWindowDimensions()
     const store = calculatorStore
-    const step = searchParams.get("step")
+    const currentStep = searchParams.get("step") ?? "1"
 
     const onChange = (fieldName: string, value: any) => {
         store.setFormValues({
@@ -40,39 +40,33 @@ export const CalculatorPage = observer(() => {
     }
 
     const updateSearchParams = (step: string, replace?: boolean) => {
-        setSearchParams(`step=${step}`, {replace})
+        if (step === "1") {
+            setSearchParams("", {replace})
+        } else {
+            setSearchParams(`step=${step}`, {replace})
+        }
     }
 
-    const onMount = () => {
+    useEffect(() => {
         if (store.currentStep === "success" || store.currentStep === "error") {
             updateSearchParams("1", true)
         } else {
             updateSearchParams(store.currentStep, true)
         }
-    }
-
-    useEffect(() => {
-        onMount()
     }, [])
 
     useEffect(() => {
-        if (location.pathname !== "/calculator") {
-            return
-        }
-
-        if (step) {
-            store.setCurrentStep(step)
-        } else {
-            onMount()
+        if (location.pathname === "/calculator") {
+            store.setCurrentStep(currentStep)
         }
     }, [searchParams])
 
     const onNext = () => {
-        updateSearchParams((Number(step) + 1).toString())
+        updateSearchParams((Number(currentStep) + 1).toString())
     }
 
     const onBack = () => {
-        updateSearchParams((Number(step) - 1).toString())
+        updateSearchParams((Number(currentStep) - 1).toString())
     }
 
     const onSubmit = (status: string) => {
@@ -80,7 +74,7 @@ export const CalculatorPage = observer(() => {
     }
 
     const getFirstColumn = () => {
-        switch (store.currentStep) {
+        switch (currentStep) {
             case "3":
                 return (
                     <CalculatorContactForm
@@ -103,9 +97,9 @@ export const CalculatorPage = observer(() => {
                     <CalculatorForm
                         formValues={store.formValues}
                         onChange={onChange}
-                        formData={getCalculatorFormData(store.currentStep)}
+                        formData={getCalculatorFormData(currentStep)}
                         onNext={onNext}
-                        onBack={calculatorStore.currentStep !== "1" ? onBack : undefined}
+                        onBack={currentStep !== "1" ? onBack : undefined}
                     />
                 )
         }

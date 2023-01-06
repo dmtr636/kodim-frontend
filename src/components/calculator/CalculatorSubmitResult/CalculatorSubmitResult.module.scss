@@ -9,6 +9,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include mobile {
+    width: auto;
+    height: auto;
+    padding: 24px 24px 109px;
+    display: block;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-image: url("/assets/calculator/submitResultBgMobile.svg");
+
+    @include mobileBig {
+      background-size: contain;
+    }
+  };
 }
 
 .text {
@@ -18,4 +32,8 @@
   font-size: 24px;
   line-height: 130%;
   color: #FFFFFF;
+
+  @include mobile {
+    max-width: 240px;
+  }
 }
