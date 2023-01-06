@@ -4,7 +4,6 @@ import style from "./QA.module.scss";
 import { QAItem } from "./QAItem";
 
 export const QA = () => {
-
   const QAArray = [
     {
       QAName: "Кто мы?",
@@ -23,21 +22,30 @@ export const QA = () => {
           {
             "Ваши посетители, переходя на\xA0сайт, должны получать максимально быстрый отклик, чтобы сайт загружался у\xA0них на\xA0устройствах моментально и\xA0они не закрыли его\xA0преждевременно. Для\xA0замера скорости мы пользуемся сервисом от\xA0"
           }
-          <a style={{
+          <a
+            style={{
               whiteSpace: "nowrap",
               textDecoration: "none",
               color: "#52AEFF",
-              fontWeight:"SemiBold",
-            }}
-            href="https://pagespeed.web.dev" target="_blank">Google — PageSpeed</a> 
-          <a style={{
-              textDecoration: "none",
-              color: "#52AEFF",
-              fontWeight:"600",
+              fontWeight: "SemiBold",
             }}
             href="https://pagespeed.web.dev"
             target="_blank"
-          > Insights. </a>
+          >
+            Google — PageSpeed
+          </a>
+          <a
+            style={{
+              textDecoration: "none",
+              color: "#52AEFF",
+              fontWeight: "600",
+            }}
+            href="https://pagespeed.web.dev"
+            target="_blank"
+          >
+            {" "}
+            Insights.{" "}
+          </a>
           Мы ценим ваше время и время ваших клиентов.
         </>
       ),
@@ -58,6 +66,28 @@ export const QA = () => {
       QAText:
         "В два этапа. Сначала клиенту отправляется счёт на\xA0предоплату, в\xA0стоимость которого входит работа UX/UI‑дизайнера и\xA0копирайтера. При\xA0необходимости, готовится визуальный макет проекта и\xA0коммерческий текст для\xA0него. После согласования макета с\xA0клиентом, мы отправляем второй счёт, где включены выбранные им услуги и\xA0оставшиеся работы над\xA0проектом.",
     },
+    {
+      QAName: "Что будет после составления заявки?",
+      QAText: (
+        <>
+          {
+            "После получения заявки от\xA0клиента, мы связываемся с\xA0ним и\xA0уточняем детали. Следующим этапом, мы отправляем форму для\xA0брифа, где клиент указывает все свои пожелания, рассказывает о\xA0том, как он видит проект. Также мы отправляем лёгкую версию публичной оферты, она\xA0же⁠⁠\xA0⁠⁠—⁠\xA0"
+          }
+          <a
+            style={{
+              textDecoration: "none",
+              color: "#52AEFF",
+              fontWeight: "SemiBold",
+            }}
+            href="https://docs.google.com/document/d/1eJDGtrsrA_6ToNI5xsfpjYJJqxq9KtDehg6ywTTnk5M/edit"
+            target="_blank"
+          >
+            памятка.
+          </a>{" "}
+          {"С\xA0начала старта разработки, мы отправляем клиенту персональную ссылку, где он сможет наблюдать за\xA0ходом работы над\xA0проектом"}
+        </>
+      ),
+    },
   ];
   const [currentItem, setCurrentItem] = React.useState("");
   const changeCurrentItem = (item) => {
@@ -76,7 +106,7 @@ export const QA = () => {
       QAText={el.QAText}
     />
   ));
-/*   console.log(currentItem); */
+  /*   console.log(currentItem); */
   return (
     <div className={style.wrapper} id={"faq"}>
       <div className={style.body}>
