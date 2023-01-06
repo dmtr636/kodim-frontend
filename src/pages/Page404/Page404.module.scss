@@ -26,7 +26,16 @@
   cursor: pointer;
 }
 @include mobile{
+  .wrapper{
+    width: auto;
+  }
   .h1 {
-    margin-top: 0;
+    padding: 0 24px;
+    margin-top: 24px;
+    font-size: 24px;
+  }
+  .link{
+    padding: 0 24px;
+    font-size: 17px;
   }
 }
