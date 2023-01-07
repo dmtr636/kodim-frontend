@@ -1,9 +1,10 @@
 @import "src/styles/vars";
 .wrapper {
   background: $color-blue;
-  background-image: url("../../../assets/main/bgBanner.svg");
-  background-position: right;
+  background-image: url("../../../assets/main/bgBannerFull.webp");
+  background-position: top 0px left 489px;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 .body {
   width: 1220px;
@@ -12,18 +13,19 @@
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 1520px) {
+ @media (min-width: 1520px) {
   .wrapper {
     background-image: url("");
   }
   .bodybanner {
     margin: 0 auto;
     width: 1520px;
-    background-image: url("../../../assets/main/bgBannerFull.svg");
-    background-position: right;
+    background-image: url("../../../assets/main/bgBannerFull.webp");
+    background-position: top 0px right;
     background-repeat: no-repeat;
-  }
+    background-size: contain;
 }
+} 
 .h1 {
   color: $color-white;
   padding-top: 100px;
@@ -54,9 +56,10 @@
     width: 100%;
     padding: 0 24px;
     background: $color-blue;
-    background-image: url("../../../assets/main/bgBannerMobile.svg");
-    background-position: right;
+    background-image: url("../../../assets/main/bgBannerMobile.webp");
+    background-position: top 0px right;
     background-repeat: no-repeat;
+    background-size: contain;
   }
   .body {
     width: 100%;
