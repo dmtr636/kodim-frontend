@@ -9,9 +9,9 @@ export const siteTypeOptions: ICalculatorFormSelectOption[] = [
     },
     {
         value: "corporate",
-        name: "Корпоративный для компании",
+        name: "Корпоративный",
         price: 70000,
-        pricePositionName: "Корпоративный для компании",
+        pricePositionName: "Корпоративный",
     },
     {
         value: "shop",
@@ -21,9 +21,9 @@ export const siteTypeOptions: ICalculatorFormSelectOption[] = [
     },
     {
         value: "portfolio",
-        name: "Портфолио",
+        name: "Портфолио / Блог",
         price: 40000,
-        pricePositionName: "Портфолио",
+        pricePositionName: "Портфолио / Блог",
     },
     {
         value: "other",
