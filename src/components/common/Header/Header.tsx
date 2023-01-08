@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "./Header.module.scss"
 import {navRoutes} from "../../../routes/navRoutes";
 import Button from "../Button/Button";
@@ -9,6 +9,7 @@ import {observer} from "mobx-react-lite";
 import {CloseMenuIcon} from "../../../assets/common/closeMenuIcon";
 import {BurgerIcon} from "../../../assets/common/burgerIcon";
 import {HashLink} from "react-router-hash-link";
+import telegramLink from "../../../assets/common/telegram.svg"
 
 const Header = observer(() => {
     const navigate = useNavigate()
@@ -27,6 +28,12 @@ const Header = observer(() => {
             }, 250)
         }
     }
+
+    useEffect(() => {
+        [telegramLink].forEach((src) => {
+            (new Image()).src = src;
+        });
+    }, []);
 
     return (
         <div className={styles.headerWrapper}>
@@ -61,7 +68,9 @@ const Header = observer(() => {
                         className={styles.telegramLink}
                         href={"https://t.me/kodim_support_bot"}
                         target={"_blank"}
-                    />
+                    >
+                        <img src={telegramLink}/>
+                    </a>
                     <Button onClick={() => {
                         navigate("calculator", {replace: location.pathname.startsWith("/calculator")})
                     }}>
@@ -128,7 +137,9 @@ const Header = observer(() => {
                                     className={styles.telegramLink}
                                     href={"https://t.me/kodim_support_bot"}
                                     target={"_blank"}
-                                />
+                                >
+                                    <img src={telegramLink}/>
+                                </a>
                             </div>
                         </div>
                     </div>
