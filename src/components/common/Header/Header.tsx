@@ -56,7 +56,12 @@ const Header = observer(() => {
                         FAQ
                     </HashLink>
                 </nav>
-                <div className={styles.button}>
+                <div className={styles.actions}>
+                    <a
+                        className={styles.telegramLink}
+                        href={"https://t.me/kodim_support_bot"}
+                        target={"_blank"}
+                    />
                     <Button onClick={() => {
                         navigate("calculator", {replace: location.pathname.startsWith("/calculator")})
                     }}>
@@ -112,13 +117,18 @@ const Header = observer(() => {
                                     FAQ
                                 </HashLink>
                             </nav>
-                            <div className={styles.menuButton}>
+                            <div className={styles.menuActions}>
                                 <Button onClick={() => {
                                     navigate("calculator", {replace: location.pathname.startsWith("/calculator")})
                                     setShowMenu(false)
                                 }}>
                                     Начать проект
                                 </Button>
+                                <a
+                                    className={styles.telegramLink}
+                                    href={"https://t.me/kodim_support_bot"}
+                                    target={"_blank"}
+                                />
                             </div>
                         </div>
                     </div>

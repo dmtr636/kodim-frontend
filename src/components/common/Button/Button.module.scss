@@ -12,12 +12,14 @@
   letter-spacing: 0.03em;
   color: #FFFFFF;
 
-  &:hover {
-    background: $color-black-hover;
+  @include desktop {
+    &:hover {
+      background: $color-black-hover;
+    }
   }
 
   @include mobile {
-    padding: 12px 15px;
+    padding: 10px 15px;
     font-size: 14px;
     line-height: 130%;
   }
@@ -37,11 +39,13 @@
   color: $color-black;
   background: white;
 
-  &:hover {
-    background: #f5f5f5;
+  @include desktop {
+    &:hover {
+      background: #f5f5f5;
+    }
   }
 
   @include mobile {
-    padding: 10px 13px;
+    padding: 8px 13px;
   }
 }
