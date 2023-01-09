@@ -1,8 +1,14 @@
-import React from "react"
+import React, {useEffect} from "react"
 import style from "./Page404/Page404.module.scss"
 import { Link } from "react-router-dom"
 
 export const Page404 = () => {
+    useEffect(() => {
+        if (window.location.pathname !== "/404") {
+            window.location.pathname = "/404"
+        }
+    }, [])
+
     return (
         <div className={style.wrapper}>
             <h1 className={style.h1}>Упс, а это 404. Не{"\xA0"}задерживаемся</h1>
