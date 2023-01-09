@@ -11,7 +11,7 @@ import useWindowDimensions from "../../../hooks/useWindowDimensions";
 export const Banner = () => {
   const navigate = useNavigate();
   const {width} = useWindowDimensions()
-  const words = ["Скоростные.", "Без загрузок.", "Для всех."]
+  const words = ["Скоростные", "Без загрузок", "Для всех"]
   const [currentWord,setCurrentWord] =React.useState(words[0])
   const [wordCount, setWordCount] =React.useState(1)
   const changeWordFunc =()=>{

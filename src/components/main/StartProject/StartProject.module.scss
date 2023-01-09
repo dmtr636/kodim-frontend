@@ -31,25 +31,33 @@
 }
 @include mobile {
   .wrapper {
-    width: auto;  
+    width: auto;
     height: auto;
     margin: 0 24px;
     margin-top: 40px;
     margin-bottom: 0px;
     flex-direction: column;
     box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
-    
-
+    background-image: url("./houseBGMob.svg");
+    background-position: bottom 0px right;
+    background-repeat: no-repeat;
+    background-size: auto;
   }
-  .header{
+  .header {
     width: 100%;
     font-size: 24px;
     padding: 24px;
     padding-right: 64px;
   }
-  .button{
+  .button {
     padding-top: 0px;
     padding-bottom: 218px;
     padding-left: 24px;
+    z-index: 222;
+  }
+  .right {
+    z-index: 123;
+    max-width: 100%;
+    overflow:hidden;
   }
 }
