@@ -9,7 +9,10 @@ const CalculatorFormItem = (props: {
         <div className={styles.formItem}>
             <div className={styles.label}>
                 {props.label}
-                <div className={styles.questionMark}></div>
+                <span className={styles.nowrap}>
+                    &nbsp;
+                    <div className={styles.questionMark}></div>
+                </span>
             </div>
             {props.children}
         </div>
