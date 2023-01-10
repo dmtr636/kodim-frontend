@@ -1,5 +1,6 @@
 import React from "react";
 import { Banner } from "../components/main/Banner/Banner";
+import { OpenDevelopmentBanner } from "../components/main/OpenDevelopmentBanner/OpenDevelopmentBanner";
 import { OurClients } from "../components/main/OurClients/OurClients";
 import { QA } from "../components/main/QA/QA";
 import { Services } from "../components/main/Services/Services";
@@ -12,6 +13,7 @@ export const MainPage = () => {
       <Banner />
       <OurClients />
       <Ticker />
+      <OpenDevelopmentBanner/>
       <Services/>
       <QA/>
       <StartProject/>

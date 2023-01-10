@@ -1,0 +1,101 @@
+@import "src/styles/vars";
+.wrapper {
+  background-color: $color-blue;
+  width: 1220px;
+  height: 262px;
+  margin: 0 auto;
+  margin-top: 80px;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+  background-image: url("./bgPC.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  justify-content: space-between;
+}
+.left {
+  padding-left: 30px;
+}
+.text {
+  padding-top: 30px;
+}
+.h1 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  color: #ffffff;
+}
+.h2 {
+  width: 512px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  color: #ffffff;
+  padding-top: 12px;
+}
+.img {
+  width: 510px;
+  height: 262px;
+  margin-left: 214px;
+}
+.button {
+  padding-top: 33px;
+}
+@include mobile {
+  .wrapper {
+    width: auto;
+    height: auto;
+    margin: 0 24px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
+    background-image: url("./box_mobile.webp");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 356px 218px;
+    justify-content: space-between;
+
+  }
+  .left {
+    padding-left: 24px;
+  }
+  .text {
+    padding-top: 24px;
+  }
+  .h1 {
+    font-size: 24px;
+    padding-right: 24px;
+  }
+  .h2 {
+    width: auto;
+    font-size: 16px;
+    padding-right: 70px;
+    color: #ffffff;
+    padding-top: 16px;
+  }
+  .img {
+    width: 430px;
+    height: 218px;
+    margin-left: -20px;
+    z-index: 1;
+  }
+  .imgBlock{
+   /*  position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    z-index: 1; */
+    display: none;
+  }
+  .button {
+    padding-top: 24px;
+    padding-bottom:145px;
+    z-index: 252;
+  }
+}
