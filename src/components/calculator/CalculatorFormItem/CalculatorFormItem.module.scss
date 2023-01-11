@@ -30,14 +30,6 @@
   white-space: nowrap;
 }
 
-.questionMarkOpen {
-  background: url(/assets/calculator/questionMarkFilled.svg) center/contain;
-
-  .helpPopover {
-    display: grid;
-  }
-}
-
 .questionMark {
   position: relative;
   display: inline-block;
@@ -51,7 +43,11 @@
 
   @include desktop {
     &:hover {
-      composes: questionMarkOpen;
+      background: url(/assets/calculator/questionMarkFilled.svg) center/contain;
+
+      .helpPopover {
+        display: grid;
+      }
     }
   }
 
@@ -61,7 +57,11 @@
     margin-left: 5px;
 
     &:focus {
-      composes: questionMarkOpen;
+      background: url(/assets/calculator/questionMarkFilled.svg) center/contain;
+
+      .helpPopover {
+        display: grid;
+      }
     }
   }
 
