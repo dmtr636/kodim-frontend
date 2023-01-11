@@ -58,6 +58,7 @@ const CalculatorFormItem = (props: {
             <div
                 className={styles.questionMark}
                 ref={questionMarkRef}
+                tabIndex={0}
             >
                 <Popover/>
             </div>
