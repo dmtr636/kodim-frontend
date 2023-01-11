@@ -41,13 +41,11 @@
   margin-top: -2px;
   vertical-align: middle;
 
-  @include desktop {
-    &:hover {
-      background: url(/assets/calculator/questionMarkFilled.svg) center/contain;
+  &:hover {
+    background: url(/assets/calculator/questionMarkFilled.svg) center/contain;
 
-      .helpPopover {
-        display: grid;
-      }
+    .helpPopover {
+      display: grid;
     }
   }
 
@@ -55,14 +53,6 @@
     width: 20px;
     height: 20px;
     margin-left: 5px;
-
-    &:focus {
-      background: url(/assets/calculator/questionMarkFilled.svg) center/contain;
-
-      .helpPopover {
-        display: grid;
-      }
-    }
   }
 
   @include preload {
