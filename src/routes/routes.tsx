@@ -8,6 +8,7 @@ import Layout from "../components/common/Layout/Layout";
 import {navRoutes} from "./navRoutes";
 import {documentsRoutes} from "./documentsRoutes";
 import DocumentsPage from "../pages/DocumentsPage";
+import { OpenDevelopmentPage } from "../pages/OpenDevelopmentPage";
 
 
 export const createRoutes = (projectStore: ProjectsStore): BreadcrumbsRoute[] => {
@@ -49,6 +50,11 @@ export const createRoutes = (projectStore: ProjectsStore): BreadcrumbsRoute[] =>
                     path: "/projects/:id",
                     element: <CaseOpen type={"project"}/>,
                     breadcrumb: ProjectBreadcrumb
+                },
+                {
+                    path: "/open-development",
+                    element: <OpenDevelopmentPage/>,
+                    breadcrumb: "Открытая разработка"
                 },
                 {
                     path: "*",
