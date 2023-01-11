@@ -3,9 +3,9 @@ import {ICalculatorFormSelectOption} from "../interfaces/ICalculatorFormSection"
 export const siteTypeOptions: ICalculatorFormSelectOption[] = [
     {
         value: "landing",
-        name: "Сайт-визитка",
+        name: "Сайт-визитка / Лендинг",
         price: 30000,
-        pricePositionName: "Сайт-визитка"
+        pricePositionName: "Сайт-визитка / Лендинг"
     },
     {
         value: "corporate",

@@ -24,31 +24,34 @@ export type ICalculatorFormSelectOption =
     ICalculatorFormSelectOptionWithoutPrice |
     ICalculatorFormSelectOptionWithPriceOptions
 
-export interface ICalculatorFormSelect {
+export interface ICalculatorFormItemHelpItem {
+    header?: string,
+    text: string
+}
+
+export interface IBaseCalculatorFormItem {
+    name: string,
+    label: string,
+    help?: ICalculatorFormItemHelpItem[]
+}
+
+export interface ICalculatorFormSelect extends IBaseCalculatorFormItem {
     type: "select",
-    label: string,
-    name: string,
     options: ICalculatorFormSelectOption[]
 }
 
-export interface ICalculatorFormToggleButtons {
+export interface ICalculatorFormToggleButtons extends IBaseCalculatorFormItem {
     type: "toggleButtons",
-    label: string,
-    name: string,
     options: ICalculatorFormSelectOption[]
 }
 
-export interface ICalculatorFormTextField {
+export interface ICalculatorFormTextField extends IBaseCalculatorFormItem {
     type: "textField",
-    label: string,
-    name: string,
     placeholder: string
 }
 
-export interface ICalculatorFormTextArea {
+export interface ICalculatorFormTextArea extends IBaseCalculatorFormItem {
     type: "textArea",
-    label: string,
-    name: string,
     placeholder: string,
     minRows?: number,
     maxLength?: number
@@ -65,4 +68,3 @@ export interface ICalculatorFormSection {
     items: ICalculatorFormItem[],
     hideDivider?: boolean
 }
-

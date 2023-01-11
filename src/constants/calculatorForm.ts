@@ -18,7 +18,45 @@ export const calculatorFormFirstStep: ICalculatorFormSection[] = [
                 type: "select",
                 label: "Выберите тип сайта",
                 name: "site_type",
-                options: siteTypeOptions
+                options: siteTypeOptions,
+                help: [
+                    {
+                        header: "Сайт-визитка",
+                        text:
+                            " — одностраничный \n" +
+                            "сайт с основной информацией \n" +
+                            "об услугах, товаре, мероприятии, \n" +
+                            "человеке и т. д."
+                    },
+                    {
+                        header: "Корпоративный",
+                        text:
+                            " — многостраничный\n" +
+                            "сайт компании, содержащий всю\n" +
+                            "информацию о деятельности. "
+                    },
+                    {
+                        header: "Интернет-магазин",
+                        text:
+                            " — сайт для продаж\n" +
+                            "товаров или услуг с возможностью\n" +
+                            "онлайн оплаты."
+                    },
+                    {
+                        header: "Портфолио / Блог",
+                        text:
+                            " — сайт для ведения\n" +
+                            "блога и презентации своих работ."
+                    },
+                    {
+                        header: "Другое",
+                        text:
+                            " — проект с определённым\n" +
+                            "функционалом и специфическими\n" +
+                            "задачами, который не попадает \n" +
+                            "под категории, описанные выше."
+                    }
+                ]
             }
         ]
     },
@@ -46,13 +84,35 @@ export const calculatorFormFirstStep: ICalculatorFormSection[] = [
                 type: "toggleButtons",
                 label: "Базовая SEO-настройка",
                 name: "basic_seo",
-                options: basicSeoOptions
+                options: basicSeoOptions,
+                help: [
+                    {
+                        text:
+                            "Проекту подбираются ключевые слова,\n" +
+                            "страницам прописываются корректные \n" +
+                            "названия и описания для поисковой \n" +
+                            "системы. Подключаются необходимые\n" +
+                            "инструменты для анализа статистики.\n" +
+                            "Сайт начинает продвигаться \n" +
+                            "в поисковой выдаче."
+                    }
+                ]
             },
             {
                 type: "toggleButtons",
                 label: "SEO-текст и общее текстовое сопровождение",
                 name: "seo_text",
-                options: seoTextOptions
+                options: seoTextOptions,
+                help: [
+                    {
+                        text:
+                            "Для всего проекта копирайтер пишет \n" +
+                            "маркетинговый текст с учётом \n" +
+                            "ключевых слов. Это благоприятно \n" +
+                            "влияет на общую конверсию сайта\n" +
+                            "и продвижение в поисковой выдаче."
+                    }
+                ]
             }
         ]
     },
@@ -74,13 +134,36 @@ export const calculatorFormFirstStep: ICalculatorFormSection[] = [
                 type: "toggleButtons",
                 label: "Уведомления и заявки с сайта",
                 name: "notifications",
-                options: notificationsOptions
+                options: notificationsOptions,
+                help: [
+                    {
+                        text:
+                            "Если проект связан \n" +
+                            "с получением уведомлений \n" +
+                            "от клиентов: товары, заявки \n" +
+                            "на услуги, заказы обратного\n" +
+                            "звонка, то нужно выбрать\n" +
+                            "подходящий способ \n" +
+                            "их получения владельцем \n" +
+                            "сайта."
+                    }
+                ]
             },
             {
                 type: "toggleButtons",
                 label: "Управление сайтом, админ-панель",
                 name: "admin_panel",
-                options: adminPanelOptions
+                options: adminPanelOptions,
+                help: [
+                    {
+                        text:
+                            "Персонализированная \n" +
+                            "админ-панель является\n" +
+                            "уникальной и создаётся\n" +
+                            "под конкретные нужды\n" +
+                            "проекта."
+                    }
+                ]
             }
         ]
     },

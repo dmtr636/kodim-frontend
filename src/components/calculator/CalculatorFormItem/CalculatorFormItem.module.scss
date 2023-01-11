@@ -31,21 +31,112 @@
 }
 
 .questionMark {
+  position: relative;
   display: inline-block;
   background: url(/assets/calculator/questionMark.svg);
+  background-size: contain;
   width: 32px;
   height: 32px;
-  margin-left: 12px;
+  margin-left: 7px;
   margin-top: -2px;
   vertical-align: middle;
 
   &:hover {
-    background: url(/assets/calculator/questionMarkFilled.svg);
+    background: url(/assets/calculator/questionMarkFilled.svg) center/contain;
+
+    .helpPopover {
+      display: grid;
+    }
   }
 
-  // Preload
-  &::after {
-    position: absolute; width:0; height:0; overflow:hidden; z-index:-1;
-    content: url(/assets/calculator/questionMarkFilled.svg);
+  @include mobile {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include preload {
+    content:
+            url(/assets/calculator/questionMarkFilled.svg)
+            url(/assets/calculator/arrowPopover.svg)
+            url(/assets/calculator/arrowPopoverTop.svg);
   }
 }
+
+.helpPopover {
+  display: none;
+  grid-gap: 14px;
+  position: absolute;
+  top: 16px;
+  z-index: 5;
+  padding: 14px 16px;
+  background: $color-black;
+  width: max-content;
+
+  @include mobile {
+    grid-gap: 12px;
+    width: calc(100vw - 48px);
+  }
+}
+
+.helpPopoverRight {
+  left: 62px;
+  border-radius: 0 5px 5px 5px;
+
+  .arrowPopover {
+    top: 0;
+    left: -19px;
+    width: 19px;
+    height: 22px;
+    background: url(/assets/calculator/arrowPopover.svg);
+
+    @include mobile {
+      transform: scaleX(-1) translateX(-20px);
+    }
+  }
+}
+
+.helpPopoverLeft {
+  right: 16px;
+  top: 63px;
+  border-radius: 5px 0 5px 5px;
+
+  .arrowPopover {
+    top: -19px;
+    right: 0;
+    width: 22px;
+    height: 19px;
+    background: url(/assets/calculator/arrowPopoverTop.svg);
+  }
+}
+
+.helpPopoverBottom {
+  composes: helpPopoverLeft;
+  right: 0;
+  top: 45px;
+  border-radius: 5px;
+}
+
+.arrowPopover {
+  position: absolute;
+}
+
+.helpContent {
+  white-space: pre-line;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+
+  @include mobile {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.helpItemHeader {
+  color: $color-blue;
+}
+

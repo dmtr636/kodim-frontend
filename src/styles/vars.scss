@@ -28,3 +28,10 @@ $ANIMATION_DURATION: 0.25s;
 @mixin desktop {
   @media (min-width: 1280px) { @content; }
 }
+
+@mixin preload {
+  &::after {
+    position: absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    @content
+  }
+}

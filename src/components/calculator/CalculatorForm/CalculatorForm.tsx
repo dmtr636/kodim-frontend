@@ -69,6 +69,7 @@ const CalculatorForm = (props: {
                         <CalculatorFormItem
                             label={item.label}
                             key={item.name}
+                            help={item.help}
                         >
                             {getFormItemElement(item)}
                         </CalculatorFormItem>
