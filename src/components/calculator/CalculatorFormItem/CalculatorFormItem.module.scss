@@ -25,3 +25,27 @@
     white-space: normal;
   }
 }
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.questionMark {
+  display: inline-block;
+  background: url(/assets/calculator/questionMark.svg);
+  width: 32px;
+  height: 32px;
+  margin-left: 12px;
+  margin-top: -2px;
+  vertical-align: middle;
+
+  &:hover {
+    background: url(/assets/calculator/questionMarkFilled.svg);
+  }
+
+  // Preload
+  &::after {
+    position: absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content: url(/assets/calculator/questionMarkFilled.svg);
+  }
+}
