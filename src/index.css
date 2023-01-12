@@ -71,7 +71,7 @@ html {
 }
 .service-head .swiper-slide:last-child{
     padding-right: 24px;
-    
+
 }
 .service-body .swiper-slide{
  height: auto;
@@ -81,7 +81,7 @@ html {
 /* For sticky header */
 @media (min-width: 700px) {
     [id] {
-        scroll-margin-top: 82px;
+        scroll-margin-top: 112px;
     }
 }
 @media (max-width: 699px) {
