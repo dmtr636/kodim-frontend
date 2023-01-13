@@ -2,10 +2,11 @@ import React, {ReactNode} from 'react';
 import styles from "./Button.module.scss"
 import classNames from "classnames";
 
-const Button = ({onClick, children, fullWidth, variant, disabled}: {
+const Button = ({onClick, children, fullWidth,fullWidthMob, variant, disabled}: {
     onClick: () => void,
     children: ReactNode,
     fullWidth?: boolean,
+    fullWidthMob?:boolean,
     variant?: "filled" | "outlined",
     disabled?: boolean,
 }) => {
@@ -15,6 +16,7 @@ const Button = ({onClick, children, fullWidth, variant, disabled}: {
             className={classNames(
                 styles.button,
                 {[styles.fullWidth]: fullWidth},
+                {[styles.fullWidthMob]: fullWidthMob},
                 {[styles.outlined]: variant === "outlined"}
             )}
             disabled={disabled}

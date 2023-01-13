@@ -27,7 +27,7 @@
   width: 980; */
   position: absolute;
   top:0px;
-  left:400px;
+  left:320px;
   z-index: 1;
   overflow: hidden;
 }
@@ -52,7 +52,7 @@
   color: $color-white;
   padding-top: 100px;
   white-space: pre-line;
-  font-family: "Raleway";
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 900;
   font-size: 48px;
@@ -80,9 +80,9 @@
     padding: 0 24px;
     background: $color-blue;
     background-image: url("../../../assets/main/bgBannerMobile.webp");
-    background-position: top 0px right;
+    background-position: bottom 0px right;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
   }
   .bodybanner {
     background-image: none;
@@ -98,7 +98,7 @@
     padding-top: 24px;
     font-size: 28px;
     padding-right: 2px;
-    font-family: "Raleway";
+    font-family:'Montserrat';
     font-style: normal;
     font-weight: 900;
     font-size: 24px;

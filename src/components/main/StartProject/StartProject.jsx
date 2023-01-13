@@ -16,7 +16,7 @@ export const StartProject = () => {
         </div>
 
         <div className={style.button}>
-          <Button onClick={() => navigate("/calculator")}>
+          <Button onClick={() => navigate("/calculator")} fullWidthMob>
             Начать свой проект
           </Button>
         </div>
