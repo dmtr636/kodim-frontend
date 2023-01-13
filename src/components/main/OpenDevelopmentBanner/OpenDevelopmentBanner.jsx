@@ -17,7 +17,7 @@ export const OpenDevelopmentBanner = () => {
             Наблюдайте за ходом разработки проекта через персональную ссылку
           </h2>
         </div>
-        <div className={style.button}><Button onClick={() => navigate("/open-development")}>Узнать подробнее</Button></div>
+        <div className={style.button}><Button onClick={() => navigate("/open-development")}fullWidthMob >Узнать подробнее</Button></div>
       </div>
       <div className={style.imgBlock}><img className={style.img} src={bgpc} alt="" /></div>
     </div>

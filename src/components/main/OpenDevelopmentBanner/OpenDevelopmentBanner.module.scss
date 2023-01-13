@@ -4,7 +4,7 @@
   width: 1220px;
   height: 262px;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 120px;
   display: flex;
   border-radius: 5px;
   box-shadow: 0px 0px 14px rgba(52, 182, 255, 0.35);
@@ -44,6 +44,7 @@
 }
 .button {
   padding-top: 33px;
+  
 }
 @include mobile {
   .wrapper {
@@ -58,7 +59,7 @@
     background-image: url("./box_mobile.webp");
     background-position: bottom right;
     background-repeat: no-repeat;
-    background-size: 356px 218px;
+    background-size: 382px 218px;
     justify-content: space-between;
 
   }
@@ -94,8 +95,9 @@
     display: none;
   }
   .button {
-    padding-top: 24px;
-    padding-bottom:145px;
+    padding-top: 145px;
+    padding-bottom:24px;
+    margin-right: 24px;
     z-index: 252;
   }
 }

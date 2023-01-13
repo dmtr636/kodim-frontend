@@ -203,7 +203,7 @@ export const Desk = () => {
                   </div> */}
                 </div>
                 <div className={style.buttonPosition}>
-                    <Button onClick={() => navigate("/calculator")}>
+                    <Button onClick={() => navigate("/calculator")} fullWidth>
                       Рассчитать стоимость
                     </Button>
                   </div>
@@ -237,13 +237,13 @@ export const Desk = () => {
                 {services[activeService].serviceText}
               </div>
               <div className={style.buttonPosition}>
-                <Button onClick={() => navigate("/calculator")}>
+                <Button onClick={() => navigate("/calculator")} /* fullWidth */>
                   Рассчитать стоимость
                 </Button>
               </div>
             </div>
             <div className={style.buttonPositionMob}>
-                <Button onClick={() => navigate("/calculator")}>
+                <Button onClick={() => navigate("/calculator")} /* fullWidth */>
                   Рассчитать стоимость
                 </Button>
               </div>  

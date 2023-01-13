@@ -33,7 +33,7 @@ export const Banner = () => {
           </h1>
           <div className={style.text}>{currentWord}</div>
           <div className={style.button}>
-            <Button onClick={() => navigate("/calculator")}>
+            <Button onClick={() => navigate("/calculator")} fullWidthMob>
               Рассчитать стоимость онлайн
             </Button>
           </div>
