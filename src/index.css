@@ -50,6 +50,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 body {
     overflow: overlay;
+    color: #52AEFF;
+    font-family: 'Raleway';
 }
 
 /* Scrollbar for firefox */

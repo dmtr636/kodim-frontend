@@ -5,7 +5,7 @@ import styles from "./Layout.module.scss"
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
 import {Helmet} from "react-helmet";
 import {isTablet} from "../../../utils/utils";
-import {Outlet, ScrollRestoration, useLocation, useOutlet} from "react-router-dom";
+import {useLocation, useOutlet} from "react-router-dom";
 import Cookies from "../Cookies/Cookies";
 import {getMetaByPath} from "../../../constants/pageMeta";
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
@@ -36,12 +36,18 @@ const Layout = () => {
         window.scrollTo(0, 0)
     }, [location])
 
-    const title = breadcrumbs.slice(-1)[0].match.route?.breadcrumb?.toString()
+    let title = meta?.title
+    const breadcrumb = breadcrumbs.slice(-1)[0].match.route?.breadcrumb
+    if (typeof breadcrumb === "string") {
+        title = title ?? breadcrumb
+    }
 
     return (
         <>
             <Helmet>
-                <title>{meta?.title ?? title}</title>
+                {title &&
+                    <title>{meta?.title ?? title}</title>
+                }
                 {isTablet(width)
                     ? <meta name="viewport" content="width=1280"/>
                     : <meta name="viewport" content="width=device-width, initial-scale=1"/>

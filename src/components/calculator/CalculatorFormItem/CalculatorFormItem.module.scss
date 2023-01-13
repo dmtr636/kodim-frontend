@@ -40,7 +40,6 @@
   margin-left: 7px;
   margin-top: -2px;
   vertical-align: middle;
-  z-index: 3000;
 
   &:hover {
     background: url(/assets/calculator/questionMarkFilled.svg) center/contain;
@@ -69,10 +68,10 @@
   grid-gap: 14px;
   position: absolute;
   top: 16px;
-  z-index: 3000;
   padding: 14px 16px;
   background: $color-black;
   width: max-content;
+  z-index: 1;
 
   @include mobile {
     grid-gap: 12px;

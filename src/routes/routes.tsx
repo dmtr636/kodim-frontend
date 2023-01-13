@@ -9,19 +9,29 @@ import {navRoutes} from "./navRoutes";
 import {documentsRoutes} from "./documentsRoutes";
 import DocumentsPage from "../pages/DocumentsPage";
 import { OpenDevelopmentPage } from "../pages/OpenDevelopmentPage";
+import OpenDevelopmentProjectPage from "../pages/OpenDevelopmentProjectPage";
+import {observer} from "mobx-react-lite";
+import {openDevelopmentStore} from "../stores/openDevelopmentStore";
 
 
 export const createRoutes = (projectStore: ProjectsStore): BreadcrumbsRoute[] => {
-    const ProjectBreadcrumb = (props: BreadcrumbComponentProps) => {
-        return (
-            <>{projectStore.projects.find(project => project.id.toString() === props.match.params.id)?.name}</>
-        )
-    };
-    const CaseBreadcrumb = (props: BreadcrumbComponentProps) => {
-        return (
-            <>{projectStore.cases.find(project => project.id.toString() === props.match.params.id)?.name}</>
-        )
-    }
+    const ProjectBreadcrumb = (props: BreadcrumbComponentProps) => (
+        <>
+            {projectStore.projects.find(project => project.id.toString() === props.match.params.id)?.name}
+        </>
+    )
+
+    const CaseBreadcrumb = (props: BreadcrumbComponentProps) => (
+        <>
+            {projectStore.cases.find(project => project.id.toString() === props.match.params.id)?.name}
+        </>
+    )
+
+    const OpenDevelopmentProjectBreadcrumb = (props: BreadcrumbComponentProps) => (
+        <>
+            {openDevelopmentStore.project?.name}
+        </>
+    )
 
     return [
         {
@@ -55,6 +65,11 @@ export const createRoutes = (projectStore: ProjectsStore): BreadcrumbsRoute[] =>
                     path: "/open-development",
                     element: <OpenDevelopmentPage/>,
                     breadcrumb: "Открытая разработка"
+                },
+                {
+                    path: "/open-development/:id",
+                    element: <OpenDevelopmentProjectPage/>,
+                    breadcrumb: OpenDevelopmentProjectBreadcrumb
                 },
                 {
                     path: "*",
