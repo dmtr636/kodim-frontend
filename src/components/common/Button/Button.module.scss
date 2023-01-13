@@ -3,7 +3,7 @@
 .button {
   background: $color-black;
   border-radius: 5px;
-  padding: 13px 30px;
+  padding: 0 30px;
   font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -11,6 +11,9 @@
   line-height: 22px;
   letter-spacing: 0.03em;
   color: #FFFFFF;
+  display: grid;
+  align-items: center;
+  height: 48px;
 
   @include desktop {
     &:hover {
@@ -19,7 +22,8 @@
   }
 
   @include mobile {
-    padding: 12px 15px;
+    height: 42px;
+    padding: 0 15px;
     font-size: 14px;
     line-height: 130%;
   }
@@ -35,7 +39,7 @@
 
 .outlined {
   border: 2px solid #303030;
-  padding: 11px 28px;
+  padding: 0 28px;
   color: $color-black;
   background: white;
 
@@ -46,7 +50,7 @@
   }
 
   @include mobile {
-    padding: 8px 13px;
+    padding: 0 13px;
   }
 }
 @include mobile{
