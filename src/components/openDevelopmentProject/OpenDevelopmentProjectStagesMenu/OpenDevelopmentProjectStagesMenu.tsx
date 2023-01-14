@@ -8,7 +8,7 @@ import {openDevelopmentStore} from "../../../stores/openDevelopmentStore";
 import {observer} from "mobx-react-lite";
 import {ReactComponent as Done} from "../../../assets/openDevelopmentProject/done.svg";
 
-const OpenDevelopmentProjectStages = observer(() => {
+const OpenDevelopmentProjectStagesMenu = observer(() => {
     const store = openDevelopmentStore
     const project = openDevelopmentStore.project
     return (
@@ -37,4 +37,4 @@ const OpenDevelopmentProjectStages = observer(() => {
     );
 });
 
-export default OpenDevelopmentProjectStages;
+export default OpenDevelopmentProjectStagesMenu;

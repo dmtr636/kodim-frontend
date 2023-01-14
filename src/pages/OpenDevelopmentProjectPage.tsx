@@ -5,15 +5,20 @@ import {observer} from "mobx-react-lite";
 import OpenDevelopmentProjectLayout
     from "../components/openDevelopmentProject/OpenDevelopmentProjectLayout/OpenDevelopmentProjectLayout";
 import {Page404} from "./Page404";
-import OpenDevelopmentProjectStages
-    from "../components/openDevelopmentProject/OpenDevelopmentProjectStages/OpenDevelopmentProjectStages";
+import OpenDevelopmentProjectStagesMenu
+    from "../components/openDevelopmentProject/OpenDevelopmentProjectStagesMenu/OpenDevelopmentProjectStagesMenu";
 import {Helmet} from "react-helmet";
 import OpenDevelopmentProjectStageItems
     from "../components/openDevelopmentProject/OpenDevelopmentProjectStageItems/OpenDevelopmentProjectStageItems";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+import {isMobile} from "../utils/utils";
+import OpenDevelopmentProjectStageSelect
+    from "../components/openDevelopmentProject/OpenDevelopmentProjectStageSelect/OpenDevelopmentProjectStageSelect";
 
 const OpenDevelopmentProjectPage = observer(() => {
     const {id} = useParams<{id: string}>()
     const store = openDevelopmentStore
+    const {width} = useWindowDimensions()
 
     useEffect(() => {
         store.fetchProject(id ?? "")
@@ -25,18 +30,22 @@ const OpenDevelopmentProjectPage = observer(() => {
 
     return (
         <OpenDevelopmentProjectLayout>
-            {store.project
-                ?
+            {store.project ? (
                 <>
                     <Helmet>
                         <title>{store.project.name}</title>
                         <meta name="robots" content="noindex" />
                     </Helmet>
-                    <OpenDevelopmentProjectStages/>
+                    {isMobile(width) ? (
+                        <OpenDevelopmentProjectStageSelect/>
+                    ) : (
+                        <OpenDevelopmentProjectStagesMenu/>
+                    )}
                     <OpenDevelopmentProjectStageItems/>
                 </>
-                : <h2>Загрузка...</h2>
-            }
+            ) : (
+                <h2>Загрузка...</h2>
+            )}
         </OpenDevelopmentProjectLayout>
     );
 });

@@ -4,14 +4,24 @@
   position: relative;
 }
 
+.header {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 130%;
+  color: #52AEFF;
+  margin-bottom: 16px;
+}
+
 .select {
-  height: 48px;
+  height: 38px;
   background: white;
   cursor: pointer;
   border-radius: 5px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  column-gap: 21px;
   padding: 0 30px;
 
   font-family: 'Raleway';
@@ -34,14 +44,19 @@
     padding: 0 15px;
     font-size: 14px;
     line-height: 130%;
+    column-gap: 10px;
   }
 }
 
 .selectedOption {
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
+  overflow-x: hidden;
   margin-right: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  height: 100%;
 }
 
 .selectActive {
@@ -77,6 +92,7 @@
   background: url("../../../assets/calculator/arrow.svg") no-repeat;
   background-size: contain;
   flex-shrink: 0;
+  margin-left: auto;
   transition: transform 0.25s ease-out;
 
   @include mobile {
@@ -109,4 +125,34 @@
   height: 100%;
   background: transparent;
   z-index: 10;
+}
+
+.circle {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #303030;
+  border-radius: 50%;
+
+  @include mobile {
+    width: 18px;
+    height: 18px;
+    border-width: 2px;
+  }
+}
+
+.selectedOption, .listItemActive {
+  .circle {
+    border-color: white;
+  }
+}
+
+.done {
+  margin-top: -3px;
+  margin-right: -3px;
+
+  @include mobile {
+    width: 20px;
+    height: 20px;
+    margin-right: -2px;
+  }
 }
