@@ -21,6 +21,7 @@ const OpenDevelopmentProjectStages = observer(() => {
                     )}
                     onClick={() => {
                         store.setActiveStage(stage)
+                        window.scrollTo(0,0)
                     }}
                     key={stage.name}
                 >

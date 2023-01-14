@@ -8,6 +8,8 @@ import {Page404} from "./Page404";
 import OpenDevelopmentProjectStages
     from "../components/openDevelopmentProject/OpenDevelopmentProjectStages/OpenDevelopmentProjectStages";
 import {Helmet} from "react-helmet";
+import OpenDevelopmentProjectStageItems
+    from "../components/openDevelopmentProject/OpenDevelopmentProjectStageItems/OpenDevelopmentProjectStageItems";
 
 const OpenDevelopmentProjectPage = observer(() => {
     const {id} = useParams<{id: string}>()
@@ -28,8 +30,10 @@ const OpenDevelopmentProjectPage = observer(() => {
                 <>
                     <Helmet>
                         <title>{store.project.name}</title>
+                        <meta name="robots" content="noindex" />
                     </Helmet>
                     <OpenDevelopmentProjectStages/>
+                    <OpenDevelopmentProjectStageItems/>
                 </>
                 : <h2>Загрузка...</h2>
             }

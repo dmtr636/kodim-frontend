@@ -17,6 +17,7 @@ class OpenDevelopmentStore {
         axios.get(getOpenDevelopmentProjectEndpoint(projectId))
             .then(res => {
                 this.project = res.data.result
+                this.stage = this.project?.stages[0]
                 this.status = "success"
             })
             .catch(e => {
