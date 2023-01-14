@@ -15,36 +15,25 @@
 }
 
 .select {
-  height: 38px;
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
   background: white;
   cursor: pointer;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  column-gap: 21px;
-  padding: 0 30px;
-
-  font-family: 'Raleway';
   font-style: normal;
   font-weight: 600;
-  font-size: 19px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 130%;
   letter-spacing: 0.03em;
   color: $color-black;
-
   user-select: none;
 
   &:hover {
     background: $color-blue-hover;
-  }
-
-  @include mobile {
-    width: 100%;
-    height: 38px;
-    padding: 0 14px;
-    font-size: 14px;
-    line-height: 130%;
-    column-gap: 10px;
   }
 }
 
@@ -72,10 +61,8 @@
   composes: select;
   border-radius: 0;
 
-  @include mobile {
-    height: auto;
-    padding: 10px 14px;
-  }
+  height: auto;
+  padding: 12px 14px;
 }
 
 .listItemActive {
@@ -87,23 +74,18 @@
 }
 
 .arrow {
-  width: 24px;
-  height: 15px;
+  width: 16px;
+  height: 11px;
   background: url("../../../assets/calculator/arrow.svg") no-repeat;
   background-size: contain;
   flex-shrink: 0;
   margin-left: auto;
   transition: transform 0.25s ease-out;
-
-  @include mobile {
-    width: 16px;
-    height: 11px;
-  }
 }
 
 .popover {
   position: absolute;
-  top: 48px;
+  top: 58px;
   left: 0;
   right: 0;
   overflow: hidden;
@@ -111,10 +93,6 @@
   border-radius: 5px;
   background: white;
   z-index: 20;
-
-  @include mobile {
-
-  }
 }
 
 .overlay {
@@ -128,16 +106,10 @@
 }
 
 .circle {
-  width: 22px;
-  height: 22px;
-  border: 3px solid #303030;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #303030;
   border-radius: 50%;
-
-  @include mobile {
-    width: 18px;
-    height: 18px;
-    border-width: 2px;
-  }
 }
 
 .selectedOption, .listItemActive {
@@ -147,12 +119,8 @@
 }
 
 .done {
+  width: 20px;
+  height: 20px;
+  margin-right: -2px;
   margin-top: -3px;
-  margin-right: -3px;
-
-  @include mobile {
-    width: 20px;
-    height: 20px;
-    margin-right: -2px;
-  }
 }
