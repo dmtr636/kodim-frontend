@@ -94,5 +94,8 @@
   }
   .textBlock {
     padding-top: 14px;
+    &:last-child{
+      padding-bottom: 16px;
+    }
   }
 }
