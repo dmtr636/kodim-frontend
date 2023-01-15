@@ -43,7 +43,7 @@ const data = [
         items: [
             {
                 name: "Задать вопрос в телеграм",
-                path: "https://t.me/starostakirill",
+                path: "https://t.me/kodim_support_bot",
                 navLink: false,
             },
             {
@@ -61,6 +61,11 @@ const data = [
                 path: "https://play.google.com/store/apps/dev?id=5079685909738071932&hl=ru",
                 navLink: false,
             },
+            {
+                name: "Открытая разработка",
+                path: "/open-development",
+                navLink: true,
+            }
         ]
     }
 ]
