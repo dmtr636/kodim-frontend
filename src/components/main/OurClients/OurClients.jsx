@@ -9,7 +9,7 @@ export const OurClients = () => {
       <h2 className={style.left}>
         {width < 700 ?<OurClientsMob/>:"Наши клиенты это\xA0—\xA0малый бизнес,\nи все те, кому нужен реально\n быстрый сайт"}
       </h2>
-      <div className={style.right}>Скорость вашего <br /> будущего <br /> сайта</div>
+      <div className={style.right}><div className={style.rightText}>Скорость вашего <br /> будущего <br /> сайта</div></div>
     </div>
   );
 };
