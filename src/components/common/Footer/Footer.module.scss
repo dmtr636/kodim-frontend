@@ -28,7 +28,6 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  column-gap: 136px;
 
   @include mobile {
     flex-direction: column;
