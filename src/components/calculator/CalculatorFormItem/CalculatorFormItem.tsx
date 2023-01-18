@@ -43,8 +43,8 @@ const CalculatorFormItem = (props: {
                 className={styles.arrowPopover}
                 style={popoverArrowStyle}
             />
-            {props.help?.map(item =>
-                <div className={styles.helpContent}>
+            {props.help?.map((item, index) =>
+                <div className={styles.helpContent} key={index}>
                     <span className={styles.helpItemHeader}>{item.header}</span>
                     <span>{item.text}</span>
                 </div>

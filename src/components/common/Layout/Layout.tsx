@@ -28,6 +28,8 @@ const Layout = () => {
     }
 
     useEffect(() => {
+        (window as any).YandexRotorSettings.IsLoaded = true;
+
         window.addEventListener("resize", onResize)
         return () => window.removeEventListener("resize", onResize)
     }, [])
