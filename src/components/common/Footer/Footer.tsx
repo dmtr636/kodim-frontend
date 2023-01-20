@@ -108,13 +108,25 @@ const Footer = () => {
             </div>
             <div className={styles.bottom}>
                 <div className={styles.bottomContent}>
-                    <div className={styles.mailIcon} />
-                    <a
-                        className={styles.email}
-                        href={"mailto:kodimstudio@gmail.com"}
-                    >
-                        kodimstudio@gmail.com
-                    </a>
+                    <div className={styles.bottomContentItem}>
+                        <div className={styles.mailIcon} />
+                        <a
+                            className={styles.email}
+                            href={"mailto:kodimstudio@gmail.com"}
+                        >
+                            kodimstudio@gmail.com
+                        </a>
+                    </div>
+
+                    <div className={styles.bottomContentItem}>
+                        <div className={styles.phoneIcon} />
+                        <a
+                            className={styles.email}
+                            href={"tel:+79208773577"}
+                        >
+                            +7 920 877 35 77
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
