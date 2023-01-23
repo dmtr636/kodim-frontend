@@ -5,25 +5,29 @@ export const siteTypeOptions: ICalculatorFormSelectOption[] = [
         value: "landing",
         name: "Сайт-визитка / Лендинг",
         price: 30000,
-        pricePositionName: "Сайт-визитка / Лендинг"
+        pricePositionName: "Сайт-визитка / Лендинг",
+        priceType: "from"
     },
     {
         value: "corporate",
         name: "Корпоративный",
         price: 70000,
         pricePositionName: "Корпоративный",
+        priceType: "from"
     },
     {
         value: "shop",
         name: "Интернет-магазин товаров или услуг",
         price: 100000,
         pricePositionName: "Интернет-магазин товаров или услуг",
+        priceType: "from"
     },
     {
         value: "portfolio",
         name: "Портфолио / Блог",
         price: 40000,
         pricePositionName: "Портфолио / Блог",
+        priceType: "from"
     },
     {
         value: "other",
