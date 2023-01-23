@@ -73,6 +73,7 @@
 }
 .button {
   padding-top: 60px;
+  z-index: 2;
 }
 @include mobile {
   .wrapper {
