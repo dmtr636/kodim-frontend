@@ -6,10 +6,9 @@ import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {logo} from "../../../assets/common";
 import classNames from "classnames";
 import {observer} from "mobx-react-lite";
-import {CloseMenuIcon} from "../../../assets/common/closeMenuIcon";
-import {BurgerIcon} from "../../../assets/common/burgerIcon";
 import {HashLink} from "react-router-hash-link";
 import telegramLink from "../../../assets/common/telegram.svg"
+import Burger from "./Burger/Burger";
 
 const Header = observer(() => {
     const navigate = useNavigate()
@@ -79,14 +78,12 @@ const Header = observer(() => {
                 </div>
 
                 <button
-                    className={styles.burger}
                     onClick={toggleMenu}
+                    className={styles.burger}
                 >
-                    {isShowMenu
-                        ? <CloseMenuIcon />
-                        : <BurgerIcon />
-                    }
+                    <Burger open={isShowMenu && !isMenuExiting}/>
                 </button>
+
                 {isShowMenu &&
                     <div
                         className={classNames(
