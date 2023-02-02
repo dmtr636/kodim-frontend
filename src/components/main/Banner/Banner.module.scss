@@ -20,7 +20,7 @@
   flex-direction: column;
   position: relative;
   z-index: 2;
-  
+
 }
 .img {
  /*  height: 480px;
@@ -52,7 +52,7 @@
   color: $color-white;
   padding-top: 100px;
   white-space: pre-line;
-  font-family: "Montserrat";
+  font-family: "MontserratVariable";
   font-style: normal;
   font-weight: 900;
   font-size: 48px;
@@ -64,7 +64,7 @@
 .text {
   color: $color-white;
   align-items: flex-start;
-  font-family: "Raleway";
+  font-family: "RalewayVariable";
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
@@ -99,7 +99,7 @@
     padding-top: 24px;
     font-size: 22px;
     padding-right: 2px;
-    font-family:"Montserrat";
+    font-family:"MontserratVariable";
     font-style: normal;
     font-weight: 900;
     line-height: 130%;

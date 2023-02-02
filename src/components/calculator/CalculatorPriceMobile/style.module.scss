@@ -57,7 +57,7 @@ $ANIMATION_DURATION: 0.25s;
 }
 
 .title {
-  font-family: 'Raleway';
+  font-family: "RalewayVariable";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -68,7 +68,7 @@ $ANIMATION_DURATION: 0.25s;
 
 .positionsCount {
   composes: title;
-  font-family: 'Montserrat';
+  font-family: 'MontserratVariable';
 }
 
 .bottomPanel {
@@ -104,7 +104,7 @@ $ANIMATION_DURATION: 0.25s;
   margin-top: 12px;
   display: flex;
   justify-content: space-between;
-  font-family: 'Raleway';
+  font-family: "RalewayVariable";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -112,7 +112,7 @@ $ANIMATION_DURATION: 0.25s;
 }
 
 .totalPrice {
-  font-family: 'Montserrat';
+  font-family: 'MontserratVariable';
   font-size: 18px;
   line-height: 140%;
 }
@@ -134,7 +134,7 @@ $ANIMATION_DURATION: 0.25s;
 }
 
 .positionName {
-  font-family: 'Raleway';
+  font-family: "RalewayVariable";
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -148,7 +148,7 @@ $ANIMATION_DURATION: 0.25s;
 }
 
 .positionPrice {
-  font-family: 'Montserrat';
+  font-family: 'MontserratVariable';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

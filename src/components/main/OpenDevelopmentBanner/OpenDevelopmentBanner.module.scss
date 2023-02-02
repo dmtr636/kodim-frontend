@@ -20,7 +20,7 @@
   padding-top: 30px;
 }
 .h1 {
-  font-family: "Raleway";
+  font-family: "RalewayVariable";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -29,7 +29,7 @@
 }
 .h2 {
   width: 512px;
-  font-family: "Raleway";
+  font-family: "RalewayVariable";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -44,7 +44,7 @@
 }
 .button {
   padding-top: 33px;
-  
+
 }
 @include mobile {
   .wrapper {

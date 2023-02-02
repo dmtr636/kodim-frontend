@@ -6,7 +6,7 @@
   border: 2px solid #52AEFF;
   border-radius: 5px;
 
-  font-family: 'Raleway';
+  font-family: "RalewayVariable";
   font-style: normal;
   font-weight: 600;
   font-size: 19px;
@@ -27,9 +27,9 @@
 
 .phoneInput {
   composes: input;
-  font-family: 'Montserrat';
+  font-family: 'MontserratVariable';
 }
 
 .phoneInput::placeholder {
-  font-family: 'Raleway';
+  font-family: "RalewayVariable";
 }
