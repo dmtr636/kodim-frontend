@@ -51,7 +51,7 @@ body::-webkit-scrollbar-thumb:hover {
 body {
     overflow: overlay;
     color: #52AEFF;
-    font-family: "RalewayVariable";
+    font-family: 'Raleway';
 }
 
 /* Scrollbar for firefox */
