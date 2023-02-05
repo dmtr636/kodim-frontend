@@ -1,11 +1,16 @@
-/*:root {*/
-/*    color-scheme: only light;*/
-/*}*/
+:root {
+    color-scheme: only light;
+}
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    overflow: overlay;
+    background: white !important;
 }
 
 a {
@@ -50,13 +55,6 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-thumb:hover {
     background-color: #71baff;    /* color of the scroll thumb */
-}
-
-body {
-    overflow: overlay;
-    color: #52AEFF;
-    font-family: 'Raleway';
-    background: white !important;
 }
 
 /* Scrollbar for firefox */
