@@ -56,6 +56,7 @@ body {
     overflow: overlay;
     color: #52AEFF;
     font-family: 'Raleway';
+    background: white !important;
 }
 
 /* Scrollbar for firefox */
