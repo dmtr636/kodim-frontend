@@ -13,12 +13,4 @@ export const documentsRoutes = [
             </Suspense>,
         breadcrumb: "Политика конфиденциальности"
     },
-    {
-        path: "/documents/contract",
-        element:
-            <Suspense fallback={<DocumentsTextFallback/>}>
-                <ContractOffer/>
-            </Suspense>,
-        breadcrumb: "Договор-оферта"
-    },
 ]
