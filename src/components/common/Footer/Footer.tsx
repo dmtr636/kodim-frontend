@@ -11,11 +11,6 @@ const data = [
                 path: "/documents/privacy",
                 navLink: true,
             },
-            {
-                name: "Договор-оферта",
-                path: "/documents/contract",
-                navLink: true,
-            },
         ]
     },
     {
